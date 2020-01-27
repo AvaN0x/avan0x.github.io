@@ -1,0 +1,345 @@
+html {
+  scroll-behavior: smooth
+}
+
+body {
+  margin: 0 0 0 0;
+  background: #52514d;
+  font-family: Roboto, Arial, Helvetica, sans-serif;
+  margin-top: 50px;
+  color: white
+}
+
+header {
+  width: 100%;
+  position: fixed;
+  top: 0;
+  box-sizing: border-box;
+  height: 50px;
+  background: #272625;
+  padding: 5px 25px;
+  z-index: 9999
+}
+header img {
+  height: 38px;
+  border-radius: 50%;
+  float: right;
+  border: 1px solid white;
+  transform: rotate(0);
+  transition: .5s
+}
+header > a i{
+  position: relative;
+  font-size: 24px;
+  margin: 8px;
+  color: white;
+  cursor: pointer;
+  transition: .5s;
+  transform: rotate(0)
+}
+.menu_toggle.active i {
+  transform: rotate(90deg);
+  color: #fff1b9
+}
+header nav {
+  position: fixed;
+  top: 50px;
+  left: -100%;
+  height: calc(100vh - 50px);
+  width: 100%;
+  transition: .5s;
+  background: #3f4040f6;
+  text-align: center;
+  overflow-y: auto;
+  box-shadow: 0 3px 5px black;
+  z-index: 9999
+}
+header nav ul {
+  padding: 0;
+  margin: 0;
+  list-style-type: none
+}
+header nav.active {
+  left: 0
+}
+header nav > ul {
+  border-bottom: 2px solid #fff1b9cc;
+  font-size: 1.1em
+}
+header nav ul li {
+  text-align: left;
+  padding: 2px 0
+}
+header nav ul li a {
+  color: #fff;
+  text-decoration: none;
+  transition: .5s;
+  display: block;
+  padding: 5px 5px 5px 45px
+}
+header nav li i {
+  position: absolute;
+  left: 15px;
+  transform: translateY(10%);
+  transition: .5s
+}
+header nav li i.fa-share {
+  transform: translateY(30%)
+}
+header nav h1 {
+  margin: 10px 0;
+  padding: 0;
+  text-align: center;
+  font-size: 1em;
+  font-weight: normal;
+  text-transform: uppercase
+}
+header ul li.submenu > ul {
+  transition: .5s;
+  transform-origin: top;
+  transform: scaleY(0);
+  left: 15px;
+  position: relative;
+  top: 0;
+  height: 0;
+  opacity: 0
+}
+header ul li.submenu ul:before {
+  content: '';
+  position: absolute;
+  left:7.5px;
+  top: -5px;
+  height: 100%;
+  border-left: 1px dashed #fff1b9
+}
+header ul li.submenu.active > ul {
+  transform: scaleY(1);
+  height: auto;
+  width: calc(100% - 15px);
+  opacity: 1
+}
+header ul li.submenu.active > a {
+  color: #fff1b9
+}
+
+div.cover {
+  width: 100%;
+  height: calc(100vh - 50px);
+  position: relative;
+  display: block;
+  background-image: url(https://img.wallpapersafari.com/desktop/1920/1080/49/28/r5VKG8.jpg); /* https://wallpapersafari.com/w/r5VKG8/ */
+  background-size: cover;
+  background-position: center
+}
+div.cover div {
+  background-color: #fff1b9c0;
+  top: 50%;
+  width: 100%;
+  text-align: center;
+  font-size: 30px;
+  margin: auto;
+  display: block;
+  position: sticky
+}
+div.cover div h1 {
+  margin: 0;
+  font-size: 1.3em;
+  color: #fff
+}
+div.cover div p a {
+  color: #fff
+}
+div.cover div p {
+  margin: 0;
+  font-size: 1.1em;
+  padding-bottom: 15px;
+  animation-name: scroll;
+  animation-duration: 1.8s;
+  animation-iteration-count: infinite;
+}
+@keyframes scroll {
+  0% { transform: translateY(0); opacity: 1; }
+  80% { transform: translateY(15px); opacity: .3;}
+  100% { transform: translateY(0); opacity: 1; }
+}
+
+
+
+
+section {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 15px;
+  text-align: justify;
+  background-color: #575652;
+  min-height: calc(100vh - 80px)
+}
+section h1{
+  font-size: 1.5em;
+  color: #fff1b9;
+  text-align: center
+}
+section h2 {
+  font-size: 1.2em;
+  color: #fff1b9
+}
+section p {
+  font-size: 1em
+}
+section p {
+  font-size: 1em;
+  margin: 8px 0
+}
+.text-indent {
+  text-indent: 20px
+}
+section a {
+  text-decoration: none;
+  color: #fff1b9;
+  font-weight: bold
+}
+ul.checklist {
+  list-style-type: none
+}
+ul.checklist li i {
+  display: inline;
+  position: relative;
+  left: -15px;
+  color: #fff1b9;
+  font-size: 1.2em;
+}
+ul.checklist li i.fa-times {
+  left: -14px
+}
+
+
+
+/* iframe correspondant aux pages de mes anciens projets */
+div.iframe {
+  margin: 10px auto;
+  display: block;
+  width: 80%;
+  height: 30vw;
+  max-height: 500px;
+}
+div.iframe iframe {
+  height: 100%;
+  width: 100%;
+  pointer-events: none;
+  box-sizing: border-box;
+  position: relative;
+  display: block;
+  top: -100%;
+  border: 4px solid #fff1b9
+}
+div.iframe a {
+  height: 100%;
+  width: 100%;
+  position: relative;
+  display: block;
+  background-color: #5756525e;
+  z-index: 1
+}
+div.iframe a:after {
+  content:'Cliquez pour voir';
+  display: block;
+  position: relative;
+  text-align: center;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 2em;
+}
+
+table,
+th,
+td {
+  border: 1px solid #fff1b9;
+  padding: 4px;
+  text-align: start
+}
+table {
+  border-collapse:collapse;
+  border-style: hidden;
+}
+
+span.u {
+  text-decoration: underline;
+}
+
+
+
+
+/* page compétences */
+div.skillbar {
+  height: auto;
+  width: 100%;
+  padding: 2px 5px;
+  background-color: #ffffff06;
+  border: 2px solid #fff1b9;
+  border-radius: 5px;
+  display: inline-flex;
+  margin: 5px 0;
+  box-sizing: border-box
+}
+div.skillbar span {
+  display: inline;
+  position: relative;
+  font-size: 16px;
+  line-height: 35px;
+  text-align: center;
+}
+div.skillbar span:first-child,
+div.skillbar span:last-child {
+  width: 60px
+}
+div.skillbar .bar {
+  width: calc(100% - 120px);
+  height: 20px;
+  top: 0;
+  border-radius: 5px;
+  border: 2px solid #ffffff20;
+  background-color: #ffffff06;
+  position: relative;
+  margin: 4px auto;
+}
+div.skillbar .bar .fill {
+  height: 100%;
+  background-color: #fff1b9;
+  border-radius: 5px;
+  animation: skillbar 2s ease-in-out
+}
+@keyframes skillbar {
+  0% {width: 0};
+}
+
+
+
+
+/* timer sur la premiere page */
+#holidayTimer {
+  text-align: center;
+}
+#holidayTimer div {
+  background-color: #fff1b9;
+  display: inline-block;
+  margin: 5px;
+}
+#holidayTimer div span {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  min-width: 100px;
+  padding: 13px;
+  box-sizing: border-box;
+  text-align: center;
+  color: black;
+  border: 1px solid black;
+}
+#holidayTimer div span:nth-child(1) {
+  height: 100px;
+  font-size: 50px;
+}
+#holidayTimer div span:nth-child(2) {
+  height: 50px;
+  text-transform: uppercase;
+}

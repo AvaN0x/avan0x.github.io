@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>V1 - Site d'AvaN0x</title>
+    <link rel="stylesheet" media="screen and (min-width:721px)" href="style.css" />
+    <link rel="stylesheet" media="screen and (max-width:720px)" href="mobile.css" />
+    <meta name="viewport"  content="width=max-device-width, initial-scale=1" />
+    <script src="https://code.jquery.com/jquery-3.4.1.js"></script>
+    <script src="https://kit.fontawesome.com/0383df481c.js" crossorigin="anonymous"></script>
+    <link href="https://fonts.googleapis.com/css?family=Roboto&display=swap" rel="stylesheet">
+  </head>
+  <body>
+    <header>
+      <script>
+        $(function () {
+          $("header").load("menu.html");
+        });
+      </script>
+    </header>
+
+    <div class="cover">
+      <div>
+        <h1>AvaN0x / Clément RICATTE</h1>
+        <p><a href="#section"><i class="fas fa-angle-double-down"></i></a></p>
+      </div>
+    </div>
+    <section id="section">
+      <h1>AvaN0x / Clément RICATTE</h1>
+      <h2>Présentation</h2>
+      <p class="text-indent">
+        Je m'appelle Clément, j'ai <span class="age" title="Age généré automatiquement" style="color: #fff1b9"></span> ans, je suis actuellement en première année de 
+        <a href="http://iut-metz.univ-lorraine.fr/dut-informatique">DUT Info</a> à l'<a href="http://iut-metz.univ-lorraine.fr/">IUT de Metz</a>.
+      </p>
+      <h2>Bienvenue sur mon site personnel</h2>
+      <p class="text-indent">
+        Le site a été réalisé en tant que hobby lors de mes études, son design n'est pas fixe, il peut totalement changer du jour au lendemain, en fonction de mes gouts /
+        j'ai appris de nouvelles astuces que je veux mettre en pratique.
+      </p>
+      <h2>Navigation</h2>
+      <p class="text-indent">
+        Le <a class="menu_toggle" style="cursor: pointer; color: #fff1b9;">menu</a> vous permet de visiter toutes les pages que j'ai réalisées, et autres.
+      </p>
+      <h1>Temps restant à attendre</h1>
+      <p style="text-align:center;">Avant les prochaines vacances :D</p>
+      <!-- <p style="text-align:center;">Avant la fin des vacances :(</p> -->
+      <div id="holidayTimer">
+          <div class="days">
+            <span>00</span>
+            <span>jours</span>
+          </div>
+          <div class="hours">
+            <span>00</span>
+            <span>heures</span>
+          </div>
+          <div class="minutes">
+            <span>00</span>
+            <span>minutes</span>
+          </div>
+          <div class="seconds">
+            <span>00</span>
+            <span>secondes</span>
+          </div>
+      </div>
+    </section>
+    <script>
+      function holidayTimer() {
+        var goalDate = new Date(2020, 2, 14, 17, 30);
+        var time = Number(goalDate - new Date());
+        var s = Math.floor((time/1000) % 60);
+        var m = Math.floor((time/1000/60) % 60);
+        var h = Math.floor((time/(1000*60*60)) % 24);
+        var d = Math.floor(time/(1000*60*60*24) - 31);
+        
+        s = (s < 10) ? "0" + s : s;
+        m = (m < 10) ? "0" + m : m;
+        h = (h < 10) ? "0" + h : h;
+        d = (d < 10) ? "0" + d : d;
+
+        if (time > 0) {
+            $('#holidayTimer .days span:eq(0)').html(d);
+            $('#holidayTimer .hours span:eq(0)').html(h);
+            $('#holidayTimer .minutes span:eq(0)').html(m);
+            $('#holidayTimer .seconds span:eq(0)').html(s);
+        }
+      }
+
+      $(document).ready(function(){
+          $("span.age").text(new Date(new Date() - new Date("2001-10-09")).getFullYear() - 1970);
+          
+          setInterval(holidayTimer, 1000);
+      })
+    </script>
+  </body>
+  </html>

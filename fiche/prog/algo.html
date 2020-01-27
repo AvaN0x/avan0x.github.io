@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8" />
+        <title>AvaN0x - Algo</title>
+        <link rel="stylesheet" media="screen and (min-width:721px)" href="../../style.css" />
+        <link rel="stylesheet" media="screen and (max-width:720px)" href="../../mobile.css" />
+        <link rel="stylesheet" href="../fiche.css" />
+        <meta name="viewport"  content="width=max-device-width, initial-scale=1" />
+        <script src="https://code.jquery.com/jquery-3.4.1.js"></script>
+        <script src="https://kit.fontawesome.com/0383df481c.js" crossorigin="anonymous"></script>
+        <link href="https://fonts.googleapis.com/css?family=Roboto&display=swap" rel="stylesheet">
+  </head>
+  <body>
+    <header>
+      <script>
+        $(function () {
+          $("header").load("../../menu.html");
+        });
+      </script>
+    </header>
+
+    <section>
+      <h1>Algorithmique (version IUT Metz)</h1>
+      <p class="text-indent"><i class="fas fa-exclamation-triangle" style="position: relative; left: -15px;"></i>Cette fiche n'est pas un cours, mais une fiche de syntaxe.</p>
+      <ol class="fiche">
+        <li>Mise en forme</li>
+          <ol>
+            <li>Tableau</li>
+              <table>
+                <thead>
+                  <tr>
+                    <th>algo :<code>nomAlgo</code></td>
+                    <th>Ordonnancement</td>
+                    <th>Lexique</td>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td><code>instructions</code></td>
+                    <td><code>chiffre</code></td>
+                    <td><code>déclarations</code></td>
+                  </tr>
+                </tbody>
+              </table>
+            <li>Affectations</li>
+              <code>variable <i class="fas fa-long-arrow-alt-left"></i> valeur</code>
+            <li>Saisie / Affichage</li>
+              <p>Affichage :<br/>
+                <code>ecrire("texte", variable)</code><br/>
+                - variable : que pour afficher une valeur de variable
+              </p>
+              <p>Saisie :<br/>
+                <code>lire(variable)</code><br/>
+              </p>
+            <li>Déclaration</li>
+              <p>A écrire dans le lexique :<code>nomVariable(typeVariable)</code></p>
+          </ol>
+        <li>Conditions</li>
+          <ol>
+            <li>La conditionnelle si</li>
+              <code>
+                <span class="u">si</span> condition <span class="u">alors</span><br>
+                  | instructions<br/>
+                <span class="u">sinonsi</span> condition <span class="u">alors</span><br>
+                  | instructions<br/>
+                <span class="u">sinon</span><br/>
+                  | instructions<br/>
+                fsi
+              </code>
+            <li>La conditionnelle cas</li>
+              <code>
+                <span class="u">cas</span> variable <span class="u">parmi</span><br>
+                  | val<sub>1</sub> : instruction<sub>1</sub><br/>
+                  | val<sub>2</sub>,val<sub>3</sub>,val<sub>4</sub> : instruction<sub>2</sub><br/>
+                  | ...<br/>
+                  | val<sub>n</sub> : instruction<sub>n</sub><br/>
+                  | defaut : instruction<br/>                  
+                fcas
+              </code>
+          </ol>
+        <li>Opérateurs</li>
+          <ol>
+            <li>Conditions</li>
+              <p>
+                <table>
+                  <tbody>
+                    <tr>
+                      <td>égalité</th>
+                      <td>=</td>
+                    </tr>
+                    <tr>
+                      <td>supériorité</th>
+                      <td>></td>
+                    </tr>
+                    <tr>
+                      <td>infériorité</th>
+                      <td><</td>
+                    </tr>
+                    <tr>
+                      <td>supériorité et égalité</th>
+                      <td>>=</td>
+                    </tr>
+                    <tr>
+                      <td>infériorité et égalité</th>
+                      <td><=</td>
+                    </tr>
+                    <tr>
+                      <td>différence</th>
+                      <td>!=</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </p>
+            <li>Instructions</li>
+              <p>
+                <table>
+                  <tbody>
+                    <tr>
+                      <td>addition</th>
+                      <td>+</td>
+                    </tr>
+                    <tr>
+                      <td>soustraction</th>
+                      <td>-</td>
+                    </tr>
+                    <tr>
+                      <td>multiplication</th>
+                      <td>*</td>
+                    </tr>
+                    <tr>
+                      <td>division réelle</th>
+                      <td>/</td>
+                    </tr>
+                    <tr>
+                      <td>division entière</th>
+                      <td><span class="u">div</span></td>
+                    </tr>
+                    <tr>
+                      <td>modulo</th>
+                      <td><span class="u">mod</span></td>
+                    </tr>
+                  </tbody>
+                </table>
+              </p>
+            <li>Caractères / chaines</li>
+              <p>Caractère entre ' ' : <code>'a'</code></p>
+              <p>Chaine entre " " : <code>"avan0x"</code></p>
+              <p>Récupérer un caractère d'une chaine :<br/> 
+                <code>
+                  chaine <i class="fas fa-long-arrow-alt-left"></i> "avan0x"<br>
+                  ecrire(chaine[2])<em>renvoit 'a'</em>
+                </code>
+              </p>
+              <p>Concaténation : <code>|</code></p>
+            <li>Booléens</li>
+            <p>
+              <table>
+                <tbody>
+                  <tr>
+                    <td>et</th>
+                    <td><span class="u">et</span></td>
+                  </tr>
+                  <tr>
+                    <td>ou</th>
+                    <td><span class="u">ou</span></td>
+                  </tr>
+                  <tr>
+                    <td>non</th>
+                    <td><span class="u">non</span></td>
+                  </tr>
+                </tbody>
+              </table>
+            </p>
+          </ol>
+        <li>Itérations</li>
+          <ol>
+            <li>L'itération pour</li>
+              <p>
+                <code>
+                  <span class="u">pour</span> var <i class="fas fa-long-arrow-alt-left"></i> borneInf à borneSup <span class="u">faire</span><br>
+                    | instructions<br/>
+                  fpour
+                </code>
+                <code>
+                  <span class="u">pour</span> var <i class="fas fa-long-arrow-alt-left"></i> borneSup à borneInf [pas-1]<span class="u">faire</span><br>
+                    | instructions<br/>
+                  fpour
+                </code>
+              </p>
+            <li>L'itération répéter</li>
+              <p>
+                <code>
+                  <span class="u">repeter</span><br>
+                    | instructions<br/>
+                  jqa condition
+                </code>
+              </p>
+            <li>L'itération tant que</li>
+              <p>
+                <code>
+                  <span class="u">tq</span> condition <span class="u">faire</span><br>
+                    | instructions<br/>
+                  ftq
+                </code>
+              </p>
+          </ol>
+        <li>Modules</li>
+          <p>Utilisation dans l'algorithme :</code><br/>
+            <table>
+              <thead>
+                <tr>
+                  <th>algo :<code>nomAlgo</code></td>
+                  <th>Ord</td>
+                  <th>Lexique</td>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td><code>Module(paramètres)</code></td>
+                  <td></td>
+                  <td><code>nomModule(module)</code></td>
+                </tr>
+              </tbody>
+            </table>
+            <br/>
+            Forme du module
+            <table>
+              <thead>
+                <tr>
+                  <th>module :<code>nomModule(<i class="fas fa-arrows-alt-v"></i><i class="fas fa-long-arrow-alt-up"></i><i class="fas fa-long-arrow-alt-down"></i>p<sub>1</sub>:tp<sub>1</sub>;...;<i class="fas fa-arrows-alt-v"></i><i class="fas fa-long-arrow-alt-up"></i><i class="fas fa-long-arrow-alt-down"></i>p<sub>n</sub>:tp<sub>n</sub>)</code></td>
+                  <th>Ord</td>
+                  <th>Lexique</td>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td><code>instructions</code></td>
+                  <td></td>
+                  <td><code>déclarations (sauf paramètres)</code></td>
+                </tr>
+              </tbody>
+            </table>
+            <br/>
+            <i class="fas fa-long-arrow-alt-down"></i> : entrée (non modifiable)<br/>
+            <i class="fas fa-long-arrow-alt-up"></i> : sortie<br/>
+            <i class="fas fa-arrows-alt-v"></i> : entrée / sortie<br/>
+            p : paramètre<br/>
+            tp : type du paramètre<br/>
+          </p>
+        <li>Fonctions</li>
+          <p>Utilisation dans l'algorithme :</code><br/>
+            <table>
+              <thead>
+                <tr>
+                  <th>algo :<code>nomAlgo</code></td>
+                  <th>Ord</td>
+                  <th>Lexique</td>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td><code>variable <i class="fas fa-long-arrow-alt-left"></i> Fonction(paramètres)</code></td>
+                  <td></td>
+                  <td><code>nomFonction(fonction)</code></td>
+                </tr>
+              </tbody>
+            </table>
+            <br/>
+            Forme de la fonction
+            <table>
+              <thead>
+                <tr>
+                  <th>fonction :<code>nomFonction(p<sub>1</sub>,..., p<sub>n</sub>:tp1;...; p<sub>1</sub>,..., p<sub>n</sub>:tp2...):type_fonction</code></td>
+                  <th>Ord</td>
+                  <th>Lexique</td>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td><code>instructions<br/>...<br/>nomFonction <i class="fas fa-long-arrow-alt-left"></i> valeur_à_renvoyer</code></td>
+                  <td></td>
+                  <td><code>déclarations (sauf paramètres)</code></td>
+                </tr>
+              </tbody>
+            </table>
+            <br/>
+            p : paramètre<br/>
+            tp : type du paramètre<br/>
+          </p>
+        <li>Tableaux</li>
+          <ol>
+            <li>Une dimension</li>
+              <p>Déclaration (lexique) :<br/>
+                <code>T_nomTypeTableau(type) = table[borneInf..borneSup]:typeTableau</code><br/>
+                <code>nomTableau(T_nomTypeTableau)</code><br/>
+                Accès aux données :<br/>
+                <code>nomTableau[placeTableau]</code><br/>
+              </p>
+            <li>Plusieurs dimensions</li>
+            <p>Déclaration (lexique) :<br/>
+              <code>T_nomTypeTableau(type) = table[borneInf<sub>1</sub>..borneSup<sub>1</sub>, ..., borneInf<sub>n</sub>..borneSup<sub>n</sub>]:typeTableau</code><br/>
+              <code>nomTableau(T_nomTypeTableau)</code><br/>
+              Accès aux données :<br/>
+              <code>nomTableau[placeTableau<sub>1</sub>, ..., placeTableau<sub>n</sub>]</code><br/>
+            </p>
+          </ol>
+        <li>Type scalaire / intervalle</li>
+          <p>Ensemble de val ordonné, il y a deux fonctions prédéfinies : <code>Pred()</code>et<code>Succ()</code></p>
+          <ol>
+            <li>Scalaire</li>
+              <p>Déclaration (lexique) :<br/>
+                <code>T_nomType(type) = (val<sub>1</sub>, ..., val<sub>n</sub>)</code><br/>
+                exemple : T_Jour(type) = (lundi, mardi, mercredi, jeudi, vendredi, samedi, dimanche)<br/>
+                <code>nomVar(T_nomType)</code>
+              </p>
+            <li>Intervalle</li>
+              <p>Déclaration (lexique) :<br/>
+                <code>T_nomType(type) = borneInf .. borneSup</code><br/>
+                <code>nomVar(T_nomType)</code>
+              </p>
+          </ol>
+        <li>Type structure</li>
+          <p>Déclaration (lexique) :<br/>
+            <code>nomTypeStructure(type) = structure(nomChamp<sub>1</sub>(nomType<sub>1</sub>); ...; nomChamp<sub>n</sub>(nomType<sub>n</sub>))</code><br/>
+            <code>nomVarStructure(nomTypeStructure)</code><br/>
+            Chaque <code>nomChamp</code> peut être plusieurs variables (exemple : "nom, prenom(chaine)")<br/>
+            Accès à une donnée : <br/>
+            <code>nomVarStructure.nomChamp[i]</code>
+          </p>
+      </ol>
+    </section>
+  </body>
+  </html>

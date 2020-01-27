@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <link rel="stylesheet" href="site.css" />
+  <script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.2.1.min.js"></script>
+  <script src="https://kit.fontawesome.com/0383df481c.js" crossorigin="anonymous"></script>
+  <title>Site de Clément V1</title>
+</head>
+<body id="body" class="background_gray">
+<!-- Menu gauche -->
+<div id="lmenu" style='display: none;'>
+   <ul>
+     <a class="lmenu_title">Cours</a>
+        <li><a href="https://openclassrooms.com/courses/apprenez-a-creer-votre-site-web-avec-html5-et-css3/comment-fait-on-pour-creer-des-sites-web" target="_blank" title="OpenClassRoom"><i class="fas fa-newspaper"></i> OpenClassRoom</a></li>
+        <div class="lmenu_line"><br/></div><br/>
+    <a class="lmenu_title">Etudes</a>
+        <li><a href="#" title="Pourquoi la Lune ne nous tombe t-elle pas sur la tête ?"><i class="fab fa-accusoft"></i> TPE : La Lune</a></li>
+        <div class="lmenu_line"><br/></div><br/>
+    <a class="lmenu_title">Autres</a>
+        <li><a href="#" title="Un site cool !"><i class="fa fa-share" aria-hidden="true"></i> Page de gifs</a></li>
+        <li><a href="#" title="Je fais des tests ici !"><i class="fa fa-share" aria-hidden="true"></i> Page de tests</a></li>
+        <li><a href="#" title="Une page qui te dit ou aller sur Fortnite !"><i class="fa fa-share" aria-hidden="true"></i> Fortnite : Drop random</a></li>
+        <li><a href="#" title="Affichage du shop du jour de Fortnite"><i class="fa fa-share" aria-hidden="true"></i> Fortnite : Shop</a></li>
+        <li><a href="#" title="Les Skins à venir sur Fortnite"><i class="fa fa-share" aria-hidden="true"></i> Fortnite : Upcoming Skins</a></li>
+        <div class="lmenu_line"><br/></div><br/>
+    <a class="lmenu_title">Jeux</a>
+        <li><a href="#" title="Jeu du Plus ou moins"><i class="fas fa-gamepad"></i> Plus ou moins</a></li>
+        <div class="lmenu_line"><br/></div><br/>
+    <a class="lmenu_title">Indev</a>
+        <li><a href="#" title="Jeu du Morpion"><i class="fas fa-spinner fa-spin"></i> Morpion (Give Up ?!)</a></li>
+        <li><a href="#" title="Les News actuelle de Fortnite"><i class="fa fa-share" aria-hidden="true"></i> Fortnite : News</a></li>
+        <div class="lmenu_line"><br/></div><br/>
+   </ul>
+</div>
+<!-- Menu option  -->
+<div id="menu_option">
+  <ul>
+    <li><a onclick="backgroundchange()" href="#" title="Changer le background!"><i class="far fa-image"></i></a></li>
+  </ul>
+</div>
+<ul id="menu_horizontal">
+    <li class="left_button"><a href="#" onclick="hideshowlmenu()" title="Menu"><i class="fa fa-bars" aria-hidden="true"></i></a></li>
+    <li class="left_button"><a href="../../../index.html" title="Retour version actuelle du site"><i class="fa fa-home" aria-hidden="true" style="color: #fff1b9"></i></a></li>
+    <li class="right_button"><a href="#" onclick="hideshowmenu_option()" title="Options du site"><i class="fas fa-sliders-h" height="31px"></i></a></li>
+    </ul>
+
+  <section>
+    <article>
+    <iframe src="https://giphy.com/embed/10HTAgEA1o5A9a"  height="200" frameBorder="0" class="giphy-embed" allowFullScreen></iframe><p><a href="https://giphy.com/stickers/10HTAgEA1o5A9a"></a></p>
+    <h1><span class="site"><em>Site de Clément V1</em></span></h1>
+     <h2>Une petite vidéo drôle :</h2>
+     <iframe width="560" height="315" src="https://www.youtube.com/embed/W4XJ1n0D9GA" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+    </article>
+  </section>
+  <script>
+    </script>
+    <!-- Barre haut-->
+    <script>
+    var le = document.getElementById('lmenu');
+    function hideshowlmenu() {
+        if (le.style.display === 'none') {
+            le.style.display = 'block';
+        } else {
+            le.style.display = 'none';
+        }
+    }
+    var op = document.getElementById('menu_option');
+    function hideshowmenu_option() {
+        if (op.style.display === 'none') {
+            op.style.display = 'block';
+        } else {
+            op.style.display = 'none';
+        }
+    }
+    </script>
+
+</body>
+</html>
