@@ -66,23 +66,18 @@
     </section>
     <script>
       function holidayTimer() {
-        var goalDate = new Date(2020, 2, 14, 17, 30);
-        var time = Number(goalDate - new Date());
-        var s = Math.floor((time/1000) % 60);
-        var m = Math.floor((time/1000/60) % 60);
-        var h = Math.floor((time/(1000*60*60)) % 24);
-        var d = Math.floor(time/(1000*60*60*24)-29);
+        var goalDate = new Date(2020, 2-1, 14, 17, 30).getTime();
+        var time = Math.floor((goalDate - new Date().getTime())/1000);
+        var d = Math.floor(time / 86400);
+        var h = Math.floor((time % 86400) / 3600);
+        var m = Math.floor(( (time % 86400) % 3600) / 60);
+        var s = Math.floor(( (time % 86400) % 3600) % 60);
         
-        s = (s < 10) ? "0" + s : s;
-        m = (m < 10) ? "0" + m : m;
-        h = (h < 10) ? "0" + h : h;
-        d = (d < 10) ? "0" + d : d;
-
         if (time > 0) {
-            $('#holidayTimer .days span:eq(0)').html(d);
-            $('#holidayTimer .hours span:eq(0)').html(h);
-            $('#holidayTimer .minutes span:eq(0)').html(m);
-            $('#holidayTimer .seconds span:eq(0)').html(s);
+            $('#holidayTimer .days span:eq(0)').html((d < 10) ? "0" + d : d);
+            $('#holidayTimer .hours span:eq(0)').html((h < 10) ? "0" + h : h);
+            $('#holidayTimer .minutes span:eq(0)').html((m < 10) ? "0" + m : m);
+            $('#holidayTimer .seconds span:eq(0)').html((s < 10) ? "0" + s : s);
         }
       }
 
