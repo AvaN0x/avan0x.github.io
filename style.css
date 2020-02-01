@@ -113,12 +113,10 @@ header nav h1 {
   text-transform: uppercase
 }
 
-header ul li.submenu > a,
-header ul li.discord > a {
+header ul li.submenu > a {
   cursor: pointer
 }
-header ul li.submenu > ul,
-header ul li.discord > ul {
+header ul li.submenu > ul {
   transition: .5s;
   transform-origin: top;
   transform: scaleY(0);
@@ -128,8 +126,7 @@ header ul li.discord > ul {
   height: 0;
   opacity: 0
 }
-header ul li.submenu ul:before,
-header ul li.discord ul:before {
+header ul li.submenu ul:before {
   content: '';
   position: absolute;
   left:7.5px;
@@ -137,15 +134,13 @@ header ul li.discord ul:before {
   height: 100%;
   border-left: 1px dashed #fff1b9
 }
-header ul li.submenu.active > ul,
-header ul li.discord.active > ul {
+header ul li.submenu.active > ul {
   transform: scaleY(1);
   height: auto;
   width: calc(100% - 15px);
   opacity: 1
 }
-header ul li.submenu.active > a,
-header ul li.discord.active > a {
+header ul li.submenu.active > a {
   color: #fff1b9
 }
 ::-webkit-scrollbar {
