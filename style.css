@@ -1,3 +1,13 @@
+:root {
+  --main-color: #fff1b9;
+  --main-transparent-color: #fff1b9c8;
+
+}
+
+.mainColor {
+  color : var(--main-color)
+}
+
 html {
   scroll-behavior: smooth
 }
@@ -29,7 +39,7 @@ header img {
 }
 header img:hover {
   transform: rotate(360deg);
-  border: 1px solid #fff1b9;
+  border: 1px solid var(--main-color);
   border-radius: 30%
 }
 header > a i{
@@ -42,12 +52,12 @@ header > a i{
   transform: rotate(0)
 }
 header > a:hover i {
-  color: #fff1b9;
+  color: var(--main-color);
   transform: rotate(10deg) scale(1.1)
 }
 .menu_toggle.active i {
   transform: rotate(90deg);
-  color: #fff1b9
+  color: var(--main-color)
 }
 .menu_toggle.active:hover i {
   transform: rotate(80deg) scale(1.1)
@@ -74,7 +84,7 @@ header nav.active {
   left: 0
 }
 header nav > ul {
-  border-bottom: 2px solid #fff1b9cc;
+  border-bottom: 2px solid var(--main-transparent-color);
   font-size: 1.1em
 }
 header nav ul li {
@@ -89,7 +99,7 @@ header nav ul li a {
   padding: 5px 5px 5px 45px
 }
 header nav ul li a:hover {
-  color: #fff1b9;
+  color: var(--main-color);
   padding: 5px 0 5px 50px
 }
 header nav ul li a:hover i {
@@ -132,7 +142,7 @@ header ul li.submenu ul:before {
   left:7.5px;
   top: -5px;
   height: 100%;
-  border-left: 1px dashed #fff1b9
+  border-left: 1px dashed var(--main-color)
 }
 header ul li.submenu.active > ul {
   transform: scaleY(1);
@@ -141,7 +151,7 @@ header ul li.submenu.active > ul {
   opacity: 1
 }
 header ul li.submenu.active > a {
-  color: #fff1b9
+  color: var(--main-color)
 }
 ::-webkit-scrollbar {
   width: 10px
@@ -153,7 +163,7 @@ header nav::-webkit-scrollbar {
   background: #262727;
 }
 ::-webkit-scrollbar-thumb:hover {
-  background: #fff1b9;
+  background: var(--main-color);
 }
 
 
@@ -169,7 +179,7 @@ div.cover {
   background-position: center
 }
 div.cover div {
-  background-color: #fff1b9c0;
+  background-color: var(--main-transparent-color);
   top: 50%;
   width: 100%;
   text-align: center;
@@ -214,12 +224,12 @@ section {
 }
 section h1{
   font-size: 1.5em;
-  color: #fff1b9;
+  color: var(--main-color);
   text-align: center
 }
 section h2 {
   font-size: 1.2em;
-  color: #fff1b9;
+  color: var(--main-color);
   clear: both;
 
 }
@@ -232,7 +242,7 @@ section p {
 }
 section a {
   text-decoration: none;
-  color: #fff1b9;
+  color: var(--main-color);
 }
 section a:hover {
   font-weight: bold
@@ -245,7 +255,7 @@ ul.checklist li i {
   display: inline;
   position: relative;
   left: -15px;
-  color: #fff1b9;
+  color: var(--main-color);
   font-size: 1.2em;
 }
 ul.checklist li i.fa-times {
@@ -270,7 +280,7 @@ div.iframe iframe {
   position: relative;
   display: block;
   top: -100%;
-  border: 4px solid #fff1b9
+  border: 4px solid var(--main-color)
 }
 div.iframe a {
   height: 100%;
@@ -293,7 +303,7 @@ div.iframe a:after {
 table,
 th,
 td {
-  border: 1px solid #fff1b9;
+  border: 1px solid var(--main-color);
   padding: 4px
 }
 table {
@@ -314,7 +324,7 @@ div.skillbar {
   width: 100%;
   padding: 2px 5px;
   background-color: #ffffff06;
-  border: 2px solid #fff1b9;
+  border: 2px solid var(--main-color);
   border-radius: 5px;
   display: inline-flex;
   margin: 5px 5px;
@@ -349,7 +359,7 @@ div.skillbar .bar {
 }
 div.skillbar .bar .fill {
   height: 100%;
-  background-color: #fff1b9;
+  background-color: var(--main-color);
   border-radius: 5px;
   animation: skillbar 2s ease-in-out
 }
@@ -365,7 +375,7 @@ div.skillbar .bar .fill {
   text-align: center;
 }
 #holidayTimer div {
-  background-color: #fff1b9;
+  background-color: var(--main-color);
   display: inline-block;
   margin: 5px;
 }
