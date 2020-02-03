@@ -72,7 +72,7 @@
     .fiche ol li {
         color: var(--main-color);
         font-weight: bold;
-        margin: 10px 0 5px 0;
+        margin: 10px 0 5px 0
     }
     code,
     pre {
@@ -136,7 +136,7 @@
         opacity: 0
     }
     .ficheContainer > li {
-        list-style-type: none;
+        list-style-type: none
     }
     .ficheContainer > li > a {
         color: var(--main-color);
@@ -205,10 +205,10 @@
         display: inline-block;
         width: auto;
         text-indent: 0;
-        text-align: start;
+        text-align: start
     }
     .fiche code em {
-        margin-left: 20px;
+        margin-left: 20px
     }
     .fiche code em:before {
         content:'/*'
@@ -225,7 +225,7 @@
     }
     .tuto ol li {
         list-style-type: lower-latin;
-        margin-left: 15px;
+        margin-left: 15px
     }
     .tuto img {
         display: none

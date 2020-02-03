@@ -1,6 +1,6 @@
 :root {
   --main-color: #fff1b9;
-  --main-transparent-color: #fff1b9c8;
+  --main-transparent-color: #fff1b9c8
 }
 
 .mainColor {
@@ -164,12 +164,12 @@ div.cover div p {
   padding-bottom: 15px;
   animation-name: scroll;
   animation-duration: 1.8s;
-  animation-iteration-count: infinite;
+  animation-iteration-count: infinite
 }
 @keyframes scroll {
-  0% { transform: translateY(0); opacity: 1; }
-  80% { transform: translateY(15px); opacity: .3;}
-  100% { transform: translateY(0); opacity: 1; }
+  0% { transform: translateY(0); opacity: 1}
+  80% { transform: translateY(15px); opacity: .3}
+  100% { transform: translateY(0); opacity: 1 }
 }
 
 
@@ -215,7 +215,7 @@ ul.checklist li i {
   position: relative;
   left: -15px;
   color: var(--main-color);
-  font-size: 1.2em;
+  font-size: 1.2em
 }
 ul.checklist li i.fa-times {
   left: -14px
@@ -229,7 +229,7 @@ div.iframe {
   display: block;
   width: 80%;
   height: 30vw;
-  max-height: 500px;
+  max-height: 500px
 }
 div.iframe iframe {
   height: 100%;
@@ -256,7 +256,7 @@ div.iframe a:after {
   text-align: center;
   top: 50%;
   transform: translateY(-50%);
-  font-size: 2em;
+  font-size: 2em
 }
 
 table,
@@ -268,11 +268,11 @@ td {
 }
 table {
   border-collapse:collapse;
-  border-style: hidden;
+  border-style: hidden
 }
 
 span.u {
-  text-decoration: underline;
+  text-decoration: underline
 }
 
 
@@ -295,7 +295,7 @@ div.skillbar span {
   position: relative;
   font-size: 16px;
   line-height: 35px;
-  text-align: center;
+  text-align: center
 }
 div.skillbar span:first-child,
 div.skillbar span:last-child {
@@ -309,7 +309,7 @@ div.skillbar .bar {
   border: 2px solid #ffffff20;
   background-color: #ffffff06;
   position: relative;
-  margin: 4px auto;
+  margin: 4px auto
 }
 div.skillbar .bar .fill {
   height: 100%;
@@ -318,7 +318,7 @@ div.skillbar .bar .fill {
   animation: skillbar 2s ease-in-out
 }
 @keyframes skillbar {
-  0% {width: 0};
+  0% {width: 0}
 }
 
 
@@ -326,12 +326,12 @@ div.skillbar .bar .fill {
 
 /* timer sur la premiere page */
 #holidayTimer {
-  text-align: center;
+  text-align: center
 }
 #holidayTimer div {
   background-color: var(--main-color);
   display: inline-block;
-  margin: 5px;
+  margin: 5px
 }
 #holidayTimer div span {
   display: flex;
@@ -342,13 +342,13 @@ div.skillbar .bar .fill {
   box-sizing: border-box;
   text-align: center;
   color: black;
-  border: 1px solid black;
+  border: 1px solid black
 }
 #holidayTimer div span:nth-child(1) {
   height: 100px;
-  font-size: 50px;
+  font-size: 50px
 }
 #holidayTimer div span:nth-child(2) {
   height: 50px;
-  text-transform: uppercase;
+  text-transform: uppercase
 }
