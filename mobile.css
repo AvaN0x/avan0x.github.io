@@ -325,15 +325,14 @@ div.skillbar .bar .fill {
 
 
 /* timer sur la premiere page */
-#holidayTimer {
+.holidayTimer {
   text-align: center
 }
-#holidayTimer div {
-  background-color: var(--main-color);
+.holidayTimer div {
   display: inline-block;
   margin: 5px
 }
-#holidayTimer div span {
+.holidayTimer span {
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -341,14 +340,13 @@ div.skillbar .bar .fill {
   padding: 13px;
   box-sizing: border-box;
   text-align: center;
-  color: black;
-  border: 1px solid black
+  color: var(--main-color);
 }
-#holidayTimer div span:nth-child(1) {
-  height: 100px;
+.holidayTimer div span:nth-child(1) {
+  height: 50px;
   font-size: 50px
 }
-#holidayTimer div span:nth-child(2) {
-  height: 50px;
-  text-transform: uppercase
+.holidayTimer div span:nth-child(2) {
+  height: 40px;
+  text-transform: uppercase;
 }
