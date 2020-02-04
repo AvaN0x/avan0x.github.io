@@ -166,7 +166,9 @@ header nav::-webkit-scrollbar {
 ::-webkit-scrollbar-thumb:hover {
   background: var(--main-color)
 }
-
+::-webkit-scrollbar-corner {
+  background: #262727
+}
 
 
 
