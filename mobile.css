@@ -330,14 +330,13 @@ div.skillbar .bar .fill {
 }
 .holidayTimer div {
   display: inline-block;
-  margin: 5px
+  margin: 0
 }
 .holidayTimer span {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  min-width: 100px;
-  padding: 13px;
+  padding: 8px;
   box-sizing: border-box;
   text-align: center;
   color: var(--main-color);
