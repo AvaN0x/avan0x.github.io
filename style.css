@@ -379,7 +379,12 @@ div.skillbar .bar .fill {
 }
 .holidayTimer div {
   display: inline-block;
-  margin: 5px
+  margin: 5px;
+  transition: .3s;
+  cursor: default
+}
+.holidayTimer div:hover {
+  transform: scale(1.1)
 }
 .holidayTimer span {
   display: flex;
