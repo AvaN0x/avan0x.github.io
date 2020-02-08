@@ -2,7 +2,7 @@
 <html>
   <head>
     <meta charset="utf-8" />
-    <title>AvaN0x - Compétences</title>
+    <title>AvaN0x - Infos</title>
     <link rel="stylesheet" media="screen and (min-width:721px)" href="../style.css" />
     <link rel="stylesheet" media="screen and (max-width:720px)" href="../mobile.css" />
     <meta name="viewport"  content="width=max-device-width, initial-scale=1" />
@@ -21,7 +21,26 @@
     </header>
 
     <section>
-      <h1>Clément - Compétences</h1>
+      <h1>Clément - Infos</h1>
+      <h2>Etudes</h2>
+        <div class="skillbar dutInfo" style="width: calc(100% - 20px);">
+          <span style="width: 90px">DUT Info</span>
+          <div class="bar">
+            <div class="fill" style="width: 90%;">
+            </div>
+          </div>
+          <span>90%</span>
+        </div>
+        <p>Resultats des différents semestres :</p>
+        <ul style="margin: 0">
+          <li>Semestre 1 : <i style="color: var(--main-color)">Major de promo, moyenne : 16.235</i></li>
+          <li>Semestre 2 : <i style="color: var(--main-color)">...</i></li>
+          <li>Semestre 3 : <i style="color: var(--main-color)">...</i></li>
+          <li>Semestre 4 : <i style="color: var(--main-color)">...</i></li>
+        </ul>
+
+
+      <h2>Compétences</h2>
         <div class="skillbar">
           <span>HTML</span>
           <div class="bar">
@@ -87,5 +106,23 @@
           <span>0%</span>
         </div>
     </section>
+    <script>
+      function loadBarIUT() {
+        debutIUT = new Date(2019, 9-1, 2, 8).getTime();
+        finIUT = new Date(2021, 6-1, 19, 17, 30).getTime();
+        
+        pourcentIUT = Math.round( (new Date().getTime() - debutIUT) / (finIUT - debutIUT) * 1000) / 1000;
+        pourcentIUT = (pourcentIUT > 1) ? 1 : pourcentIUT; 
+        console.log("Progression à l'IUT : " + (pourcentIUT * 100) + "%");
+        
+        $('.skillbar.dutInfo span:last-child').html((pourcentIUT * 100) + "%");
+        $('.skillbar.dutInfo .bar .fill').css("width", (pourcentIUT * 100) + "%");
+      }
+
+      $(document).ready(function(){
+        loadBarIUT();
+          setInterval(loadBarIUT, 86400*4);
+      })
+    </script>
   </body>
-  </html>
+</html>

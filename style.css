@@ -234,7 +234,6 @@ section h2 {
   font-size: 1.2em;
   color: var(--main-color);
   clear: both
-
 }
 section p {
   font-size: 1em;
@@ -329,7 +328,7 @@ div.skillbar {
   background-color: #ffffff06;
   border: 2px solid var(--main-color);
   border-radius: 5px;
-  display: inline-flex;
+  display: flex;
   margin: 5px 5px;
   box-sizing: border-box
 }
