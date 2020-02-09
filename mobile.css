@@ -44,9 +44,6 @@ header #menuHolidayTimer {
   float: right;
   padding: 11px;
 }
-header #menuHolidayTimer:hover {
-  font-weight: bold
-}
 
 header > a i{
   position: relative;
