@@ -42,6 +42,19 @@ header img:hover {
   border: 1px solid var(--main-color);
   border-radius: 30%
 }
+
+
+header #menuHolidayTimer {
+  color: var(--main-color);
+  text-decoration: none;
+  float: right;
+  padding: 11px;
+}
+header #menuHolidayTimer:hover {
+  font-weight: bold
+}
+
+
 header > a i{
   position: relative;
   font-size: 24px;
@@ -373,19 +386,19 @@ div.skillbar .bar .fill {
 
 
 /* timer sur la premiere page */
-.holidayTimer {
+#holidayTimer {
   text-align: center
 }
-.holidayTimer div {
+#holidayTimer div {
   display: inline-block;
   margin: 5px;
   transition: .3s;
   cursor: default
 }
-.holidayTimer div:hover {
+#holidayTimer div:hover {
   transform: scale(1.1)
 }
-.holidayTimer span {
+#holidayTimer span {
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -394,11 +407,11 @@ div.skillbar .bar .fill {
   text-align: center;
   color: var(--main-color);
 }
-.holidayTimer div span:nth-child(1) {
+#holidayTimer div span:nth-child(1) {
   height: 50px;
   font-size: 50px
 }
-.holidayTimer div span:nth-child(2) {
+#holidayTimer div span:nth-child(2) {
   height: 40px;
   text-transform: uppercase;
 }
