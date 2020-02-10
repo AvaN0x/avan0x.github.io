@@ -26,10 +26,6 @@
   <a class="menu_toggle active"><i class="fas fa-times"></i></a>
   <a href="/index.html"><i class="fa fa-home"></i></a>
   <a href="https://github.com/AvaN0x"><img src="https://avatars3.githubusercontent.com/u/27494805?s=460&v=4" title="github.com/AvaN0x"/></a>
-  <a id="menuHolidayTimer" href="/index.html#holidayTimer">
-    <span>00</span>j <span>00</span>h<span>00</span>m
-  </a>
-
 
   <nav class="active">
     <ul>
@@ -74,78 +70,3 @@
     </ul>
   </nav>
 
-  
-  <script>
-    var goalDate;
-
-    function getGoalDate() {
-      var holidayDate = {
-          "date":[
-            {"type": 1, "date": new Date(2019, 12-1, 20, 17, 30).getTime() },
-            {"type": 0, "date": new Date(2020, 1-1, 6, 8, 0).getTime() },
-            {"type": 1, "date": new Date(2020, 2-1, 14, 17, 30).getTime() },
-            {"type": 0, "date": new Date(2020, 2-1, 24, 8, 0).getTime() },
-            {"type": 1, "date": new Date(2020, 4-1, 11, 17, 30).getTime() },
-            {"type": 0, "date": new Date(2020, 4-1, 27, 8, 0).getTime() },
-            {"type": 1, "date": new Date(2020, 6-1, 26, 17, 30).getTime() }
-          ]
-        }
-
-        for (var i = 0; i < Object.keys(holidayDate.date).length; i++)
-          if (new Date().getTime() < holidayDate.date[i].date) {
-            goalDate = holidayDate.date[i].date;
-            console.log("Date countdown " + (holidayDate.date[i].date - new Date().getTime()) + ", type : " + holidayDate.date[i].type);
-            console.log(Object.keys(holidayDate.date).length + " dates disponibles.");
-            console.log(new Date(holidayDate.date[Object.keys(holidayDate.date).length - 1].date).getDate() + "/" + (new Date(holidayDate.date[Object.keys(holidayDate.date).length - 1].date).getMonth() + 1) + "/" + new Date(holidayDate.date[Object.keys(holidayDate.date).length - 1].date).getFullYear());              
-            break;
-          }
-
-        if (holidayDate.date[i].type) {
-          // page d'accueil
-          $("#holidayTimer > p").text("Avant les prochaines vacances :D");
-
-          // menu
-          $("#menuHolidayTimer").prop("title","Avant les prochaines vacances :D - Clique pour voir");
-        }
-        else {
-          // page d'accueil
-          $("#holidayTimer > p").text("Avant la fin des vacances :(");
-
-          // menu
-          $("#menuHolidayTimer").prop("title","Avant la fin des vacances :( - Clique pour voir");
-
-        }
-    }
-
-    function holidayTimer() {
-      var time = Math.floor((goalDate - new Date().getTime())/1000);
-      var d = Math.floor(time / 86400);
-      var h = Math.floor((time % 86400) / 3600);
-      var m = Math.floor(( (time % 86400) % 3600) / 60);
-      var s = Math.floor(( (time % 86400) % 3600) % 60);
-      
-      if (time >= 0) {
-        // page accueil
-        $('#holidayTimer .days span:eq(0)').html((d < 10) ? "0" + d : d);
-        $('#holidayTimer .hours span:eq(0)').html((h < 10) ? "0" + h : h);
-        $('#holidayTimer .minutes span:eq(0)').html((m < 10) ? "0" + m : m);
-        $('#holidayTimer .seconds span:eq(0)').html((s < 10) ? "0" + s : s);
-
-
-        // menu
-        $('#menuHolidayTimer span:eq(0)').html((d < 10) ? "0" + d : d);
-        $('#menuHolidayTimer span:eq(1)').html((h < 10) ? "0" + h : h);
-        $('#menuHolidayTimer span:eq(2)').html((m < 10) ? "0" + m : m);
-
-      }
-      if (time == -1)
-        getGoalDate()
-
-    }
-
-    $(document).ready(function(){
-        getGoalDate();
-        holidayTimer();
-        setInterval(holidayTimer, 1000);
-    })
-  </script>

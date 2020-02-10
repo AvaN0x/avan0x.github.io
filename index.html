@@ -44,29 +44,155 @@
       </p>
       <h1>Temps restant à attendre</h1>
       <div id="holidayTimer"> <!-- script dans menu.html -->
-        <p style="text-align:center;"></p>
-          <div class="days">
-            <span>00</span>
-            <span>jours</span>
-          </div>
-          <div class="hours">
-            <span>00</span>
-            <span>heures</span>
-          </div>
-          <div class="minutes">
-            <span>00</span>
-            <span>minutes</span>
-          </div>
-          <div class="seconds">
-            <span>00</span>
-            <span>secondes</span>  
-          </div>
+        <p></p>
+
+        <div class="days">
+          <span>00</span>
+          <span>jours</span>
+        </div>
+        <div class="hours">
+          <span>00</span>
+          <span>heures</span>
+        </div>
+        <div class="minutes">
+          <span>00</span>
+          <span>minutes</span>
+        </div>
+        <div class="seconds">
+          <span>00</span>
+          <span>secondes</span>  
+        </div>
+
+
+        <div>
+          <label>
+            <input type="radio" name="duree" value="1" title="Durée des vacances" checked/>
+            <span>1sem</span>
+          </label>
+          <label>
+            <input type="radio" name="duree" value="2" title="Durée des vacances"/>
+            <span>2sem</span>
+          </label>
+
+
+          <label>
+            <input type="radio" name="zone" value="C" title="Zone scolaire ou vous vous trouvez"/>
+            <span>C</span>
+          </label>
+          <label>
+            <input type="radio" name="zone" value="B" title="Zone scolaire ou vous vous trouvez" checked/>
+            <span>B</span>
+          </label>
+          <label>
+            <input type="radio" name="zone" value="A" title="Zone scolaire ou vous vous trouvez"/>
+            <span>A</span>
+          </label>
+        </div>
+
+
+
       </div>
     </section>
     <script>
+      var goalDate;
+
+      //   var holidayDate = {
+      //       "date":[
+      //         {"holidays": 1, "date": new Date(2020, 1, 14, 17, 30).getTime() }, // mois - 1
+      //         {"holidays": 0, "date": new Date(2020, 1, 24, 8, 0).getTime() },
+      //         {"holidays": 1, "date": new Date(2020, 3, 11, 17, 30).getTime() },
+      //         {"holidays": 0, "date": new Date(2020, 3, 27, 8, 0).getTime() },
+      //         {"holidays": 1, "date": new Date(2020, 5, 26, 17, 30).getTime() }
+      //       ]
+      //     }
+
+      function getGoalDate() {
+        var holidayDate = {
+            "date":[
+              // holidays == 1 -> début vacances, sinon fin vacances
+              // dates basées sur la zone C (première zone en vacance)
+              {"holidays": 1, "affectedByZones":"1", "date": new Date(2020, 1, 7, 17, 30).getTime() }, // mois - 1
+              {"holidays": 0, "affectedByZones":"1", "date": new Date(2020, 1, 17, 8, 0).getTime() },
+              {"holidays": 1, "affectedByZones":"1", "date": new Date(2020, 3, 3, 17, 30).getTime() },
+              {"holidays": 0, "affectedByZones":"1", "date": new Date(2020, 3, 13, 8, 0).getTime() },
+              {"holidays": 1, "affectedByZones":"0", "date": new Date(2020, 5, 26, 17, 30).getTime() }
+            ]
+          }
+
+          for (var i = 0; i < Object.keys(holidayDate.date).length; i++) {
+            var shift = 0;
+            if (holidayDate.date[i].affectedByZones) {
+              switch($("#holidayTimer label input[name=zone]:checked").val()) {
+                case 'A':
+                  shift += 604800 * 2 * 1000;
+                  break;
+                case 'B':
+                  shift += 604800 * 1000;
+                  break;
+                case 'C':
+                  break;
+              }
+            }
+
+            if ($("#holidayTimer label input[name=duree]:checked").val() == 2 && holidayDate.date[i].holidays == 0) {
+              console.log("duree");
+              shift += 604800 * 1000;
+            }
+
+
+
+            if (new Date().getTime() < (holidayDate.date[i].date + shift)) {
+              goalDate = holidayDate.date[i].date + shift;
+
+              console.log("Date countdown " + (goalDate - new Date().getTime()) + ", type : " + holidayDate.date[i].holidays);
+              // console.log(Object.keys(holidayDate.date).length + " dates disponibles.");
+              break;
+            }
+
+          }
+
+          if (holidayDate.date[i].holidays) {
+            // page d'accueil
+            $("#holidayTimer > p").text("Avant les prochaines vacances :D");
+          }
+          else {
+            // page d'accueil
+            $("#holidayTimer > p").text("Avant la fin des vacances :(");
+          }
+      }
+
+
+      function holidayTimer() {
+        var time = Math.floor((goalDate - new Date().getTime())/1000);
+        var d = Math.floor(time / 86400);
+        var h = Math.floor((time % 86400) / 3600);
+        var m = Math.floor(( (time % 86400) % 3600) / 60);
+        var s = Math.floor(( (time % 86400) % 3600) % 60);
+        
+        if (time >= 0) {
+          // page accueil
+          $('#holidayTimer .days span:eq(0)').html((d < 10) ? "0" + d : d);
+          $('#holidayTimer .hours span:eq(0)').html((h < 10) ? "0" + h : h);
+          $('#holidayTimer .minutes span:eq(0)').html((m < 10) ? "0" + m : m);
+          $('#holidayTimer .seconds span:eq(0)').html((s < 10) ? "0" + s : s);
+        }
+        if (time == -1)
+          getGoalDate()
+      }
+
       $(document).ready(function(){
-          $("span.age").text(new Date(new Date() - new Date("2001-10-09")).getFullYear() - 1970);
+        $("span.age").text(new Date(new Date() - new Date("2001-10-09")).getFullYear() - 1970);
+
+        getGoalDate();
+        holidayTimer();
+        setInterval(holidayTimer, 1000);
       })
+
+      $("#holidayTimer label input").change(function(){
+        getGoalDate();
+        holidayTimer();
+        // console.log("duree " + $("#holidayTimer label input[name=duree]:checked").val() + ", zone " + $("#holidayTimer label input[name=zone]:checked").val());
+      });
     </script>
   </body>
 </html>

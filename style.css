@@ -42,19 +42,6 @@ header img:hover {
   border: 1px solid var(--main-color);
   border-radius: 30%
 }
-
-
-header #menuHolidayTimer {
-  color: var(--main-color);
-  text-decoration: none;
-  float: right;
-  padding: 11px;
-}
-header #menuHolidayTimer:hover {
-  font-weight: bold
-}
-
-
 header > a i{
   position: relative;
   font-size: 24px;
@@ -387,15 +374,22 @@ div.skillbar .bar .fill {
 
 /* timer sur la premiere page */
 #holidayTimer {
-  text-align: center
+  text-align: center;
+  border: 1px solid var(--main-color);
+  border-radius: 10px;
+  display: inline-block;
+  position: relative;
+  left: 50%;
+  transform: translateX(-50%);
+  overflow: hidden
 }
-#holidayTimer div {
+#holidayTimer div:not(:last-child) {
   display: inline-block;
   margin: 5px;
   transition: .3s;
   cursor: default
 }
-#holidayTimer div:hover {
+#holidayTimer div:hover:not(:last-child) {
   transform: scale(1.1)
 }
 #holidayTimer span {
@@ -405,7 +399,7 @@ div.skillbar .bar .fill {
   padding: 8px;
   box-sizing: border-box;
   text-align: center;
-  color: var(--main-color);
+  color: var(--main-color)
 }
 #holidayTimer div span:nth-child(1) {
   height: 50px;
@@ -413,5 +407,38 @@ div.skillbar .bar .fill {
 }
 #holidayTimer div span:nth-child(2) {
   height: 40px;
-  text-transform: uppercase;
+  text-transform: uppercase
+}
+#holidayTimer label input {
+  display: none
+}
+#holidayTimer label {
+  cursor: pointer
+}
+#holidayTimer label span {
+  padding: 5px 8px;
+  margin: 0;
+  display: inline-block;
+  border-top: 1px solid var(--main-color);
+  transition: .5s;
+  position: relative;
+  bottom: -10px
+}
+#holidayTimer label input:checked ~ span {
+  background: var(--main-transparent-color);
+  color: #fff
+}
+#holidayTimer div:last-child label input[name=duree] ~ span {
+  float: left;
+  border-right: 1px solid var(--main-color)
+}
+#holidayTimer div:last-child label:nth-child(2) span {
+  border-radius: 0 5px 0 0
+}
+#holidayTimer div:last-child label:nth-child(5) span {
+  border-radius: 5px 0 0 0
+}
+#holidayTimer div:last-child input[name=zone] ~ span{
+  float: right;
+  border-left: 1px solid var(--main-color)
 }
