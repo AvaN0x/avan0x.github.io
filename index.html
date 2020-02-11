@@ -87,6 +87,10 @@
             <input type="radio" name="zone" value="A" title="Zone scolaire ou vous vous trouvez"/>
             <span>A</span>
           </label>
+          <!-- <label>
+            <input type="radio" name="zone" value="S" title="Etudes supérieures"/>
+            <span>SUPP</span>
+          </label> -->
         </div>
 
 
@@ -98,12 +102,17 @@
 
 
       $(document).ready(function(){
-        $("span.age").text(new Date(new Date() - new Date("2001-10-09")).getFullYear() - 1970);
+        console.log("cookie : " + document.cookie);
+        // Affichage de l'age
+        var yearOld = new Date( new Date().getTime() - new Date("2001-10-09").getTime() ).getFullYear() - 1970;
+        $("span.age").text(yearOld);
+        // Affichage du nombre de jours depuis l'anniversaire en hover de l'age
+        var daySinceBirthday = Math.floor(( new Date().getTime() - new Date(2001 + yearOld, 9, 9).getTime() )/ 86400000);
+        $("span.age").prop("title", "et " + daySinceBirthday + " jours.");
+
 
         var duree = (getCookie("duree") != null) ? getCookie("duree") : "1";
         var zone = (getCookie("zone") != null) ? getCookie("zone") : "B";
-        console.log("cookie : " + document.cookie);
-
         $("#holidayTimer label input[name=duree][value=" + duree + "]").prop('checked', true);
         $("#holidayTimer label input[name=zone][value=" + zone + "]").prop('checked', true);
 
@@ -149,15 +158,12 @@
                 case 'B':
                   shift += 604800 * 1000;
                   break;
-                case 'C':
-                  break;
               }
             }
 
             if ($("#holidayTimer label input[name=duree]:checked").val() == 2 && holidayDate.date[i].holidays == 0) {
               shift += 604800 * 1000;
             }
-
 
 
             if (new Date().getTime() < (holidayDate.date[i].date + shift)) {
