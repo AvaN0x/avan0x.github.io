@@ -96,15 +96,35 @@
     <script>
       var goalDate;
 
-      //   var holidayDate = {
-      //       "date":[
-      //         {"holidays": 1, "date": new Date(2020, 1, 14, 17, 30).getTime() }, // mois - 1
-      //         {"holidays": 0, "date": new Date(2020, 1, 24, 8, 0).getTime() },
-      //         {"holidays": 1, "date": new Date(2020, 3, 11, 17, 30).getTime() },
-      //         {"holidays": 0, "date": new Date(2020, 3, 27, 8, 0).getTime() },
-      //         {"holidays": 1, "date": new Date(2020, 5, 26, 17, 30).getTime() }
-      //       ]
-      //     }
+
+      $(document).ready(function(){
+        $("span.age").text(new Date(new Date() - new Date("2001-10-09")).getFullYear() - 1970);
+
+        var duree = (getCookie("duree") != null) ? getCookie("duree") : "1";
+        var zone = (getCookie("zone") != null) ? getCookie("zone") : "B";
+        console.log("cookie : " + document.cookie);
+
+        $("#holidayTimer label input[name=duree][value=" + duree + "]").prop('checked', true);
+        $("#holidayTimer label input[name=zone][value=" + zone + "]").prop('checked', true);
+
+        getGoalDate();
+        holidayTimer();
+        setInterval(holidayTimer, 1000);
+      })
+
+
+      $("#holidayTimer label input").change(function(){
+        getGoalDate();
+        holidayTimer();
+        setCookie(this.name, this.value);
+      });
+
+
+
+
+      /////////////////////////
+      //// Timer functions ////
+      /////////////////////////
 
       function getGoalDate() {
         var holidayDate = {
@@ -135,7 +155,6 @@
             }
 
             if ($("#holidayTimer label input[name=duree]:checked").val() == 2 && holidayDate.date[i].holidays == 0) {
-              console.log("duree");
               shift += 604800 * 1000;
             }
 
@@ -144,7 +163,7 @@
             if (new Date().getTime() < (holidayDate.date[i].date + shift)) {
               goalDate = holidayDate.date[i].date + shift;
 
-              console.log("Date countdown " + (goalDate - new Date().getTime()) + ", type : " + holidayDate.date[i].holidays);
+              console.log("Date countdown " + (goalDate - new Date().getTime()) + ", holidays : " + holidayDate.date[i].holidays + ", affectedByZones : " + holidayDate.date[i].affectedByZones);
               // console.log(Object.keys(holidayDate.date).length + " dates disponibles.");
               break;
             }
@@ -180,19 +199,32 @@
           getGoalDate()
       }
 
-      $(document).ready(function(){
-        $("span.age").text(new Date(new Date() - new Date("2001-10-09")).getFullYear() - 1970);
 
-        getGoalDate();
-        holidayTimer();
-        setInterval(holidayTimer, 1000);
-      })
 
-      $("#holidayTimer label input").change(function(){
-        getGoalDate();
-        holidayTimer();
-        // console.log("duree " + $("#holidayTimer label input[name=duree]:checked").val() + ", zone " + $("#holidayTimer label input[name=zone]:checked").val());
-      });
+
+      ///////////////////////////
+      //// Cookies functions ////
+      ///////////////////////////
+
+      function setCookie(cookieName, cookieValue) {
+        var d = new Date();
+        d.setTime(d.getTime() + (365 * 24 * 60 * 60 * 1000));
+        var expires = "expires=" + d.toUTCString();
+        document.cookie = cookieName + "=" + cookieValue + ";" + expires + ";path=/";
+      }
+
+      function getCookie(cookieName) {
+        var name = cookieName + "=";
+        var cookieTable = document.cookie.split(';');
+        for(var i = 0; i < cookieTable.length; i++) {
+          var c = cookieTable[i];
+          while (c.charAt(0) == ' ') 
+            c = c.substring(1);
+          if (c.indexOf(name) == 0) 
+            return c.substring(name.length, c.length);
+        }
+        return null;
+      }
     </script>
   </body>
 </html>
