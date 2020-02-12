@@ -66,31 +66,28 @@
 
         <div>
           <label>
-            <input type="radio" name="duree" value="1" title="Durée des vacances" checked/>
-            <span>1sem</span>
+            <input type="checkbox" name="duree" value="1"/>
+            <span title="1ère semaine des vacances">sem 1</span>
           </label>
           <label>
-            <input type="radio" name="duree" value="2" title="Durée des vacances"/>
-            <span>2sem</span>
+            <input type="checkbox" name="duree" value="2"/>
+            <span title="2ème semaine des vacances">sem 2</span>
           </label>
 
 
+
           <label>
-            <input type="radio" name="zone" value="C" title="Zone scolaire ou vous vous trouvez"/>
-            <span>C</span>
+            <input type="radio" name="zone" value="C"/>
+            <span title="Zone scolaire où vous vous trouvez">C</span>
           </label>
           <label>
-            <input type="radio" name="zone" value="B" title="Zone scolaire ou vous vous trouvez" checked/>
-            <span>B</span>
+            <input type="radio" name="zone" value="B"/>
+            <span title="Zone scolaire où vous vous trouvez">B</span>
           </label>
           <label>
-            <input type="radio" name="zone" value="A" title="Zone scolaire ou vous vous trouvez"/>
-            <span>A</span>
+            <input type="radio" name="zone" value="A"/>
+            <span title="Zone scolaire où vous vous trouvez">A</span>
           </label>
-          <!-- <label>
-            <input type="radio" name="zone" value="S" title="Etudes supérieures"/>
-            <span>SUPP</span>
-          </label> -->
         </div>
 
 
@@ -103,6 +100,8 @@
 
       $(document).ready(function(){
         console.log("cookie : " + document.cookie);
+
+
         // Affichage de l'age
         var yearOld = new Date( new Date().getTime() - new Date("2001-10-09").getTime() ).getFullYear() - 1970;
         $("span.age").text(yearOld);
@@ -111,10 +110,16 @@
         $("span.age").prop("title", "et " + daySinceBirthday + " jours.");
 
 
-        var duree = (getCookie("duree") != null) ? getCookie("duree") : "1";
+
         var zone = (getCookie("zone") != null) ? getCookie("zone") : "B";
-        $("#holidayTimer label input[name=duree][value=" + duree + "]").prop('checked', true);
         $("#holidayTimer label input[name=zone][value=" + zone + "]").prop('checked', true);
+
+        var duree = (getCookie("duree") != null) ? getCookie("duree") : "1";
+        if (duree == 3) {
+          $("#holidayTimer label input[name=duree][value=1]").prop('checked', true);
+          $("#holidayTimer label input[name=duree][value=2]").prop('checked', true);
+        } else
+          $("#holidayTimer label input[name=duree][value=" + duree + "]").prop('checked', true);
 
         getGoalDate();
         holidayTimer();
@@ -123,9 +128,21 @@
 
 
       $("#holidayTimer label input").change(function(){
+        if (this.name == "duree") {
+          var dureeValue = 0;
+          for (var i = 0; i < $("#holidayTimer label input[name=duree]:checked").length; i++) 
+            dureeValue += parseInt($("#holidayTimer label input[name=duree]:checked:eq(" + i + ")").val());
+          if (dureeValue == 0) {
+            $("#holidayTimer label input[name=duree][value=1]").prop('checked', true);
+            $("#holidayTimer label input[name=duree][value=2]").prop('checked', true);
+            dureeValue = 3;
+          }
+          setCookie(this.name, dureeValue);
+        } else 
+          setCookie(this.name, this.value);
+
         getGoalDate();
         holidayTimer();
-        setCookie(this.name, this.value);
       });
 
 
@@ -147,6 +164,9 @@
               {"holidays": 1, "affectedByZones":"0", "date": new Date(2020, 5, 26, 17, 30).getTime() }
             ]
           }
+          var dureeValue = 0;
+          for (var i = 0; i < $("#holidayTimer label input[name=duree]:checked").length; i++) 
+            dureeValue += parseInt($("#holidayTimer label input[name=duree]:checked:eq(" + i + ")").val());
 
           for (var i = 0; i < Object.keys(holidayDate.date).length; i++) {
             var shift = 0;
@@ -161,10 +181,14 @@
               }
             }
 
-            if ($("#holidayTimer label input[name=duree]:checked").val() == 2 && holidayDate.date[i].holidays == 0) {
+            // if ($("#holidayTimer label input[name=duree]:checked").val() == 2 && holidayDate.date[i].holidays == 0) {
+            //   shift += 604800 * 1000;
+            // }
+            if (dureeValue == 3 && holidayDate.date[i].holidays == 0
+                || dureeValue == 2
+              ) {
               shift += 604800 * 1000;
-            }
-
+            } 
 
             if (new Date().getTime() < (holidayDate.date[i].date + shift)) {
               goalDate = holidayDate.date[i].date + shift;
