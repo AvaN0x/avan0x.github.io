@@ -13,19 +13,26 @@
     <meta property="og:image" content="https://avatars3.githubusercontent.com/u/27494805?s=460&v=4" />
     <meta property="og:description" content="Par AvaN0x" />
 
-    <script src="https://code.jquery.com/jquery-3.4.1.js"></script>
-    <script src="https://kit.fontawesome.com/0383df481c.js" crossorigin="anonymous"></script>
     <link href="https://fonts.googleapis.com/css?family=Roboto&display=swap" rel="stylesheet">
     <link rel="icon" type="image/png" href="https://avatars3.githubusercontent.com/u/27494805?s=460&v=4" />
+
+    <script src="https://kit.fontawesome.com/0383df481c.js" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.4.1.js"></script>
   </head>
   <body>
-    <header>
+    <div id="menu">
       <script>
         $(function () {
-          $("header").load("menu.html");
+          $("div#menu").load("menu.html");
         });
       </script>
-    </header>
+    </div>
+    <div id="cookieAccepter">
+      <p></p>
+      <input type="submit" value="Accepter les cookies" />
+    </div>
+
+
 
     <div class="cover">
       <div>
@@ -47,7 +54,7 @@
       </p>
       <h2>Navigation</h2>
       <p class="text-indent">
-        Le <a class="menu_toggle mainColor" style="cursor: pointer;">menu</a> vous permet de visiter toutes les pages que j'ai réalisées, et autres.
+        Le <a class="menuToggle mainColor" style="cursor: pointer;">menu</a> vous permet de visiter toutes les pages que j'ai réalisées, et autres.
       </p>
       <h1>Temps restant à attendre</h1>
       <div id="holidayTimer"> <!-- script dans menu.html -->
@@ -228,33 +235,7 @@
         if (time == -1)
           getGoalDate()
       }
-
-
-
-
-      ///////////////////////////
-      //// Cookies functions ////
-      ///////////////////////////
-
-      function setCookie(cookieName, cookieValue, day) {
-        var d = new Date();
-        d.setTime(d.getTime() + (day * 24 * 60 * 60 * 1000));
-        var expires = "expires=" + d.toUTCString();
-        document.cookie = cookieName + "=" + cookieValue + ";" + expires + ";path=/";
-      }
-
-      function getCookie(cookieName) {
-        var name = cookieName + "=";
-        var cookieTable = document.cookie.split(';');
-        for(var i = 0; i < cookieTable.length; i++) {
-          var c = cookieTable[i];
-          while (c.charAt(0) == ' ') 
-            c = c.substring(1);
-          if (c.indexOf(name) == 0) 
-            return c.substring(name.length, c.length);
-        }
-        return null;
-      }
     </script>
+    <script src="src/cookie.js"></script>
   </body>
 </html>

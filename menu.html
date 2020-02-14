@@ -1,29 +1,34 @@
 <script>
   function openMenu() {
-    $('.menu_toggle').toggleClass('active');
+    $('.menuToggle').toggleClass('active');
     $('header nav').toggleClass('active');
-    $('.menu_toggle i').toggleClass('fa-bars');
-    $('.menu_toggle i').toggleClass('fa-times');
+    $('.menuToggle i').toggleClass('fa-bars');
+    $('.menuToggle i').toggleClass('fa-times');
   }
 
   $(document).ready(function(){
     if ($(window).width() <= 720) {
       openMenu();
     }
-    
-    $('.menu_toggle').click(function(){
-      openMenu();
-    })
-
-    $('.submenu > a').click(function(){
-      $(this).parent().toggleClass('active');
-      $(this).find('i').toggleClass('fa-folder');
-      $(this).find('i').toggleClass('fa-folder-open');
-    })
   })
+  $('.menuToggle').click(function(){
+    openMenu();
+  })
+
+  $('.submenu > a').click(function(){
+    $(this).parent().toggleClass('active');
+    $(this).find('i').toggleClass('fa-folder');
+    $(this).find('i').toggleClass('fa-folder-open');
+  })
+
+  $("#cookieAccepter p").html("Ce site utilise les cookies pour améliorer votre experience d'utilisateur.\
+    \
+    ");
 </script>
 
-  <a class="menu_toggle active"><i class="fas fa-times"></i></a>
+
+<header>
+  <a class="menuToggle active"><i class="fas fa-times"></i></a>
   <a href="/index.html"><i class="fa fa-home"></i></a>
   <a href="https://github.com/AvaN0x"><img src="https://avatars3.githubusercontent.com/u/27494805?s=460&v=4" title="github.com/AvaN0x"/></a>
 
@@ -69,4 +74,6 @@
       <li><a href="/page/historique/v1/index.html"><i class="fas fa-save"></i>Première version</a></li>
     </ul>
   </nav>
+</header>
+
 

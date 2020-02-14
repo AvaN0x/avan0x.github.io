@@ -7,19 +7,33 @@
     <link rel="stylesheet" media="screen and (max-width:720px)" href="../../mobile.css" />
     <link rel="stylesheet" href="../fiche.css" />
     <meta name="viewport"  content="width=max-device-width, initial-scale=1" />
-    <script src="https://code.jquery.com/jquery-3.4.1.js"></script>
-    <script src="https://kit.fontawesome.com/0383df481c.js" crossorigin="anonymous"></script>
+    <!-- DISCORD -->
+    <meta property="og:title" content="AvaN0x - C" />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://avan0x.github.io/" />
+    <meta property="og:image" content="https://avatars3.githubusercontent.com/u/27494805?s=460&v=4" />
+    <meta property="og:description" content="Par AvaN0x" />
+
     <link href="https://fonts.googleapis.com/css?family=Roboto&display=swap" rel="stylesheet">
     <link rel="icon" type="image/png" href="https://avatars3.githubusercontent.com/u/27494805?s=460&v=4" />
-</head>
+
+    <script src="https://kit.fontawesome.com/0383df481c.js" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.4.1.js"></script>
+    <script src="../../src/cookie.js"></script>
+  </head>
   <body>
-    <header>
+    <div id="menu">
       <script>
         $(function () {
-          $("header").load("../../menu.html");
+          $("div#menu").load("../../menu.html");
         });
       </script>
-    </header>
+    </div>
+    <div id="cookieAccepter">
+      <p></p>
+      <input type="submit" value="Accepter les cookies" />
+    </div>
+    
 
     <script>
       $(document).ready(function(){

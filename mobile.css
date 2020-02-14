@@ -46,7 +46,7 @@ header > a i{
   transition: .5s;
   transform: rotate(0)
 }
-.menu_toggle.active i {
+.menuToggle.active i {
   transform: rotate(90deg);
   color: var(--main-color)
 }
@@ -170,6 +170,35 @@ div.cover div p {
   0% { transform: translateY(0); opacity: 1}
   80% { transform: translateY(15px); opacity: .3}
   100% { transform: translateY(0); opacity: 1 }
+}
+
+#cookieAccepter {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  background-color: var(--main-transparent-color);
+  z-index: 9999;
+  color: #000;
+  display: none;
+  padding: 16px;
+  justify-content: center;
+  box-sizing: border-box
+}
+#cookieAccepter p {
+  margin: 0 8px
+}
+#cookieAccepter p a {
+  font-weight: bold;
+  color: #000
+}
+#cookieAccepter input[type=submit] {
+  margin: 0;
+  padding: 10px;
+  border-radius: 10px;
+  border: 2px solid #262727;
+  background: var(--main-transparent-color);
+  cursor: pointer;
+  font-weight: bold
 }
 
 

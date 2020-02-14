@@ -1,6 +1,5 @@
 :root {
   --main-color: #fff1b9;
-  /* --main-color: red; */
   --main-transparent-color: #fff1b9b0
 }
 
@@ -55,11 +54,11 @@ header > a:hover i {
   color: var(--main-color);
   transform: rotate(10deg) scale(1.1)
 }
-.menu_toggle.active i {
+.menuToggle.active i {
   transform: rotate(90deg);
   color: var(--main-color)
 }
-.menu_toggle.active:hover i {
+.menuToggle.active:hover i {
   transform: rotate(80deg) scale(1.1)
 }
 
@@ -169,6 +168,37 @@ header nav::-webkit-scrollbar {
 ::-webkit-scrollbar-corner {
   background: #262727
 }
+
+#cookieAccepter {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  background-color: var(--main-transparent-color);
+  z-index: 9999;
+  color: #000;
+  display: none;
+  padding: 16px;
+  justify-content: center;
+  box-sizing: border-box;
+  transition: .5s
+}
+#cookieAccepter p {
+  margin: 0 20px
+}
+#cookieAccepter p a {
+  font-weight: bold;
+  color: #000
+}
+#cookieAccepter input[type=submit] {
+  margin: 0 20px;
+  padding: 10px;
+  border-radius: 10px;
+  border: 2px solid #262727;
+  background: var(--main-transparent-color);
+  cursor: pointer;
+  font-weight: bold
+}
+
 
 
 
