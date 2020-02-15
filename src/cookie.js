@@ -32,3 +32,4 @@ $("#cookieAccepter input[type=submit]").click(function() {
     setCookie("cookiesAccepted", "1", 365);
     $("#cookieAccepter").css("transform", "translateY(100%)");
 })
+

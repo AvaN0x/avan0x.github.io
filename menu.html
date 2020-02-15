@@ -21,9 +21,6 @@
     $(this).find('i').toggleClass('fa-folder-open');
   })
 
-  $("#cookieAccepter p").html("Ce site utilise les cookies pour améliorer votre experience d'utilisateur.\
-    <br/><a href='#' style='text-decoration: line-through'>Cliquez ici pour plus d'informations</a>\
-    ");
 </script>
 
 
@@ -76,4 +73,13 @@
   </nav>
 </header>
 
+<script>
+  $("#cookieAccepter p").html("Ce site utilise les cookies pour améliorer votre experience d\"utilisateur.\
+    <br/><a href=\"/page/cookie.html\" style=\"text-decoration: line-through\">Cliquez ici pour plus d\"informations</a>\
+    ");
 
+
+  $("footer").html("<p>Site réalisé par <a href=https://github.com/AvaN0x\">Clément RICATTE <i class=\"fab fa-github\"></i></a></p>\
+      <p><a href=\"/page/cookie.html\">Utilisation des cookies</a></p>\
+      <p>Licence <a href=\"https://github.com/AvaN0x/avan0x.github.io/blob/master/LICENSE\">MIT</a></p>")
+</script>

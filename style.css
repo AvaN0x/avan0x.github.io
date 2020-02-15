@@ -272,12 +272,39 @@ section p {
 .text-indent {
   text-indent: 20px
 }
+footer a,
 section a {
   text-decoration: none;
   color: var(--main-color)
 }
+footer a:hover,
 section a:hover {
   font-weight: bold
+}
+
+footer {
+  background-color: #272625;
+  color: #fff;
+  position: absolute;
+  margin: 0;
+  width: 100%;
+  box-sizing: border-box;
+  font-size: .9em;
+  padding: 10px;
+  z-index: 99999;
+  display: flex;
+  justify-content: center
+}
+footer p {
+  margin: 0 20px;
+}
+footer i {
+  margin: 0 5px
+}
+footer p:not(:last-child):after {
+  content:'-';
+  position: relative;
+  right: -20px
 }
 
 ul.checklist {
