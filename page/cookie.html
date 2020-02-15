@@ -36,6 +36,7 @@
     <section>
       <h1>Utilisation des cookies</h1>
       <input type="submit" value="Supprimer tous les cookies" name="delCookies";/>
+      <p id="delCookiesText" style="text-align: center"></p>
     </section>
     <footer></footer>
     <script src="../src/cookie.js"></script>
@@ -48,7 +49,7 @@
         $("input[type=submit][name=delCookies]").attr("disabled", true);
         $("#cookieAccepter").css("display", "flex");
         $("#cookieAccepter").css("transform", "translateY(0)");
-        alert("Tous les cookies ont été supprimés.");
+        $("#delCookiesText").html("Tous les cookies ont été supprimés.");
       })
 
       $(document).ready(function() {
