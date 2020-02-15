@@ -8,5 +8,3 @@ Il contient des pages expliquant les différents projets que j'ai réalisé, des
 ![License](https://img.shields.io/github/license/avan0x/avan0x.github.io?logo=github)
 
 ![Repo Size](https://img.shields.io/github/repo-size/avan0x/avan0x.github.io?logo=github)
-
-![Followers](https://img.shields.io/github/followers/avan0x?style=social)
