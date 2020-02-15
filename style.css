@@ -189,17 +189,23 @@ header nav::-webkit-scrollbar {
   font-weight: bold;
   color: #000
 }
-#cookieAccepter input[type=submit] {
+input[type=submit] {
   margin: 0 20px;
   padding: 10px;
   border-radius: 10px;
   border: 2px solid #262727;
   background: var(--main-transparent-color);
   cursor: pointer;
-  font-weight: bold
+  font-weight: bold;
+  transition: .5s
 }
-
-
+input[type=submit]:hover {
+  transform: scale(1.1)
+}
+input[type=submit][disabled] {
+  border: dashed;
+  opacity: .5;
+}
 
 
 div.cover {
