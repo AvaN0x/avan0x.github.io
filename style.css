@@ -207,14 +207,7 @@ input[type=submit][disabled] {
   border: dashed;
   opacity: .5;
 }
-input[type=submit][name=delCookies] {
-  left: 0;
-  right: 0;
-  display: block;
-  position: relative;
-  width: calc(100% - 40px);
-  box-sizing: border-box;
-}
+
 
 div.cover {
   width: 100%;
@@ -512,4 +505,30 @@ div.skillbar .bar .fill {
 #holidayTimer div:last-child input[name=zone] ~ span{
   float: right;
   border-left: 1px solid var(--main-color)
+}
+
+
+
+input[type=submit][name=delCookies] {
+  left: 0;
+  right: 0;
+  display: block;
+  position: relative;
+  width: calc(100% - 40px);
+  box-sizing: border-box
+}
+
+#cookieTable {
+  text-align: center
+}
+#cookieTable td {
+  padding: 4px
+}
+#cookieTable td:not(:last-child) {
+  min-width: 150px
+}
+#cookieTable td:last-child {
+  padding: 4px 8px;
+  cursor: pointer;
+  color: #ff5269
 }

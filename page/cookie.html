@@ -37,6 +37,15 @@
       <h1>Utilisation des cookies</h1>
       <input type="submit" value="Supprimer tous les cookies" name="delCookies";/>
       <p id="delCookiesText" style="text-align: center"></p>
+      <table id="cookieTable">
+        <caption>Tableau des cookies du site</caption>
+        <tbody>
+          <tr>
+            <th>Cookie name</th>
+            <th>Cookie value</th>
+          </tr>
+        </tbody>
+      </table>
     </section>
     <footer></footer>
     <script src="../src/cookie.js"></script>
@@ -46,18 +55,50 @@
         document.cookie.split(";").forEach(function(c) {
             document.cookie = c.replace(/^ +/, "").replace(/=.*/, "=;expires=" + new Date().toUTCString() + ";path=/"); 
           });
-        $("input[type=submit][name=delCookies]").attr("disabled", true);
-        $("#cookieAccepter").css("display", "flex");
-        $("#cookieAccepter").css("transform", "translateY(0)");
+        
+        cookieCheck();
         $("#delCookiesText").html("Tous les cookies ont été supprimés.");
       })
 
       $(document).ready(function() {
-        if (!document.cookie)
-          $("input[type=submit][name=delCookies]").attr("disabled", true);
+        cookieCheck();
       })
+
+      function fillCookieTable() {
+        if (document.cookie) { // s'il existe des cookies, on remplis le tableau
+          document.cookie.split(";").forEach(function(c) {
+            $("table#cookieTable").css("display","inherit");
+            c = c.split("=");
+            $("table#cookieTable").append("<tr><td>" + c[0].trim() + "</td><td>" + c[1].trim() + "</td><td onclick='removeCookie(\"" + c[0].trim() + "\")' title='Supprimer le cookie \"" + c[0].trim() + "\"'><i class='fas fa-times'></i></td></tr>");
+          });
+
+        } else {
+          $("table#cookieTable").css("display","none"); // sinon on cache le tableau
+        }
+      }
+
+      function cookieCheck() {
+        if (!document.cookie) // s'il n'y a pas de cookies 
+          $("input[type=submit][name=delCookies]").attr("disabled", true);// on desactive le bouton
+        else 
+          $("input[type=submit][name=delCookies]").attr("disabled", false); // on active le bouton
+
+        if(getCookie("cookiesAccepted") == null) { // si le cookies d'acceptation des cookies n'existe pas, on l'affiche
+          $("#cookieAccepter").css("display", "flex");
+          $("#cookieAccepter").css("transform", "translateY(0)");
+        }
+
+        $("table#cookieTable tr:not(:first-child)" ).remove(); //supprimer les lignes restantes
+        fillCookieTable();
+      }
+
+      function removeCookie(cookieName) {
+        setCookie(cookieName, "", 0); // on supprime le cookie
+        cookieCheck();
+      }
+
       $("#cookieAccepter input[type=submit]").click(function() {
-        $("input[type=submit][name=delCookies]").attr("disabled", false);
+        cookieCheck();
       })
 
     </script>
