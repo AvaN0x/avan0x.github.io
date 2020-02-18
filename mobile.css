@@ -466,6 +466,12 @@ input[type=submit][name=delCookies] {
   box-sizing: border-box
 }
 
+#cookieTable {
+  text-align: center;
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%)
+}
 #cookieTable,
 #cookieTable th,
 #cookieTable td {
