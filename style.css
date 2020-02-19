@@ -41,7 +41,7 @@ header img:hover {
   border: 1px solid var(--main-color);
   border-radius: 30%
 }
-header > a i{
+/* header > a i{
   position: relative;
   font-size: 24px;
   margin: 8px;
@@ -60,7 +60,37 @@ header > a:hover i {
 }
 .menuToggle.active:hover i {
   transform: rotate(80deg) scale(1.1)
+} */
+
+header > a i,
+header > label > a i {
+  position: relative;
+  font-size: 24px;
+  margin: 8px;
+  color: white;
+  cursor: pointer;
+  transition: .5s;
+  transform: rotate(0)
 }
+header > a:hover i,
+header > label > a i:hover {
+  color: var(--main-color);
+  transform: rotate(10deg) scale(1.1)
+}
+header > label input {
+  display: none
+}
+header > label {
+  cursor: pointer
+}
+header > label input:checked ~ a i {
+  transform: rotate(90deg);
+  color: var(--main-color)
+}
+header > label input:checked ~ a:hover i {
+  transform: rotate(80deg) scale(1.1)
+}
+
 
 header nav {
   position: fixed;

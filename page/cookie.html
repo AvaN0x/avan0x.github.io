@@ -23,7 +23,7 @@
     <div id="menu">
       <script>
         $(function () {
-          $("div#menu").load("../menu.html");
+          $("div#menu").load("../menu.html", cookieCheck());
         });
       </script>
     </div>
@@ -76,6 +76,11 @@
           $("table#cookieTable").css("display","none"); // sinon on cache le tableau
         }
       }
+
+      $('label input:checkbox').change(function(){
+        cookieCheck();
+        console.log("hehe");
+      })
 
       function cookieCheck() {
         if (!document.cookie) // s'il n'y a pas de cookies 

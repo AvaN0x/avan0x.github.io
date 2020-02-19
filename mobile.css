@@ -37,7 +37,8 @@ header img {
   transform: rotate(0);
   transition: .5s
 }
-header > a i{
+header > a i,
+header > label > a i {
   position: relative;
   font-size: 24px;
   margin: 8px;
@@ -46,10 +47,17 @@ header > a i{
   transition: .5s;
   transform: rotate(0)
 }
-.menuToggle.active i {
+header > label input {
+  display: none
+}
+header > label {
+  cursor: pointer
+}
+header > label input:checked ~ a i {
   transform: rotate(90deg);
   color: var(--main-color)
 }
+
 header nav {
   position: fixed;
   top: 50px;

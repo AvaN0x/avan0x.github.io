@@ -1,35 +1,18 @@
-<script>
-  function openMenu() {
-    $('.menuToggle').toggleClass('active');
-    $('header nav').toggleClass('active');
-    $('.menuToggle i').toggleClass('fa-bars');
-    $('.menuToggle i').toggleClass('fa-times');
-  }
-
-  $(document).ready(function(){
-    if ($(window).width() <= 720) {
-      openMenu();
-    }
-  })
-  $('.menuToggle').click(function(){
-    openMenu();
-  })
-
-  $('.submenu > a').click(function(){
-    $(this).parent().toggleClass('active');
-    $(this).find('i').toggleClass('fa-folder');
-    $(this).find('i').toggleClass('fa-folder-open');
-  })
-
-</script>
 
 
 <header>
-  <a class="menuToggle active"><i class="fas fa-times"></i></a>
+  <!-- <a class="menuToggle active"><i class="fas fa-times"></i></a> -->
+
+  
+  <label>
+    <input type="checkbox" name="openMenu"/>
+    <a><i class="fas fa-bars"></i></a>
+  </label>
+
   <a href="/index.html"><i class="fa fa-home"></i></a>
   <a href="https://github.com/AvaN0x"><img src="https://avatars3.githubusercontent.com/u/27494805?s=460&v=4" title="github.com/AvaN0x"/></a>
 
-  <nav class="active">
+  <nav>
     <ul>
       <h1>A propos</h1>
       <li><a href="https://github.com/AvaN0x"><i class="fab fa-github"></i>GitHub</a></li>
@@ -73,6 +56,8 @@
   </nav>
 </header>
 
+<script src="/src/cookie.js"></script>
+
 <script>
   $("#cookieAccepter p").html("Ce site utilise les cookies pour améliorer votre experience d'utilisateur.\
     <br/><a href=\"/page/cookie.html\">Cliquez ici pour plus d\"informations</a>\
@@ -82,4 +67,40 @@
   $("footer").html("<p>Site réalisé par <a href=https://github.com/AvaN0x\">Clément RICATTE <i class=\"fab fa-github\"></i></a></p>\
       <p><a href=\"/page/cookie.html\">Utilisation des cookies</a></p>\
       <p>Licence <a href=\"https://github.com/AvaN0x/avan0x.github.io/blob/master/LICENSE\">MIT</a></p>")
+
+
+  function openMenu() {
+    // $('.menuToggle').toggleClass('active');
+    $('header nav').toggleClass('active');
+    $('label input[name=openMenu] ~ a i').toggleClass('fa-bars');
+    $('label input[name=openMenu] ~ a i').toggleClass('fa-times');
+  }
+
+  $(document).ready(function(){
+    if ((getCookie("menuState") == null || getCookie("menuState") == 1) && $(window).width() > 720) {
+      if (getCookie("menuState") == null)
+        setCookie("menuState", 1, -1);
+      $("label input[name=openMenu]").prop('checked', true);
+      if(document.location.href.match(/[^\/]+$/)[0] == "cookie.html") // si on est sur la page des cookies on recharge le tableau
+      cookieCheck()
+      openMenu();
+    }
+  })
+
+  $('label input[name=openMenu]').change(function(){
+    console.log($("label input[name=openMenu]:checked").length);
+    if ($(window).width() > 720) {
+      setCookie("menuState", $("label input[name=openMenu]:checked").length, -1);
+      if(document.location.href.match(/[^\/]+$/)[0] == "cookie.html") // si on est sur la page des cookies on recharge le tableau
+      cookieCheck()
+    }
+    openMenu();
+  })
+
+  $('.submenu > a').click(function(){
+    $(this).parent().toggleClass('active');
+    $(this).find('i').toggleClass('fa-folder');
+    $(this).find('i').toggleClass('fa-folder-open');
+  })
+
 </script>
