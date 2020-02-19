@@ -81,18 +81,27 @@
       if (getCookie("menuState") == null)
         setCookie("menuState", 1, -1);
       $("label input[name=openMenu]").prop('checked', true);
-      if(document.location.href.match(/[^\/]+$/)[0] == "cookie.html") // si on est sur la page des cookies on recharge le tableau
-      cookieCheck()
+
+      try {
+        cookieCheck();
+      }
+      catch(error) {
+        void(0)  
+      }
       openMenu();
     }
   })
 
   $('label input[name=openMenu]').change(function(){
-    console.log($("label input[name=openMenu]:checked").length);
     if ($(window).width() > 720) {
       setCookie("menuState", $("label input[name=openMenu]:checked").length, -1);
-      if(document.location.href.match(/[^\/]+$/)[0] == "cookie.html") // si on est sur la page des cookies on recharge le tableau
-      cookieCheck()
+
+      try {
+        cookieCheck();
+      }
+      catch(error) {
+        void(0)
+      }
     }
     openMenu();
   })
