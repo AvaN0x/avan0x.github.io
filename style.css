@@ -477,6 +477,9 @@ div.skillbar .bar .fill {
   transform: translateX(-50%);
   overflow: hidden
 }
+#holidayTimer p:first-child {
+  margin: 8px
+} 
 #holidayTimer div:not(:last-child) {
   display: inline-block;
   margin: 5px;
@@ -517,6 +520,9 @@ div.skillbar .bar .fill {
   transition: .5s;
   position: relative;
   bottom: -10px
+}
+#holidayTimer label input:disabled ~ span {
+  opacity: .3
 }
 #holidayTimer label input:checked ~ span {
   background: var(--main-transparent-color);

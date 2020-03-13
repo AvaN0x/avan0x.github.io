@@ -56,7 +56,7 @@
       <p class="text-indent">
         Le <a class="menuToggle mainColor" style="cursor: pointer;">menu</a> vous permet de visiter toutes les pages que j'ai réalisées, et autres.
       </p>
-      <h1>Temps restant à attendre</h1>
+      <h1>Etat des vacances</h1>
       <div id="holidayTimer"> <!-- script dans menu.html -->
         <p></p>
 
@@ -169,21 +169,35 @@
       function getGoalDate() {
         var holidayDate = {
             "date":[
-              // holidays == 1 -> début vacances, sinon fin vacances
               // dates basées sur la zone C (première zone en vacance)
-              {"holidays": 1, "affectedByZones":"1", "date": new Date(2020, 1, 7, 17, 30).getTime() }, // mois - 1
-              {"holidays": 0, "affectedByZones":"1", "date": new Date(2020, 1, 17, 8, 0).getTime() },
-              {"holidays": 1, "affectedByZones":"1", "date": new Date(2020, 3, 3, 17, 30).getTime() },
-              {"holidays": 0, "affectedByZones":"1", "date": new Date(2020, 3, 13, 8, 0).getTime() },
-              {"holidays": 1, "affectedByZones":"0", "date": new Date(2020, 5, 26, 17, 30).getTime() }
+
+              // "holidays"
+              // 0 fin vacances normales
+              // 1 début vacances normales 
+              // 2 fermeture des établissements scolaires
+              // 3 réouverture des établissements scolaires
+
+              // "affectedByZones"
+              // 1 oui
+              // 0 non
+
+              {"holidays": 1, "affectedByZones": 1, "date": new Date(2020, 1, 7, 17, 30).getTime() }, // mois - 1
+              {"holidays": 0, "affectedByZones": 1, "date": new Date(2020, 1, 17, 8, 0).getTime() },
+                {"holidays": 2, "affectedByZones": 0, "date": new Date(2020, 2, 13, 17, 30).getTime() },
+                {"holidays": 3, "affectedByZones": 0, "date": null },
+              {"holidays": 1, "affectedByZones": 1, "date": new Date(2020, 3, 3, 17, 30).getTime() },
+              {"holidays": 0, "affectedByZones": 1, "date": new Date(2020, 3, 13, 8, 0).getTime() },
+              {"holidays": 1, "affectedByZones": 0, "date": new Date(2020, 5, 26, 17, 30).getTime() }
             ]
           }
           var dureeValue = 0;
+          
           for (var i = 0; i < $("#holidayTimer label input[name=duree]:checked").length; i++) 
             dureeValue += parseInt($("#holidayTimer label input[name=duree]:checked:eq(" + i + ")").val());
 
           for (var i = 0; i < Object.keys(holidayDate.date).length; i++) {
             var shift = 0;
+
             if (holidayDate.date[i].affectedByZones) {
               switch($("#holidayTimer label input[name=zone]:checked").val()) {
                 case 'A':
@@ -196,10 +210,15 @@
             }
 
             if (dureeValue == 3 && holidayDate.date[i].holidays == 0
-                || dureeValue == 2
+                || dureeValue == 2 && holidayDate.date[i].holidays != 2 && holidayDate.date[i].holidays != 3
               ) {
               shift += 604800 * 1000;
             } 
+            if (holidayDate.date[i].date == null) {
+              goalDate = null;
+              break;
+            }
+              
 
             if (new Date().getTime() < (holidayDate.date[i].date + shift)) {
               goalDate = holidayDate.date[i].date + shift;
@@ -210,31 +229,50 @@
 
           }
 
-          if (holidayDate.date[i].holidays) {
-            $("#holidayTimer > p").text("Avant les prochaines vacances :D");
+          if (holidayDate.date[i].holidays == 0) {
+            $("#holidayTimer > p").text("Temps avant la fin des vacances :(");
           }
-          else {
-            $("#holidayTimer > p").text("Avant la fin des vacances :(");
+          else if (holidayDate.date[i].holidays == 1) {
+            $("#holidayTimer > p").text("Temps avant les prochaines vacances :D");
+          }
+          else if (holidayDate.date[i].holidays == 2) {
+            $("#holidayTimer > p").text("Temps avant la fermeture des établissements scolaires !");
+            $("#holidayTimer div:last-child input").prop("disabled", true);
+          }
+          else if (holidayDate.date[i].holidays == 3 && goalDate != null) {
+            $("#holidayTimer > p").text("Temps avant la réouverture des établissements scolaires !");
+            $("#holidayTimer div:last-child input").prop("disabled", true);
+          }
+          else if (holidayDate.date[i].holidays == 3 && goalDate == null) {
+            $("#holidayTimer > p").html("<i class=\"fas fa-exclamation-triangle\" style=\"font-size: 5em; margin: 8px\"></i><br/>La date de réouverture des établissements scolaires n'est pas connue.");
+            $("#holidayTimer div:last-child input").prop("disabled", true);
           }
       }
 
 
       function holidayTimer() {
-        var time = Math.floor((goalDate - new Date().getTime())/1000);
-        var d = Math.floor(time / 86400);
-        var h = Math.floor((time % 86400) / 3600);
-        var m = Math.floor(( (time % 86400) % 3600) / 60);
-        var s = Math.floor(( (time % 86400) % 3600) % 60);
-        
-        if (time >= 0) {
-          // page accueil
-          $('#holidayTimer .days span:eq(0)').html((d < 10) ? "0" + d : d);
-          $('#holidayTimer .hours span:eq(0)').html((h < 10) ? "0" + h : h);
-          $('#holidayTimer .minutes span:eq(0)').html((m < 10) ? "0" + m : m);
-          $('#holidayTimer .seconds span:eq(0)').html((s < 10) ? "0" + s : s);
+        if (goalDate != null) {
+          var time = Math.floor((goalDate - new Date().getTime())/1000);
+          var d = Math.floor(time / 86400);
+          var h = Math.floor((time % 86400) / 3600);
+          var m = Math.floor(( (time % 86400) % 3600) / 60);
+          var s = Math.floor(( (time % 86400) % 3600) % 60);
+          
+          if (time >= 0) {
+            // page accueil
+            $('#holidayTimer .days span:eq(0)').html((d < 10) ? "0" + d : d);
+            $('#holidayTimer .hours span:eq(0)').html((h < 10) ? "0" + h : h);
+            $('#holidayTimer .minutes span:eq(0)').html((m < 10) ? "0" + m : m);
+            $('#holidayTimer .seconds span:eq(0)').html((s < 10) ? "0" + s : s);
+          }
+          if (time == -1)
+            getGoalDate()
+        } else {
+          $('#holidayTimer .days').css("display", "none");
+          $('#holidayTimer .hours').css("display", "none");
+          $('#holidayTimer .minutes').css("display", "none");
+          $('#holidayTimer .seconds').css("display", "none");
         }
-        if (time == -1)
-          getGoalDate()
       }
     </script>
     <script src="src/cookie.js"></script>
