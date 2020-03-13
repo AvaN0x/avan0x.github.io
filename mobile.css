@@ -447,7 +447,8 @@ div.skillbar .bar .fill {
   bottom: -5px
 }
 #holidayTimer label input:disabled ~ span {
-  opacity: .3
+  opacity: .3;
+  cursor: not-allowed
 }
 #holidayTimer label input:checked ~ span {
   background: var(--main-transparent-color);
