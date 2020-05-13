@@ -358,11 +358,11 @@ ul.checklist li i.fa-times {
   left: -14px
 }
 
-ul {
+ul.colorBullet {
   list-style: none;
 }
 
-ul li::before {
+ul.colorBullet li::before {
   content: "\2022";
   color: var(--main-color);
   font-weight: bold;
@@ -473,6 +473,7 @@ div.skillbar {
   display: inline-block;
   margin: 5px 5px;
   position: relative;
+  top: 2px;
   border: 1px solid #ffffff60;
 }
 div.skillbar .fill {

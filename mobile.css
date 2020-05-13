@@ -293,11 +293,11 @@ ul.checklist li i.fa-times {
 
 
 
-ul {
+ul.colorBullet {
   list-style: none;
 }
 
-ul li::before {
+ul.colorBullet li::before {
   content: "\2022";
   color: var(--main-color);
   font-weight: bold;
