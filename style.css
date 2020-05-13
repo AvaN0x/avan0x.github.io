@@ -358,7 +358,18 @@ ul.checklist li i.fa-times {
   left: -14px
 }
 
+ul {
+  list-style: none;
+}
 
+ul li::before {
+  content: "\2022";
+  color: var(--main-color);
+  font-weight: bold;
+  display: inline-block;
+  width: 1em;
+  margin-left: -1em;
+}
 
 /* iframe correspondant aux pages de mes anciens projets */
 div.iframe {
@@ -413,37 +424,30 @@ span.u {
 
 
 
-
-/* page compétences */
-div.skillbar {
+/* page infos */
+div.timebar {
   height: auto;
-  width: 100%;
+  width: calc(100% - 20px);
   padding: 2px 5px;
   background-color: #ffffff06;
-  border: 2px solid var(--main-color);
+  border: 1px solid var(--main-color);
   border-radius: 5px;
   display: flex;
   margin: 5px 5px;
   box-sizing: border-box
 }
-@media (min-width: 1100px) {
-  div.skillbar {
-    width: 520px;
-    float: left
-  }
-}
-div.skillbar span {
+div.timebar span {
   display: inline;
   position: relative;
   font-size: 16px;
   line-height: 35px;
   text-align: center
 }
-div.skillbar span:first-child,
-div.skillbar span:last-child {
+div.timebar span:first-child,
+div.timebar span:last-child {
   width: 60px
 }
-div.skillbar .bar {
+div.timebar .bar {
   width: calc(100% - 120px);
   height: 20px;
   top: 0;
@@ -453,14 +457,29 @@ div.skillbar .bar {
   position: relative;
   margin: 4px auto
 }
-div.skillbar .bar .fill {
+div.timebar .bar .fill {
   height: 100%;
   background-color: var(--main-color);
   border-radius: 5px;
-  animation: skillbar 2s ease-in-out
+  animation: barfill 2s ease-in-out
 }
-@keyframes skillbar {
+@keyframes barfill {
   0% {width: 0}
+}
+div.skillbar {
+  height: 4px;
+  width: 50px;
+  border-radius: 5px;
+  display: inline-block;
+  margin: 5px 5px;
+  position: relative;
+  border: 1px solid #ffffff60;
+}
+div.skillbar .fill {
+  height: 100%;
+  background-color: var(--main-color);
+  border-radius: 5px;
+  animation: barfill 2s ease-in-out
 }
 
 

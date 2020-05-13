@@ -36,13 +36,13 @@
     <section>
       <h1>Clément - Infos</h1>
       <h2>Etudes</h2>
-        <div class="skillbar dutInfo" style="width: calc(100% - 20px);">
+        <div class="timebar dutInfo" style="width: calc(100% - 20px);">
           <span style="width: 90px">DUT Info</span>
           <div class="bar">
-            <div class="fill" style="width: 90%;" title="Calculé automatiquement">
+            <div class="fill" style="width: 0%;" title="Calculé automatiquement">
             </div>
           </div>
-          <span>90%</span>
+          <span>0%</span>
         </div>
         <p>Resultats des différents semestres :</p>
         <ul style="margin: 0">
@@ -54,70 +54,64 @@
 
 
       <h2>Compétences</h2>
-        <div class="skillbar">
+      <ul> 
+        <li>
           <span>HTML</span>
-          <div class="bar">
+          <div class="skillbar">
             <div class="fill" style="width: 90%;">
             </div>
           </div>
-          <span>90%</span>
-        </div>
-        <div class="skillbar">
+        </li>
+        <li>
           <span>CSS</span>
-          <div class="bar">
+          <div class="skillbar">
             <div class="fill" style="width: 60%;">
             </div>
           </div>
-          <span>60%</span>
-        </div>
-        <div class="skillbar">
+        </li>
+        <li>
           <span>JS</span>
-          <div class="bar">
-            <div class="fill" style="width: 20%;">
+          <div class="skillbar">
+            <div class="fill" style="width: 30%;">
             </div>
           </div>
-          <span>20%</span>
-        </div>
-        <div class="skillbar">
+        </li>
+        <li>
           <span>PHP</span>
-          <div class="bar">
-            <div class="fill" style="width: 2%;">
+          <div class="skillbar">
+            <div class="fill" style="width: 5%;">
             </div>
           </div>
-          <span>2%</span>
-        </div>
-        <div class="skillbar">
+        </li>
+        <li>
           <span>C</span>
-          <div class="bar">
-            <div class="fill" style="width: 50%;">
+          <div class="skillbar">
+            <div class="fill" style="width: 60%;">
             </div>
           </div>
-          <span>50%</span>
-        </div>
-        <div class="skillbar">
+        </li>
+        <li>
           <span>C++</span>
-          <div class="bar">
+          <div class="skillbar">
             <div class="fill" style="width: 0%;">
             </div>
           </div>
-          <span>0%</span>
-        </div>
-        <div class="skillbar">
+        </li>
+        <li>
           <span>C#</span>
-          <div class="bar">
-            <div class="fill" style="width: 0%;">
+          <div class="skillbar">
+            <div class="fill" style="width: 5%;">
             </div>
           </div>
-          <span>0%</span>
-        </div>
-        <div class="skillbar">
-          <span>java</span>
-          <div class="bar">
-            <div class="fill" style="width: 0%;">
+        </li>
+        <li>
+          <span>JAVA</span>
+          <div class="skillbar">
+            <div class="fill" style="width: 60%;">
             </div>
           </div>
-          <span>0%</span>
-        </div>
+        </li>
+      </ul>
     </section>
     <footer></footer>
       <script>
@@ -129,8 +123,8 @@
         pourcentIUT = (pourcentIUT > 1) ? 1 : pourcentIUT; 
         console.log("Progression à l'IUT : " + (pourcentIUT * 100) + "%");
         
-        $('.skillbar.dutInfo span:last-child').html((pourcentIUT * 100) + "%");
-        $('.skillbar.dutInfo .bar .fill').css("width", (pourcentIUT * 100) + "%");
+        $('.timebar.dutInfo span:last-child').html((pourcentIUT * 100) + "%");
+        $('.timebar.dutInfo .bar .fill').css("width", (pourcentIUT * 100) + "%");
       }
 
       $(document).ready(function(){
