@@ -123,8 +123,8 @@
         pourcentIUT = (pourcentIUT > 1) ? 1 : pourcentIUT; 
         console.log("Progression à l'IUT : " + (pourcentIUT * 100) + "%");
         
-        $('.timebar.dutInfo span:last-child').html((pourcentIUT * 100) + "%");
-        $('.timebar.dutInfo .bar .fill').css("width", (pourcentIUT * 100) + "%");
+        $('.timebar.dutInfo span:last-child').html((pourcentIUT * 100).toFixed(2) + "%");
+        $('.timebar.dutInfo .bar .fill').css("width", (pourcentIUT * 100).toFixed(2) + "%");
       }
 
       $(document).ready(function(){
