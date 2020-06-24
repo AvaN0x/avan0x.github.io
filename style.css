@@ -379,6 +379,7 @@ div.iframe {
   height: 30vw;
   max-height: 500px
 }
+div.iframe img,
 div.iframe iframe {
   height: 100%;
   width: 100%;
