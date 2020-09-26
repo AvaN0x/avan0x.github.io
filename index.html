@@ -1,283 +1,299 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <meta charset="utf-8" />
-    <title>Site d'AvaN0x</title>
-    <link rel="stylesheet" media="screen and (min-width:721px)" href="style.css" />
-    <link rel="stylesheet" media="screen and (max-width:720px)" href="mobile.css" />
-    <meta name="viewport"  content="width=max-device-width, initial-scale=1" />
-    <!-- DISCORD -->
-    <meta property="og:title" content="Site d'AvaN0x" />
-    <meta property="og:type" content="website" />
-    <meta property="og:url" content="https://avan0x.github.io/" />
-    <meta property="og:image" content="https://avatars3.githubusercontent.com/u/27494805?s=460&v=4" />
-    <meta property="og:description" content="Par AvaN0x" />
 
-    <link href="https://fonts.googleapis.com/css?family=Roboto&display=swap" rel="stylesheet">
-    <link rel="icon" type="image/png" href="https://avatars3.githubusercontent.com/u/27494805?s=460&v=4" />
+<head>
+  <meta charset="utf-8" />
+  <title>Site d'AvaN0x</title>
+  <link rel="stylesheet" media="screen and (min-width:721px)" href="style.css" />
+  <link rel="stylesheet" media="screen and (max-width:720px)" href="mobile.css" />
+  <meta name="viewport" content="width=max-device-width, initial-scale=1" />
+  <!-- DISCORD -->
+  <meta property="og:title" content="Site d'AvaN0x" />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://avan0x.github.io/" />
+  <meta property="og:image" content="https://avatars3.githubusercontent.com/u/27494805?s=460&v=4" />
+  <meta property="og:description" content="Par AvaN0x" />
 
-    <script src="https://kit.fontawesome.com/0383df481c.js" crossorigin="anonymous"></script>
-    <script src="https://code.jquery.com/jquery-3.4.1.js"></script>
-  </head>
-  <body>
-    <div id="menu">
-      <script>
-        $(function () {
-          $("div#menu").load("menu.html");
-        });
-      </script>
-    </div>
-    <div id="cookieAccepter">
-      <p></p>
-      <input type="submit" value="Accepter les cookies" />
-    </div>
+  <link href="https://fonts.googleapis.com/css?family=Roboto&display=swap" rel="stylesheet">
+  <link rel="icon" type="image/png" href="https://avatars3.githubusercontent.com/u/27494805?s=460&v=4" />
 
+  <script src="https://kit.fontawesome.com/0383df481c.js" crossorigin="anonymous"></script>
+  <script src="https://code.jquery.com/jquery-3.4.1.js"></script>
+</head>
 
-
-    <div class="cover">
-      <div>
-        <h1>AvaN0x / Clément RICATTE</h1>
-        <p><a href="#section"><i class="fas fa-angle-double-down"></i></a></p>
-      </div>
-    </div>
-    <section id="section">
-      <h1>AvaN0x / Clément RICATTE</h1>
-      <h2>Présentation</h2>
-      <p class="text-indent">
-        Je m'appelle Clément, j'ai <span class="age mainColor" title="Age généré automatiquement"></span> ans, je suis actuellement en première année de 
-        <a href="http://iut-metz.univ-lorraine.fr/dut-informatique">DUT Info</a> à l'<a href="http://iut-metz.univ-lorraine.fr/">IUT de Metz</a>.
-      </p>
-      <h2>Bienvenue sur mon site personnel</h2>
-      <p class="text-indent">
-        Le site a été réalisé en tant que hobby lors de mes études, son design n'est pas fixe, il peut totalement changer du jour au lendemain, en fonction de mes gouts /
-        j'ai appris de nouvelles astuces que je veux mettre en pratique.
-      </p>
-      <h2>Navigation</h2>
-      <p class="text-indent">
-        Le <a class="menuToggle mainColor" style="cursor: pointer;">menu</a> vous permet de visiter toutes les pages que j'ai réalisées, et autres.
-      </p>
-      <h1>Etat des vacances</h1>
-      <div id="holidayTimer"> <!-- script dans menu.html -->
-        <p></p>
-
-        <div class="days">
-          <span>00</span>
-          <span>jours</span>
-        </div>
-        <div class="hours">
-          <span>00</span>
-          <span>heures</span>
-        </div>
-        <div class="minutes">
-          <span>00</span>
-          <span>minutes</span>
-        </div>
-        <div class="seconds">
-          <span>00</span>
-          <span>secondes</span>  
-        </div>
-
-
-        <div>
-          <label>
-            <input type="checkbox" name="duree" value="1"/>
-            <span title="1ère semaine des vacances">sem 1</span>
-          </label>
-          <label>
-            <input type="checkbox" name="duree" value="2"/>
-            <span title="2ème semaine des vacances">sem 2</span>
-          </label>
-
-
-
-          <label>
-            <input type="radio" name="zone" value="C"/>
-            <span title="Zone scolaire où vous vous trouvez">C</span>
-          </label>
-          <label>
-            <input type="radio" name="zone" value="B"/>
-            <span title="Zone scolaire où vous vous trouvez">B</span>
-          </label>
-          <label>
-            <input type="radio" name="zone" value="A"/>
-            <span title="Zone scolaire où vous vous trouvez">A</span>
-          </label>
-        </div>
-
-
-
-      </div>
-    </section>
-    <footer></footer>
+<body>
+  <div id="menu">
     <script>
-      var goalDate;
-
-
-      $(document).ready(function(){
-        console.log("cookie : " + document.cookie);
-
-
-        // Affichage de l'age
-        var yearOld = new Date( new Date().getTime() - new Date("2001-10-09").getTime() ).getFullYear() - 1970;
-        $("span.age").text(yearOld);
-        // Affichage du nombre de jours depuis l'anniversaire en hover de l'age
-        var daySinceBirthday = Math.floor(( new Date().getTime() - new Date(2001 + yearOld, 9, 9).getTime() )/ 86400000);
-        $("span.age").prop("title", "et " + daySinceBirthday + " jours.");
-
-
-
-        var zone = (getCookie("zone") != null) ? getCookie("zone") : "B";
-        $("#holidayTimer label input[name=zone][value=" + zone + "]").prop('checked', true);
-
-        var duree = (getCookie("duree") != null) ? getCookie("duree") : "1";
-        if (duree == 3) {
-          $("#holidayTimer label input[name=duree][value=1]").prop('checked', true);
-          $("#holidayTimer label input[name=duree][value=2]").prop('checked', true);
-        } else
-          $("#holidayTimer label input[name=duree][value=" + duree + "]").prop('checked', true);
-
-        getGoalDate();
-        holidayTimer();
-        setInterval(holidayTimer, 1000);
-      })
-
-
-      $("#holidayTimer label input").change(function(){
-        if (this.name == "duree") {
-          var dureeValue = 0;
-          for (var i = 0; i < $("#holidayTimer label input[name=duree]:checked").length; i++) 
-            dureeValue += parseInt($("#holidayTimer label input[name=duree]:checked:eq(" + i + ")").val());
-          if (dureeValue == 0) {
-            $("#holidayTimer label input[name=duree][value=" + this.value + "]").prop('checked', true);
-            dureeValue = this.value;
-          }
-          setCookie(this.name, dureeValue, 365);
-        } else 
-          setCookie(this.name, this.value, 365);
-
-        getGoalDate();
-        holidayTimer();
+      $(function () {
+        $("div#menu").load("menu.html");
       });
-
-
-
-
-      /////////////////////////
-      //// Timer functions ////
-      /////////////////////////
-
-      function getGoalDate() {
-        var holidayDate = {
-            "date":[
-              // dates basées sur la zone C (première zone en vacance)
-
-              // "holidays"
-              // 0 fin vacances normales
-              // 1 début vacances normales 
-              // 2 fermeture des établissements scolaires
-              // 3 réouverture des établissements scolaires
-
-              // "affectedByZones"
-              // 1 oui
-              // 0 non
-
-              // {"holidays": 1, "affectedByZones": 1, "date": new Date(2020, 1, 7, 17, 30).getTime() }, // mois - 1
-              // {"holidays": 0, "affectedByZones": 1, "date": new Date(2020, 1, 17, 8, 0).getTime() },
-              //   {"holidays": 2, "affectedByZones": 0, "date": new Date(2020, 2, 13, 17, 30).getTime() },
-              //   {"holidays": 3, "affectedByZones": 0, "date": new Date(2020, 4, 11, 8, 00).getTime() }, // null si pas indéterminé
-              // {"holidays": 1, "affectedByZones": 1, "date": new Date(2020, 3, 3, 17, 30).getTime() },
-              // {"holidays": 0, "affectedByZones": 1, "date": new Date(2020, 3, 13, 8, 0).getTime() },
-              // {"holidays": 1, "affectedByZones": 0, "date": new Date(2020, 5, 16, 14, 0).getTime() },
-              // {"holidays": 0, "affectedByZones": 0, "date": new Date(2020, 8, 1, 8, 0).getTime() }
-              {"holidays": 1, "affectedByZones": 0, "date": new Date(2020, 9, 17, 12, 0).getTime() },
-              {"holidays": 0, "affectedByZones": 0, "date": new Date(2020, 10, 2, 8, 0).getTime() }
-            ]
-          }
-          var dureeValue = 0;
-          
-          for (var i = 0; i < $("#holidayTimer label input[name=duree]:checked").length; i++) 
-            dureeValue += parseInt($("#holidayTimer label input[name=duree]:checked:eq(" + i + ")").val());
-
-          for (var i = 0; i < Object.keys(holidayDate.date).length; i++) {
-            var shift = 0;
-
-            if (holidayDate.date[i].affectedByZones) {
-              switch($("#holidayTimer label input[name=zone]:checked").val()) {
-                case 'A':
-                  shift += 604800 * 2 * 1000;
-                  break;
-                case 'B':
-                  shift += 604800 * 1000;
-                  break;
-              }
-            }
-
-            if (dureeValue == 3 && holidayDate.date[i].holidays == 0
-                || dureeValue == 2 && holidayDate.date[i].holidays != 2 && holidayDate.date[i].holidays != 3
-              ) {
-              shift += 604800 * 1000;
-            } 
-            if (holidayDate.date[i].date == null) {
-              goalDate = null;
-              break;
-            }
-              
-
-            if (new Date().getTime() < (holidayDate.date[i].date + shift)) {
-              goalDate = holidayDate.date[i].date + shift;
-
-              console.log("Date countdown " + (goalDate - new Date().getTime()) + ", holidays : " + holidayDate.date[i].holidays + ", affectedByZones : " + holidayDate.date[i].affectedByZones);
-              break;
-            }
-
-          }
-
-          if (holidayDate.date[i].holidays == 0) {
-            $("#holidayTimer > p").text("Temps avant la fin des vacances :(");
-          }
-          else if (holidayDate.date[i].holidays == 1) {
-            $("#holidayTimer > p").text("Temps avant les prochaines vacances :D");
-          }
-          else if (holidayDate.date[i].holidays == 2) {
-            $("#holidayTimer > p").text("Temps avant la fermeture des établissements scolaires !");
-            $("#holidayTimer div:last-child input").prop("disabled", true);
-          }
-          else if (holidayDate.date[i].holidays == 3 && goalDate != null) {
-            $("#holidayTimer > p").text("Temps avant la réouverture des établissements scolaires !");
-            $("#holidayTimer div:last-child input").prop("disabled", true);
-          }
-          else if (holidayDate.date[i].holidays == 3 && goalDate == null) {
-            $("#holidayTimer > p").html("<i class=\"fas fa-exclamation-triangle\" style=\"font-size: 5em; margin: 8px\"></i><br/>La date de réouverture des établissements scolaires n'est pas connue.");
-            $("#holidayTimer div:last-child input").prop("disabled", true);
-          }
-      }
-
-
-      function holidayTimer() {
-        if (goalDate != null) {
-          var time = Math.floor((goalDate - new Date().getTime())/1000);
-          var d = Math.floor(time / 86400);
-          var h = Math.floor((time % 86400) / 3600);
-          var m = Math.floor(( (time % 86400) % 3600) / 60);
-          var s = Math.floor(( (time % 86400) % 3600) % 60);
-          
-          if (time >= 0) {
-            // page accueil
-            $('#holidayTimer .days span:eq(0)').html((d < 10) ? "0" + d : d);
-            $('#holidayTimer .hours span:eq(0)').html((h < 10) ? "0" + h : h);
-            $('#holidayTimer .minutes span:eq(0)').html((m < 10) ? "0" + m : m);
-            $('#holidayTimer .seconds span:eq(0)').html((s < 10) ? "0" + s : s);
-          }
-          if (time == -1)
-            getGoalDate()
-        } else {
-          $('#holidayTimer .days').css("display", "none");
-          $('#holidayTimer .hours').css("display", "none");
-          $('#holidayTimer .minutes').css("display", "none");
-          $('#holidayTimer .seconds').css("display", "none");
-        }
-      }
     </script>
-    <script src="src/cookie.js"></script>
-  </body>
+  </div>
+  <div id="cookieAccepter">
+    <p></p>
+    <input type="submit" value="Accepter les cookies" />
+  </div>
+
+
+
+  <div class="cover">
+    <div>
+      <h1>AvaN0x / Clément RICATTE</h1>
+      <p><a href="#section"><i class="fas fa-angle-double-down"></i></a></p>
+    </div>
+  </div>
+  <section id="section">
+    <h1>AvaN0x / Clément RICATTE</h1>
+    <h2>Présentation</h2>
+    <p class="text-indent">
+      Je m'appelle Clément, j'ai <span class="age mainColor" title="Age généré automatiquement"></span> ans, je suis
+      actuellement en première année de
+      <a href="http://iut-metz.univ-lorraine.fr/dut-informatique">DUT Info</a> à l'<a
+        href="http://iut-metz.univ-lorraine.fr/">IUT de Metz</a>.
+    </p>
+    <h2>Bienvenue sur mon site personnel</h2>
+    <p class="text-indent">
+      Le site a été réalisé en tant que hobby lors de mes études, son design n'est pas fixe, il peut totalement changer
+      du jour au lendemain, en fonction de mes gouts /
+      j'ai appris de nouvelles astuces que je veux mettre en pratique.
+    </p>
+    <h2>Navigation</h2>
+    <p class="text-indent">
+      Le <a class="menuToggle mainColor" style="cursor: pointer;">menu</a> vous permet de visiter toutes les pages que
+      j'ai réalisées, et autres.
+    </p>
+    <h1>Etat des vacances</h1>
+    <div id="holidayTimer">
+      <!-- script dans menu.html -->
+      <p></p>
+
+      <div class="days">
+        <span>00</span>
+        <span>jours</span>
+      </div>
+      <div class="hours">
+        <span>00</span>
+        <span>heures</span>
+      </div>
+      <div class="minutes">
+        <span>00</span>
+        <span>minutes</span>
+      </div>
+      <div class="seconds">
+        <span>00</span>
+        <span>secondes</span>
+      </div>
+
+
+      <div>
+        <label>
+          <input type="checkbox" name="duree" value="1" />
+          <span title="1ère semaine des vacances">sem 1</span>
+        </label>
+        <label>
+          <input type="checkbox" name="duree" value="2" />
+          <span title="2ème semaine des vacances">sem 2</span>
+        </label>
+
+
+
+        <label>
+          <input type="radio" name="zone" value="C" />
+          <span title="Zone scolaire où vous vous trouvez">C</span>
+        </label>
+        <label>
+          <input type="radio" name="zone" value="B" />
+          <span title="Zone scolaire où vous vous trouvez">B</span>
+        </label>
+        <label>
+          <input type="radio" name="zone" value="A" />
+          <span title="Zone scolaire où vous vous trouvez">A</span>
+        </label>
+      </div>
+
+
+
+    </div>
+  </section>
+  <footer></footer>
+  <script>
+    var goalDate;
+
+
+    $(document).ready(function () {
+      console.log("cookie : " + document.cookie);
+
+
+      // Affichage de l'age
+      var yearOld = new Date(new Date().getTime() - new Date("2001-10-09").getTime()).getFullYear() - 1970;
+      $("span.age").text(yearOld);
+      // Affichage du nombre de jours depuis l'anniversaire en hover de l'age
+      var daySinceBirthday = Math.floor((new Date().getTime() - new Date(2001 + yearOld, 9, 9).getTime()) /
+        86400000);
+      $("span.age").prop("title", "et " + daySinceBirthday + " jours.");
+
+
+
+      var zone = (getCookie("zone") != null) ? getCookie("zone") : "B";
+      $("#holidayTimer label input[name=zone][value=" + zone + "]").prop('checked', true);
+
+      var duree = (getCookie("duree") != null) ? getCookie("duree") : "1";
+      if (duree == 3) {
+        $("#holidayTimer label input[name=duree][value=1]").prop('checked', true);
+        $("#holidayTimer label input[name=duree][value=2]").prop('checked', true);
+      } else
+        $("#holidayTimer label input[name=duree][value=" + duree + "]").prop('checked', true);
+
+      getGoalDate();
+      holidayTimer();
+      setInterval(holidayTimer, 1000);
+    })
+
+
+    $("#holidayTimer label input").change(function () {
+      if (this.name == "duree") {
+        var dureeValue = 0;
+        for (var i = 0; i < $("#holidayTimer label input[name=duree]:checked").length; i++)
+          dureeValue += parseInt($("#holidayTimer label input[name=duree]:checked:eq(" + i + ")").val());
+        if (dureeValue == 0) {
+          $("#holidayTimer label input[name=duree][value=" + this.value + "]").prop('checked', true);
+          dureeValue = this.value;
+        }
+        setCookie(this.name, dureeValue, 365);
+      } else
+        setCookie(this.name, this.value, 365);
+
+      getGoalDate();
+      holidayTimer();
+    });
+
+
+
+
+    /////////////////////////
+    //// Timer functions ////
+    /////////////////////////
+
+    function getGoalDate() {
+      var holidayDate = {
+        "date": [
+          // dates basées sur la zone C (première zone en vacance)
+
+          // "holidays"
+          // 0 fin vacances normales
+          // 1 début vacances normales 
+          // 2 fermeture des établissements scolaires
+          // 3 réouverture des établissements scolaires
+
+          // "affectedByZones"
+          // 1 oui
+          // 0 non
+
+          // {"holidays": 1, "affectedByZones": 1, "date": new Date(2020, 1, 7, 17, 30).getTime() }, // mois - 1
+          // {"holidays": 0, "affectedByZones": 1, "date": new Date(2020, 1, 17, 8, 0).getTime() },
+          //   {"holidays": 2, "affectedByZones": 0, "date": new Date(2020, 2, 13, 17, 30).getTime() },
+          //   {"holidays": 3, "affectedByZones": 0, "date": new Date(2020, 4, 11, 8, 00).getTime() }, // null si pas indéterminé
+          // {"holidays": 1, "affectedByZones": 1, "date": new Date(2020, 3, 3, 17, 30).getTime() },
+          // {"holidays": 0, "affectedByZones": 1, "date": new Date(2020, 3, 13, 8, 0).getTime() },
+          // {"holidays": 1, "affectedByZones": 0, "date": new Date(2020, 5, 16, 14, 0).getTime() },
+          // {"holidays": 0, "affectedByZones": 0, "date": new Date(2020, 8, 1, 8, 0).getTime() }
+          {
+            "holidays": 1,
+            "affectedByZones": 0,
+            "date": new Date(2020, 9, 17, 12, 0).getTime()
+          },
+          {
+            "holidays": 0,
+            "affectedByZones": 0,
+            "date": new Date(2020, 10, 2, 8, 0).getTime()
+          }
+        ]
+      }
+      var dureeValue = 0;
+
+      for (var i = 0; i < $("#holidayTimer label input[name=duree]:checked").length; i++)
+        dureeValue += parseInt($("#holidayTimer label input[name=duree]:checked:eq(" + i + ")").val());
+
+      for (var i = 0; i < Object.keys(holidayDate.date).length; i++) {
+        var shift = 0;
+
+        if (holidayDate.date[i].affectedByZones) {
+          switch ($("#holidayTimer label input[name=zone]:checked").val()) {
+            case 'A':
+              shift += 604800 * 2 * 1000;
+              break;
+            case 'B':
+              shift += 604800 * 1000;
+              break;
+          }
+        }
+
+        if (dureeValue == 3 && holidayDate.date[i].holidays == 0 ||
+          dureeValue == 2 && holidayDate.date[i].holidays != 2 && holidayDate.date[i].holidays != 3
+        ) {
+          shift += 604800 * 1000;
+        }
+        if (holidayDate.date[i].date == null) {
+          goalDate = null;
+          break;
+        }
+
+
+        if (new Date().getTime() < (holidayDate.date[i].date + shift)) {
+          goalDate = holidayDate.date[i].date + shift;
+
+          console.log("Date countdown " + (goalDate - new Date().getTime()) + ", holidays : " + holidayDate.date[i]
+            .holidays + ", affectedByZones : " + holidayDate.date[i].affectedByZones);
+          break;
+        }
+
+      }
+
+      if (holidayDate.date[i].holidays == 0) {
+        $("#holidayTimer > p").text("Temps avant la fin des vacances :(");
+      } else if (holidayDate.date[i].holidays == 1) {
+        $("#holidayTimer > p").text("Temps avant les prochaines vacances :D");
+      } else if (holidayDate.date[i].holidays == 2) {
+        $("#holidayTimer > p").text("Temps avant la fermeture des établissements scolaires !");
+        $("#holidayTimer div:last-child input").prop("disabled", true);
+      } else if (holidayDate.date[i].holidays == 3 && goalDate != null) {
+        $("#holidayTimer > p").text("Temps avant la réouverture des établissements scolaires !");
+        $("#holidayTimer div:last-child input").prop("disabled", true);
+      } else if (holidayDate.date[i].holidays == 3 && goalDate == null) {
+        $("#holidayTimer > p").html(
+          "<i class=\"fas fa-exclamation-triangle\" style=\"font-size: 5em; margin: 8px\"></i><br/>La date de réouverture des établissements scolaires n'est pas connue."
+          );
+        $("#holidayTimer div:last-child input").prop("disabled", true);
+      }
+    }
+
+
+    function holidayTimer() {
+      if (goalDate != null) {
+        var time = Math.floor((goalDate - new Date().getTime()) / 1000);
+        var d = Math.floor(time / 86400);
+        var h = Math.floor((time % 86400) / 3600);
+        var m = Math.floor(((time % 86400) % 3600) / 60);
+        var s = Math.floor(((time % 86400) % 3600) % 60);
+
+        if (time >= 0) {
+          // page accueil
+          $('#holidayTimer .days span:eq(0)').html((d < 10) ? "0" + d : d);
+          $('#holidayTimer .hours span:eq(0)').html((h < 10) ? "0" + h : h);
+          $('#holidayTimer .minutes span:eq(0)').html((m < 10) ? "0" + m : m);
+          $('#holidayTimer .seconds span:eq(0)').html((s < 10) ? "0" + s : s);
+        }
+        if (time == -1)
+          getGoalDate()
+      } else {
+        $('#holidayTimer .days').css("display", "none");
+        $('#holidayTimer .hours').css("display", "none");
+        $('#holidayTimer .minutes').css("display", "none");
+        $('#holidayTimer .seconds').css("display", "none");
+      }
+    }
+  </script>
+  <script src="src/cookie.js"></script>
+</body>
+
 </html>

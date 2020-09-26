@@ -1,16 +1,15 @@
-
-
 <header>
   <!-- <a class="menuToggle active"><i class="fas fa-times"></i></a> -->
 
-  
+
   <label>
-    <input type="checkbox" name="openMenu"/>
+    <input type="checkbox" name="openMenu" />
     <a><i class="fas fa-bars"></i></a>
   </label>
 
   <a href="/index.html"><i class="fa fa-home"></i></a>
-  <a href="https://github.com/AvaN0x" target="_blank"><img src="https://avatars3.githubusercontent.com/u/27494805?s=460&v=4" title="github.com/AvaN0x"/></a>
+  <a href="https://github.com/AvaN0x" target="_blank"><img
+      src="https://avatars3.githubusercontent.com/u/27494805?s=460&v=4" title="github.com/AvaN0x" /></a>
 
   <nav>
     <ul>
@@ -18,11 +17,11 @@
       <li><a href="https://github.com/AvaN0x" target="_blank"><i class="fab fa-github"></i>GitHub</a></li>
       <li><a href="/page/infos.html"><i class="far fa-list-alt"></i>Infos</a></li>
       <li><a href="/page/discord.html"><i class="fab fa-discord"></i>Discord</a></li>
-    </ul>  
+    </ul>
     <ul>
       <h1>Etudes</h1>
       <li class="submenu"><a><i class="fas fa-folder"></i>IUT - Metz</a>
-        <ul> 
+        <ul>
           <li><a href="/etudes/iut/projetS1.html"><i class="fas fa-chalkboard"></i>Projet Tutoré S1</a></li>
           <li><a href="/etudes/iut/projetNim.html"><i class="fas fa-chalkboard"></i>Projet Nim</a></li>
           <li><a href="/etudes/iut/projetAsm.html"><i class="fas fa-chalkboard"></i>Projet Assembleur</a></li>
@@ -84,7 +83,7 @@
     $('label input[name=openMenu] ~ a i').toggleClass('fa-times');
   }
 
-  $(document).ready(function(){
+  $(document).ready(function () {
     if ((getCookie("menuState") == null || getCookie("menuState") == 1) && $(window).width() > 720) {
       if (getCookie("menuState") == null)
         setCookie("menuState", 1, -1);
@@ -92,32 +91,29 @@
 
       try {
         cookieCheck();
-      }
-      catch(error) {
-        void(0)  
+      } catch (error) {
+        void(0)
       }
       openMenu();
     }
   })
 
-  $('label input[name=openMenu]').change(function(){
+  $('label input[name=openMenu]').change(function () {
     if ($(window).width() > 720) {
       setCookie("menuState", $("label input[name=openMenu]:checked").length, -1);
 
       try {
         cookieCheck();
-      }
-      catch(error) {
+      } catch (error) {
         void(0)
       }
     }
     openMenu();
   })
 
-  $('.submenu > a').click(function(){
+  $('.submenu > a').click(function () {
     $(this).parent().toggleClass('active');
     $(this).find('i').toggleClass('fa-folder');
     $(this).find('i').toggleClass('fa-folder-open');
   })
-
 </script>

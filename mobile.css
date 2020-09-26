@@ -4,7 +4,7 @@
 }
 
 .mainColor {
-  color : var(--main-color)
+  color: var(--main-color)
 }
 
 html {
@@ -29,6 +29,7 @@ header {
   padding: 5px 25px;
   z-index: 9999
 }
+
 header img {
   height: 38px;
   border-radius: 50%;
@@ -37,8 +38,9 @@ header img {
   transform: rotate(0);
   transition: .5s
 }
-header > a i,
-header > label > a i {
+
+header>a i,
+header>label>a i {
   position: relative;
   font-size: 24px;
   margin: 8px;
@@ -47,13 +49,16 @@ header > label > a i {
   transition: .5s;
   transform: rotate(0)
 }
-header > label input {
+
+header>label input {
   display: none
 }
-header > label {
+
+header>label {
   cursor: pointer
 }
-header > label input:checked ~ a i {
+
+header>label input:checked~a i {
   transform: rotate(90deg);
   color: var(--main-color)
 }
@@ -71,22 +76,27 @@ header nav {
   box-shadow: 0 3px 5px black;
   z-index: 9999
 }
+
 header nav ul {
   padding: 0;
   margin: 0;
   list-style-type: none
 }
+
 header nav.active {
   left: 0
 }
-header nav > ul {
+
+header nav>ul {
   border-bottom: 2px solid var(--main-transparent-color);
   font-size: 1.1em
 }
+
 header nav ul li {
   text-align: left;
   padding: 2px 0
 }
+
 header nav ul li a {
   color: #fff;
   text-decoration: none;
@@ -94,15 +104,18 @@ header nav ul li a {
   display: block;
   padding: 5px 5px 5px 45px
 }
+
 header nav li i {
   position: absolute;
   left: 15px;
   transform: translateY(10%);
   transition: .5s
 }
+
 header nav li i.fa-share {
   transform: translateY(30%)
 }
+
 header nav h1 {
   margin: 10px 0;
   padding: 0;
@@ -111,7 +124,8 @@ header nav h1 {
   font-weight: normal;
   text-transform: uppercase
 }
-header ul li.submenu > ul {
+
+header ul li.submenu>ul {
   transition: .5s;
   transform-origin: top;
   transform: scaleY(0);
@@ -121,21 +135,24 @@ header ul li.submenu > ul {
   height: 0;
   opacity: 0
 }
+
 header ul li.submenu ul:before {
   content: '';
   position: absolute;
-  left:7.5px;
+  left: 7.5px;
   top: -5px;
   height: 100%;
   border-left: 1px dashed var(--main-color)
 }
-header ul li.submenu.active > ul {
+
+header ul li.submenu.active>ul {
   transform: scaleY(1);
   height: auto;
   width: calc(100% - 15px);
   opacity: 1
 }
-header ul li.submenu.active > a {
+
+header ul li.submenu.active>a {
   color: var(--main-color)
 }
 
@@ -144,10 +161,12 @@ div.cover {
   height: calc(100vh - 50px);
   position: relative;
   display: block;
-  background-image: url(https://img.wallpapersafari.com/desktop/1920/1080/49/28/r5VKG8.jpg); /* https://wallpapersafari.com/w/r5VKG8/ */
+  background-image: url(https://img.wallpapersafari.com/desktop/1920/1080/49/28/r5VKG8.jpg);
+  /* https://wallpapersafari.com/w/r5VKG8/ */
   background-size: cover;
   background-position: center
 }
+
 div.cover div {
   background-color: var(--main-transparent-color);
   top: 50%;
@@ -158,14 +177,17 @@ div.cover div {
   display: block;
   position: sticky
 }
+
 div.cover div h1 {
   margin: 0;
   font-size: 1.3em;
   color: #fff
 }
+
 div.cover div p a {
   color: #fff
 }
+
 div.cover div p {
   margin: 0;
   font-size: 1.1em;
@@ -174,10 +196,22 @@ div.cover div p {
   animation-duration: 1.8s;
   animation-iteration-count: infinite
 }
+
 @keyframes scroll {
-  0% { transform: translateY(0); opacity: 1}
-  80% { transform: translateY(15px); opacity: .3}
-  100% { transform: translateY(0); opacity: 1 }
+  0% {
+    transform: translateY(0);
+    opacity: 1
+  }
+
+  80% {
+    transform: translateY(15px);
+    opacity: .3
+  }
+
+  100% {
+    transform: translateY(0);
+    opacity: 1
+  }
 }
 
 #cookieAccepter {
@@ -192,13 +226,16 @@ div.cover div p {
   justify-content: center;
   box-sizing: border-box
 }
+
 #cookieAccepter p {
   margin: 0 8px
 }
+
 #cookieAccepter p a {
   font-weight: bold;
   color: #000
 }
+
 input[type=submit] {
   margin: 0;
   padding: 10px;
@@ -210,9 +247,11 @@ input[type=submit] {
   transition: .5s;
   font-size: 1em
 }
+
 input[type=submit]:hover {
   background: var(--main-color);
 }
+
 input[type=submit][disabled] {
   border: dashed;
   opacity: .5;
@@ -230,11 +269,13 @@ section {
   background-color: #575652;
   min-height: calc(100vh - 80px)
 }
-section h1{
+
+section h1 {
   font-size: 1.5em;
   color: var(--main-color);
   text-align: center
 }
+
 section h2 {
   font-size: 1.2em;
   color: var(--main-color)
@@ -248,6 +289,7 @@ section p {
 .text-indent {
   text-indent: 20px
 }
+
 footer a,
 section a {
   text-decoration: none;
@@ -270,9 +312,11 @@ footer {
   justify-content: center;
   flex-direction: column
 }
+
 footer p {
   margin: 5px 20px;
 }
+
 footer i {
   margin: 0 5px
 }
@@ -280,6 +324,7 @@ footer i {
 ul.checklist {
   list-style-type: none
 }
+
 ul.checklist li i {
   display: inline;
   position: relative;
@@ -287,6 +332,7 @@ ul.checklist li i {
   color: var(--main-color);
   font-size: 1.2em
 }
+
 ul.checklist li i.fa-times {
   left: -14px
 }
@@ -314,6 +360,7 @@ div.iframe {
   height: 30vw;
   max-height: 500px
 }
+
 div.iframe img,
 div.iframe iframe {
   height: 100%;
@@ -325,6 +372,7 @@ div.iframe iframe {
   top: -100%;
   border: 4px solid var(--main-color)
 }
+
 div.iframe a {
   height: 100%;
   width: 100%;
@@ -333,8 +381,9 @@ div.iframe a {
   background-color: #5756525e;
   z-index: 1
 }
+
 div.iframe a:after {
-  content:'Cliquez pour voir';
+  content: 'Cliquez pour voir';
   display: block;
   position: relative;
   text-align: center;
@@ -350,8 +399,9 @@ td {
   padding: 4px;
   text-align: start
 }
+
 table {
-  border-collapse:collapse;
+  border-collapse: collapse;
   border-style: hidden
 }
 
@@ -374,6 +424,7 @@ div.timebar {
   margin: 5px 0;
   box-sizing: border-box
 }
+
 div.timebar span {
   display: inline;
   position: relative;
@@ -381,10 +432,12 @@ div.timebar span {
   line-height: 35px;
   text-align: center
 }
+
 div.timebar span:first-child,
 div.timebar span:last-child {
   width: 60px
 }
+
 div.timebar .bar {
   width: calc(100% - 120px);
   height: 20px;
@@ -395,15 +448,20 @@ div.timebar .bar {
   position: relative;
   margin: 4px auto
 }
+
 div.timebar .bar .fill {
   height: 100%;
   background-color: var(--main-color);
   border-radius: 5px;
   animation: barfill 2s ease-in-out
 }
+
 @keyframes barfill {
-  0% {width: 0}
+  0% {
+    width: 0
+  }
 }
+
 div.skillbar {
   height: 4px;
   width: 50px;
@@ -413,6 +471,7 @@ div.skillbar {
   position: relative;
   border: 1px solid #ffffff60;
 }
+
 div.skillbar .fill {
   height: 100%;
   background-color: var(--main-color);
@@ -432,15 +491,18 @@ div.skillbar .fill {
   transform: translateX(-50%);
   overflow: hidden
 }
+
 #holidayTimer p:first-child {
   margin: 8px
-} 
+}
+
 #holidayTimer div:not(:last-child) {
   display: inline-block;
   margin: 5px;
   transition: .3s;
   cursor: default
 }
+
 #holidayTimer span {
   display: flex;
   flex-direction: column;
@@ -450,20 +512,25 @@ div.skillbar .fill {
   text-align: center;
   color: var(--main-color)
 }
+
 #holidayTimer div span:nth-child(1) {
   height: 50px;
   font-size: 50px
 }
+
 #holidayTimer div span:nth-child(2) {
   height: 40px;
   text-transform: uppercase
 }
+
 #holidayTimer label input {
   display: none
 }
+
 #holidayTimer label {
   cursor: pointer
 }
+
 #holidayTimer label span {
   padding: 8px 10px;
   margin: 0;
@@ -473,25 +540,31 @@ div.skillbar .fill {
   position: relative;
   bottom: -5px
 }
-#holidayTimer label input:disabled ~ span {
+
+#holidayTimer label input:disabled~span {
   opacity: .3;
   cursor: not-allowed
 }
-#holidayTimer label input:checked ~ span {
+
+#holidayTimer label input:checked~span {
   background: var(--main-transparent-color);
   color: #fff
 }
-#holidayTimer div:last-child label input[name=duree] ~ span {
+
+#holidayTimer div:last-child label input[name=duree]~span {
   float: left;
   border-right: 1px solid var(--main-color)
 }
+
 #holidayTimer div:last-child label:nth-child(2) span {
   border-radius: 0 5px 0 0
 }
+
 #holidayTimer div:last-child label:nth-child(5) span {
   border-radius: 5px 0 0 0
 }
-#holidayTimer div:last-child input[name=zone] ~ span{
+
+#holidayTimer div:last-child input[name=zone]~span {
   float: right;
   border-left: 1px solid var(--main-color)
 }
@@ -511,14 +584,17 @@ input[type=submit][name=delCookies] {
   left: 50%;
   transform: translateX(-50%)
 }
+
 #cookieTable,
 #cookieTable th,
 #cookieTable td {
   text-align: center
 }
+
 #cookieTable td {
   padding: 4px
 }
+
 #cookieTable td:last-child {
   padding: 4px 8px;
   cursor: pointer;
@@ -536,6 +612,7 @@ input[type=submit][name=delCookies] {
   box-sizing: border-box;
   overflow: hidden
 }
+
 #discordInvite p:first-child {
   text-transform: uppercase;
   margin-bottom: 12px;
@@ -543,12 +620,14 @@ input[type=submit][name=delCookies] {
   font-weight: 700;
   font-size: 12px
 }
+
 #discordInvite p {
   color: #b9bbbe;
   text-overflow: ellipsis;
   cursor: default;
   font-size: 13px
 }
+
 #discordInvite img {
   border-radius: 15px;
   width: 50px;
@@ -557,12 +636,14 @@ input[type=submit][name=delCookies] {
   float: left;
   margin-right: 16px
 }
+
 #discordInvite #discordInviteText {
   max-width: 200px;
   position: relative;
   display: inline-block;
   box-sizing: border-box;
 }
+
 #discordInvite a {
   color: #fff;
   cursor: pointer;
@@ -570,13 +651,16 @@ input[type=submit][name=delCookies] {
   font-weight: 600;
   transition: .2s;
 }
+
 #discordInvite a:last-child,
 #discordInvite a:last-child:hover {
   font-weight: normal;
 }
+
 #discordInvite a:first-child:hover {
   text-decoration: underline;
 }
+
 #discordInvite a:last-child {
   background-color: #43b581;
   text-decoration: none;
@@ -589,9 +673,11 @@ input[type=submit][name=delCookies] {
   border-radius: 3px;
   font-size: 14px
 }
+
 #discordInvite a:last-child:hover {
   background-color: #3ca374;
 }
+
 .discordBubble {
   width: 8px;
   height: 8px;

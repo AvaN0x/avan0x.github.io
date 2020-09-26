@@ -2,8 +2,9 @@
     .ficheContainer {
         padding: 0
     }
-    .ficheContainer li > .fiche,
-    .ficheContainer li > .tuto {
+
+    .ficheContainer li>.fiche,
+    .ficheContainer li>.tuto {
         transition: .5s;
         transform-origin: top;
         transform: scaleY(0);
@@ -13,10 +14,12 @@
         height: 0;
         opacity: 0
     }
-    .ficheContainer > li {
+
+    .ficheContainer>li {
         list-style-type: none;
     }
-    .ficheContainer > li > a {
+
+    .ficheContainer>li>a {
         color: var(--main-color);
         font-size: 1.4em;
         background-color: #00000020;
@@ -24,10 +27,12 @@
         display: block;
         padding: 10px 0;
         cursor: pointer
-    } 
-    .ficheContainer > li > a i {
+    }
+
+    .ficheContainer>li>a i {
         transition: .5s
     }
+
     .ficheContainer li .fiche:before,
     .ficheContainer li .tuto:before {
         content: '';
@@ -37,31 +42,36 @@
         height: calc(100% - 10px);
         border-left: 1px dashed var(--main-color)
     }
-    .ficheContainer li.active > .fiche,
-    .ficheContainer li.active > .tuto {
+
+    .ficheContainer li.active>.fiche,
+    .ficheContainer li.active>.tuto {
         transform: scaleY(1);
         height: auto;
         width: calc(100% - 15px);
         opacity: 1
     }
-    .ficheContainer > li > a:hover i {
+
+    .ficheContainer>li>a:hover i {
         transform: rotate(15deg)
     }
-    .ficheContainer li.active > a i {
+
+    .ficheContainer li.active>a i {
         transform: rotate(90deg)
     }
-    .ficheContainer li.active > a {
+
+    .ficheContainer li.active>a {
         font-weight: bold
     }
 
 
-    .fiche > li {
+    .fiche>li {
         list-style-type: upper-roman;
         font-size: 1.2em;
         color: var(--main-color);
         font-weight: bold;
         margin-left: 15px
     }
+
     .fiche,
     .fiche ol,
     .tuto,
@@ -69,11 +79,13 @@
         padding: 5px 0 5px 25px;
         box-sizing: border-box
     }
+
     .fiche ol li {
         color: var(--main-color);
         font-weight: bold;
         margin: 10px 0 5px 0
     }
+
     code,
     pre {
         color: var(--main-color);
@@ -85,32 +97,38 @@
         width: auto;
         text-indent: 0
     }
+
     .fiche code em {
         margin-left: 20px;
     }
+
     .fiche code em:before {
-        content:'/*'
-    }
-    .fiche code em:after {
-        content:'*/'
+        content: '/*'
     }
 
-    .tuto > li {
+    .fiche code em:after {
+        content: '*/'
+    }
+
+    .tuto>li {
         list-style-type: decimal;
         margin-left: 15px;
         font-size: 1em
     }
+
     .tuto ol li {
         list-style-type: lower-latin;
         margin-left: 15px;
         font-size: 1em
     }
+
     .tuto img {
         max-width: 95%;
         margin-left: 10px;
         padding: 0;
         margin: 10px
     }
+
     .tuto p {
         text-indent: 5px
     }
@@ -124,8 +142,9 @@
     .ficheContainer {
         padding: 0
     }
-    .ficheContainer li > .fiche,
-    .ficheContainer li > .tuto {
+
+    .ficheContainer li>.fiche,
+    .ficheContainer li>.tuto {
         transition: .5s;
         transform-origin: top;
         transform: scaleY(0);
@@ -135,10 +154,12 @@
         height: 0;
         opacity: 0
     }
-    .ficheContainer > li {
+
+    .ficheContainer>li {
         list-style-type: none
     }
-    .ficheContainer > li > a {
+
+    .ficheContainer>li>a {
         color: var(--main-color);
         font-size: 1.4em;
         background-color: #00000020;
@@ -146,10 +167,12 @@
         display: block;
         padding: 10px 0;
         cursor: pointer
-    } 
-    .ficheContainer > li > a i {
+    }
+
+    .ficheContainer>li>a i {
         transition: .5s
     }
+
     .ficheContainer li .fiche:before,
     .ficheContainer li .tuto:before {
         content: '';
@@ -159,30 +182,34 @@
         height: calc(100% - 10px);
         border-left: 1px dashed var(--main-color)
     }
-    .ficheContainer li.active > .fiche,
-    .ficheContainer li.active > .tuto {
+
+    .ficheContainer li.active>.fiche,
+    .ficheContainer li.active>.tuto {
         transform: scaleY(1);
         height: auto;
         width: calc(100% - 15px);
         opacity: 1
     }
-    .ficheContainer li.active > a i {
+
+    .ficheContainer li.active>a i {
         transform: rotate(90deg);
     }
-    .ficheContainer li.active > a {
+
+    .ficheContainer li.active>a {
         font-weight: bold
     }
 
 
 
 
-    .fiche > li {
+    .fiche>li {
         list-style-type: upper-roman;
         font-size: 1.2em;
         color: var(--main-color);
         font-weight: bold;
         margin-left: 15px
     }
+
     .fiche,
     .fiche ol,
     .tuto,
@@ -190,11 +217,13 @@
         padding: 3px 15px;
         box-sizing: border-box
     }
+
     .fiche ol li {
         color: var(--main-color);
         font-weight: bold;
         margin: 10px 0 5px 0;
     }
+
     code,
     pre {
         color: var(--main-color);
@@ -207,35 +236,41 @@
         text-indent: 0;
         text-align: start
     }
+
     .fiche code em {
         margin-left: 20px
     }
+
     .fiche code em:before {
-        content:'/*'
+        content: '/*'
     }
+
     .fiche code em:after {
-        content:'*/'
+        content: '*/'
     }
 
 
-    .tuto > li {
+    .tuto>li {
         list-style-type: decimal;
         font-size: 1.1em;
         margin-left: 15px
     }
+
     .tuto ol li {
         list-style-type: lower-latin;
         margin-left: 15px
     }
+
     .tuto img {
         display: none
     }
+
     .tuto p {
         text-indent: 5px;
         text-align: left
     }
+
     .tuto li {
         text-align: left
     }
 }
-

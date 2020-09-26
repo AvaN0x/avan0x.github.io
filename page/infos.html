@@ -1,137 +1,140 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <meta charset="utf-8" />
-    <title>AvaN0x - Infos</title>
-    <link rel="stylesheet" media="screen and (min-width:721px)" href="../style.css" />
-    <link rel="stylesheet" media="screen and (max-width:720px)" href="../mobile.css" />
-    <meta name="viewport"  content="width=max-device-width, initial-scale=1" />
-    <!-- DISCORD -->
-    <meta property="og:title" content="AvaN0x - Infos" />
-    <meta property="og:type" content="website" />
-    <meta property="og:url" content="https://avan0x.github.io/" />
-    <meta property="og:image" content="https://avatars3.githubusercontent.com/u/27494805?s=460&v=4" />
-    <meta property="og:description" content="Par AvaN0x" />
 
-    <link href="https://fonts.googleapis.com/css?family=Roboto&display=swap" rel="stylesheet">
-    <link rel="icon" type="image/png" href="https://avatars3.githubusercontent.com/u/27494805?s=460&v=4" />
+<head>
+  <meta charset="utf-8" />
+  <title>AvaN0x - Infos</title>
+  <link rel="stylesheet" media="screen and (min-width:721px)" href="../style.css" />
+  <link rel="stylesheet" media="screen and (max-width:720px)" href="../mobile.css" />
+  <meta name="viewport" content="width=max-device-width, initial-scale=1" />
+  <!-- DISCORD -->
+  <meta property="og:title" content="AvaN0x - Infos" />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://avan0x.github.io/" />
+  <meta property="og:image" content="https://avatars3.githubusercontent.com/u/27494805?s=460&v=4" />
+  <meta property="og:description" content="Par AvaN0x" />
 
-    <script src="https://kit.fontawesome.com/0383df481c.js" crossorigin="anonymous"></script>
-    <script src="https://code.jquery.com/jquery-3.4.1.js"></script>
-  </head>
-  <body>
-    <div id="menu">
-      <script>
-        $(function () {
-          $("div#menu").load("../menu.html");
-        });
-      </script>
-    </div>
-    <div id="cookieAccepter">
-      <p></p>
-      <input type="submit" value="Accepter les cookies" />
-    </div>
-    
+  <link href="https://fonts.googleapis.com/css?family=Roboto&display=swap" rel="stylesheet">
+  <link rel="icon" type="image/png" href="https://avatars3.githubusercontent.com/u/27494805?s=460&v=4" />
 
-    <section>
-      <h1>Clément - Infos</h1>
-      <h2>Etudes</h2>
-        <div class="timebar dutInfo" style="width: calc(100% - 20px);">
-          <span style="width: 90px">DUT Info</span>
-          <div class="bar">
-            <div class="fill" style="width: 0%;" title="Calculé automatiquement">
-            </div>
-          </div>
-          <span>0%</span>
-        </div>
-        <p>Resultats des différents semestres :</p>
-        <ul style="margin: 0" class="colorBullet">
-          <li>Semestre 1 : <i style="color: var(--main-color)">Major de promo, moyenne : 16.235</i></li>
-          <li>Semestre 2 : <i style="color: var(--main-color)">Major de promo, moyenne : 18.01</i></li>
-          <li>Semestre 3 : <i style="color: var(--main-color)">...</i></li>
-          <li>Semestre 4 : <i style="color: var(--main-color)">...</i></li>
-        </ul>
+  <script src="https://kit.fontawesome.com/0383df481c.js" crossorigin="anonymous"></script>
+  <script src="https://code.jquery.com/jquery-3.4.1.js"></script>
+</head>
 
-
-      <h2>Compétences</h2>
-      <ul class="colorBullet"> 
-        <li>
-          <span>HTML</span>
-          <div class="skillbar">
-            <div class="fill" style="width: 90%;">
-            </div>
-          </div>
-        </li>
-        <li>
-          <span>CSS</span>
-          <div class="skillbar">
-            <div class="fill" style="width: 60%;">
-            </div>
-          </div>
-        </li>
-        <li>
-          <span>JS</span>
-          <div class="skillbar">
-            <div class="fill" style="width: 30%;">
-            </div>
-          </div>
-        </li>
-        <li>
-          <span>PHP</span>
-          <div class="skillbar">
-            <div class="fill" style="width: 5%;">
-            </div>
-          </div>
-        </li>
-        <li>
-          <span>C</span>
-          <div class="skillbar">
-            <div class="fill" style="width: 60%;">
-            </div>
-          </div>
-        </li>
-        <li>
-          <span>C#</span>
-          <div class="skillbar">
-            <div class="fill" style="width: 35%;">
-            </div>
-          </div>
-        </li>
-        <li>
-          <span>JAVA</span>
-          <div class="skillbar">
-            <div class="fill" style="width: 60%;">
-            </div>
-          </div>
-        </li>
-        <li>
-          <span>x86 asm</span>
-          <div class="skillbar">
-            <div class="fill" style="width: 75%;">
-            </div>
-          </div>
-        </li>
-      </ul>
-    </section>
-    <footer></footer>
-      <script>
-      function loadBarIUT() {
-        debutIUT = new Date(2019, 9-1, 2, 8).getTime();
-        finIUT = new Date(2021, 6-1, 19, 17, 30).getTime();
-        
-        pourcentIUT = Math.round( (new Date().getTime() - debutIUT) / (finIUT - debutIUT) * 1000) / 1000;
-        pourcentIUT = (pourcentIUT > 1) ? 1 : pourcentIUT; 
-        console.log("Progression à l'IUT : " + (pourcentIUT * 100) + "%");
-        
-        $('.timebar.dutInfo span:last-child').html((pourcentIUT * 100).toFixed(2) + "%");
-        $('.timebar.dutInfo .bar .fill').css("width", (pourcentIUT * 100).toFixed(2) + "%");
-      }
-
-      $(document).ready(function(){
-        loadBarIUT();
-          setInterval(loadBarIUT, 86400*4);
-      })
+<body>
+  <div id="menu">
+    <script>
+      $(function () {
+        $("div#menu").load("../menu.html");
+      });
     </script>
-    <script src="../src/cookie.js"></script>
-  </body>
+  </div>
+  <div id="cookieAccepter">
+    <p></p>
+    <input type="submit" value="Accepter les cookies" />
+  </div>
+
+
+  <section>
+    <h1>Clément - Infos</h1>
+    <h2>Etudes</h2>
+    <div class="timebar dutInfo" style="width: calc(100% - 20px);">
+      <span style="width: 90px">DUT Info</span>
+      <div class="bar">
+        <div class="fill" style="width: 0%;" title="Calculé automatiquement">
+        </div>
+      </div>
+      <span>0%</span>
+    </div>
+    <p>Resultats des différents semestres :</p>
+    <ul style="margin: 0" class="colorBullet">
+      <li>Semestre 1 : <i style="color: var(--main-color)">Major de promo, moyenne : 16.235</i></li>
+      <li>Semestre 2 : <i style="color: var(--main-color)">Major de promo, moyenne : 18.01</i></li>
+      <li>Semestre 3 : <i style="color: var(--main-color)">...</i></li>
+      <li>Semestre 4 : <i style="color: var(--main-color)">...</i></li>
+    </ul>
+
+
+    <h2>Compétences</h2>
+    <ul class="colorBullet">
+      <li>
+        <span>HTML</span>
+        <div class="skillbar">
+          <div class="fill" style="width: 90%;">
+          </div>
+        </div>
+      </li>
+      <li>
+        <span>CSS</span>
+        <div class="skillbar">
+          <div class="fill" style="width: 60%;">
+          </div>
+        </div>
+      </li>
+      <li>
+        <span>JS</span>
+        <div class="skillbar">
+          <div class="fill" style="width: 30%;">
+          </div>
+        </div>
+      </li>
+      <li>
+        <span>PHP</span>
+        <div class="skillbar">
+          <div class="fill" style="width: 5%;">
+          </div>
+        </div>
+      </li>
+      <li>
+        <span>C</span>
+        <div class="skillbar">
+          <div class="fill" style="width: 60%;">
+          </div>
+        </div>
+      </li>
+      <li>
+        <span>C#</span>
+        <div class="skillbar">
+          <div class="fill" style="width: 35%;">
+          </div>
+        </div>
+      </li>
+      <li>
+        <span>JAVA</span>
+        <div class="skillbar">
+          <div class="fill" style="width: 60%;">
+          </div>
+        </div>
+      </li>
+      <li>
+        <span>x86 asm</span>
+        <div class="skillbar">
+          <div class="fill" style="width: 75%;">
+          </div>
+        </div>
+      </li>
+    </ul>
+  </section>
+  <footer></footer>
+  <script>
+    function loadBarIUT() {
+      debutIUT = new Date(2019, 9 - 1, 2, 8).getTime();
+      finIUT = new Date(2021, 6 - 1, 19, 17, 30).getTime();
+
+      pourcentIUT = Math.round((new Date().getTime() - debutIUT) / (finIUT - debutIUT) * 1000) / 1000;
+      pourcentIUT = (pourcentIUT > 1) ? 1 : pourcentIUT;
+      console.log("Progression à l'IUT : " + (pourcentIUT * 100) + "%");
+
+      $('.timebar.dutInfo span:last-child').html((pourcentIUT * 100).toFixed(2) + "%");
+      $('.timebar.dutInfo .bar .fill').css("width", (pourcentIUT * 100).toFixed(2) + "%");
+    }
+
+    $(document).ready(function () {
+      loadBarIUT();
+      setInterval(loadBarIUT, 86400 * 4);
+    })
+  </script>
+  <script src="../src/cookie.js"></script>
+</body>
+
 </html>
