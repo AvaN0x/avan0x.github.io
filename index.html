@@ -6,7 +6,7 @@
   <title>Site d'AvaN0x</title>
   <link rel="stylesheet" media="screen and (min-width:721px)" href="style.css" />
   <link rel="stylesheet" media="screen and (max-width:720px)" href="mobile.css" />
-  <meta name="viewport" content="width=max-device-width, initial-scale=1" />
+  <meta name="viewport" content="initial-scale=1" />
   <!-- DISCORD -->
   <meta property="og:title" content="Site d'AvaN0x" />
   <meta property="og:type" content="website" />
@@ -262,7 +262,7 @@
       } else if (holidayDate.date[i].holidays == 3 && goalDate == null) {
         $("#holidayTimer > p").html(
           "<i class=\"fas fa-exclamation-triangle\" style=\"font-size: 5em; margin: 8px\"></i><br/>La date de réouverture des établissements scolaires n'est pas connue."
-          );
+        );
         $("#holidayTimer div:last-child input").prop("disabled", true);
       }
     }

@@ -7,7 +7,7 @@
   <link rel="stylesheet" media="screen and (min-width:721px)" href="../../style.css" />
   <link rel="stylesheet" media="screen and (max-width:720px)" href="../../mobile.css" />
   <link rel="stylesheet" href="../fiche.css" />
-  <meta name="viewport" content="width=max-device-width, initial-scale=1" />
+  <meta name="viewport" content="initial-scale=1" />
   <!-- DISCORD -->
   <meta property="og:title" content="AvaN0x - Algo" />
   <meta property="og:type" content="website" />
@@ -100,63 +100,67 @@
       <ol>
         <li>Conditions</li>
         <p>
-          <table>
-            <tbody>
-              <tr>
-                <td>égalité</th>
-                <td>=</td>
-              </tr>
-              <tr>
-                <td>supériorité</th>
-                <td>></td>
-              </tr>
-              <tr>
-                <td>infériorité</th>
-                <td>
-                  <</td> </tr> <tr>
-                <td>supériorité et égalité</th>
-                <td>>=</td>
-              </tr>
-              <tr>
-                <td>infériorité et égalité</th>
-                <td>
-                  <=</td> </tr> <tr>
-                <td>différence</th>
-                <td>!=</td>
-              </tr>
-            </tbody>
-          </table>
+        <table>
+          <tbody>
+            <tr>
+              <td>égalité</th>
+              <td>=</td>
+            </tr>
+            <tr>
+              <td>supériorité</th>
+              <td>></td>
+            </tr>
+            <tr>
+              <td>infériorité</th>
+              <td>
+                << /td>
+            </tr>
+            <tr>
+              <td>supériorité et égalité</th>
+              <td>>=</td>
+            </tr>
+            <tr>
+              <td>infériorité et égalité</th>
+              <td>
+                <=< /td>
+            </tr>
+            <tr>
+              <td>différence</th>
+              <td>!=</td>
+            </tr>
+          </tbody>
+        </table>
         </p>
         <li>Instructions</li>
         <p>
-          <table>
-            <tbody>
-              <tr>
-                <td>addition</th>
-                <td>+</td>
-              </tr>
-              <tr>
-                <td>soustraction</th>
-                <td>-</td>
-              </tr>
-              <tr>
-                <td>multiplication</th>
-                <td>*</td>
-              </tr>
-              <tr>
-                <td>division réelle</th>
-                <td>/</td>
-              </tr>
-              <tr>
-                <td>division entière</th>
-                <td><span class="u">div</span></td>
-              </tr>
-              <tr>
-                <td>modulo</th>
-                <td><span class="u">mod</span></td>
-              </tr>
-            </tbody>
-          </table>
+        <table>
+          <tbody>
+            <tr>
+              <td>addition</th>
+              <td>+</td>
+            </tr>
+            <tr>
+              <td>soustraction</th>
+              <td>-</td>
+            </tr>
+            <tr>
+              <td>multiplication</th>
+              <td>*</td>
+            </tr>
+            <tr>
+              <td>division réelle</th>
+              <td>/</td>
+            </tr>
+            <tr>
+              <td>division entière</th>
+              <td><span class="u">div</span></td>
+            </tr>
+            <tr>
+              <td>modulo</th>
+              <td><span class="u">mod</span></td>
+            </tr>
+          </tbody>
+        </table>
         </p>
         <li>Caractères / chaines</li>
         <p>Caractère entre ' ' : <code>'a'</code></p>
@@ -170,22 +174,22 @@
         <p>Concaténation : <code>|</code></p>
         <li>Booléens</li>
         <p>
-          <table>
-            <tbody>
-              <tr>
-                <td>et</th>
-                <td><span class="u">et</span></td>
-              </tr>
-              <tr>
-                <td>ou</th>
-                <td><span class="u">ou</span></td>
-              </tr>
-              <tr>
-                <td>non</th>
-                <td><span class="u">non</span></td>
-              </tr>
-            </tbody>
-          </table>
+        <table>
+          <tbody>
+            <tr>
+              <td>et</th>
+              <td><span class="u">et</span></td>
+            </tr>
+            <tr>
+              <td>ou</th>
+              <td><span class="u">ou</span></td>
+            </tr>
+            <tr>
+              <td>non</th>
+              <td><span class="u">non</span></td>
+            </tr>
+          </tbody>
+        </table>
         </p>
       </ol>
       <li>Itérations</li>
@@ -224,91 +228,91 @@
       </ol>
       <li>Modules</li>
       <p>Utilisation dans l'algorithme :</code><br />
-        <table>
-          <thead>
-            <tr>
-              <th>algo :<code>nomAlgo</code></td>
-              <th>Ord</td>
-              <th>Lexique</td>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td><code>Module(paramètres)</code></td>
-              <td></td>
-              <td><code>nomModule(module)</code></td>
-            </tr>
-          </tbody>
-        </table>
-        <br />
-        Forme du module
-        <table>
-          <thead>
-            <tr>
-              <th>module :<code>nomModule(<i class="fas fa-arrows-alt-v"></i><i class="fas fa-long-arrow-alt-up"></i><i
+      <table>
+        <thead>
+          <tr>
+            <th>algo :<code>nomAlgo</code></td>
+            <th>Ord</td>
+            <th>Lexique</td>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><code>Module(paramètres)</code></td>
+            <td></td>
+            <td><code>nomModule(module)</code></td>
+          </tr>
+        </tbody>
+      </table>
+      <br />
+      Forme du module
+      <table>
+        <thead>
+          <tr>
+            <th>module :<code>nomModule(<i class="fas fa-arrows-alt-v"></i><i class="fas fa-long-arrow-alt-up"></i><i
                     class="fas fa-long-arrow-alt-down"></i>p<sub>1</sub>:tp<sub>1</sub>;...;<i
                     class="fas fa-arrows-alt-v"></i><i class="fas fa-long-arrow-alt-up"></i><i
                     class="fas fa-long-arrow-alt-down"></i>p<sub>n</sub>:tp<sub>n</sub>)</code></td>
-              <th>Ord</td>
-              <th>Lexique</td>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td><code>instructions</code></td>
-              <td></td>
-              <td><code>déclarations (sauf paramètres)</code></td>
-            </tr>
-          </tbody>
-        </table>
-        <br />
-        <i class="fas fa-long-arrow-alt-down"></i> : entrée (non modifiable)<br />
-        <i class="fas fa-long-arrow-alt-up"></i> : sortie<br />
-        <i class="fas fa-arrows-alt-v"></i> : entrée / sortie<br />
-        p : paramètre<br />
-        tp : type du paramètre<br />
+            <th>Ord</td>
+            <th>Lexique</td>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><code>instructions</code></td>
+            <td></td>
+            <td><code>déclarations (sauf paramètres)</code></td>
+          </tr>
+        </tbody>
+      </table>
+      <br />
+      <i class="fas fa-long-arrow-alt-down"></i> : entrée (non modifiable)<br />
+      <i class="fas fa-long-arrow-alt-up"></i> : sortie<br />
+      <i class="fas fa-arrows-alt-v"></i> : entrée / sortie<br />
+      p : paramètre<br />
+      tp : type du paramètre<br />
       </p>
       <li>Fonctions</li>
       <p>Utilisation dans l'algorithme :</code><br />
-        <table>
-          <thead>
-            <tr>
-              <th>algo :<code>nomAlgo</code></td>
-              <th>Ord</td>
-              <th>Lexique</td>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td><code>variable <i class="fas fa-long-arrow-alt-left"></i> Fonction(paramètres)</code></td>
-              <td></td>
-              <td><code>nomFonction(fonction)</code></td>
-            </tr>
-          </tbody>
-        </table>
-        <br />
-        Forme de la fonction
-        <table>
-          <thead>
-            <tr>
-              <th>fonction :<code>nomFonction(p<sub>1</sub>,..., p<sub>n</sub>:tp1;...; p<sub>1</sub>,...,
+      <table>
+        <thead>
+          <tr>
+            <th>algo :<code>nomAlgo</code></td>
+            <th>Ord</td>
+            <th>Lexique</td>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><code>variable <i class="fas fa-long-arrow-alt-left"></i> Fonction(paramètres)</code></td>
+            <td></td>
+            <td><code>nomFonction(fonction)</code></td>
+          </tr>
+        </tbody>
+      </table>
+      <br />
+      Forme de la fonction
+      <table>
+        <thead>
+          <tr>
+            <th>fonction :<code>nomFonction(p<sub>1</sub>,..., p<sub>n</sub>:tp1;...; p<sub>1</sub>,...,
                   p<sub>n</sub>:tp2...):type_fonction</code></td>
-              <th>Ord</td>
-              <th>Lexique</td>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td><code>instructions<br />...<br />nomFonction <i class="fas fa-long-arrow-alt-left"></i>
+            <th>Ord</td>
+            <th>Lexique</td>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><code>instructions<br />...<br />nomFonction <i class="fas fa-long-arrow-alt-left"></i>
                   valeur_à_renvoyer</code></td>
-              <td></td>
-              <td><code>déclarations (sauf paramètres)</code></td>
-            </tr>
-          </tbody>
-        </table>
-        <br />
-        p : paramètre<br />
-        tp : type du paramètre<br />
+            <td></td>
+            <td><code>déclarations (sauf paramètres)</code></td>
+          </tr>
+        </tbody>
+      </table>
+      <br />
+      p : paramètre<br />
+      tp : type du paramètre<br />
       </p>
       <li>Tableaux</li>
       <ol>

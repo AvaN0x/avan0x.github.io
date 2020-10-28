@@ -6,7 +6,7 @@
   <title>AvaN0x - Cookies</title>
   <link rel="stylesheet" media="screen and (min-width:721px)" href="../style.css" />
   <link rel="stylesheet" media="screen and (max-width:720px)" href="../mobile.css" />
-  <meta name="viewport" content="width=max-device-width, initial-scale=1" />
+  <meta name="viewport" content="initial-scale=1" />
   <!-- DISCORD -->
   <meta property="og:title" content="AvaN0x - Cookies" />
   <meta property="og:type" content="website" />
@@ -74,7 +74,7 @@
           c = c.split("=");
           $("table#cookieTable").append("<tr><td>" + c[0].trim() + "</td><td>" + c[1].trim() +
             "</td><td onclick='removeCookie(\"" + c[0].trim() + "\")' title='Supprimer le cookie \"" + c[0]
-          .trim() + "\"'><i class='fas fa-times'></i></td></tr>");
+              .trim() + "\"'><i class='fas fa-times'></i></td></tr>");
         });
 
       } else {
