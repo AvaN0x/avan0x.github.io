@@ -2,162 +2,188 @@
 <html>
 
 <head>
-  <meta charset="utf-8" />
-  <title>AvaN0x - C</title>
-  <link rel="stylesheet" media="screen and (min-width:721px)" href="../../style.css" />
-  <link rel="stylesheet" media="screen and (max-width:720px)" href="../../mobile.css" />
-  <link rel="stylesheet" href="../fiche.css" />
-  <meta name="viewport" content="initial-scale=1" />
-  <!-- DISCORD -->
-  <meta property="og:title" content="AvaN0x - C" />
-  <meta property="og:type" content="website" />
-  <meta property="og:url" content="https://avan0x.github.io/" />
-  <meta property="og:image" content="https://avatars3.githubusercontent.com/u/27494805?s=460&v=4" />
-  <meta property="og:description" content="Par AvaN0x" />
+    <meta charset="utf-8" />
+    <title>AvaN0x - C</title>
+    <link rel="stylesheet" media="screen and (min-width:721px)" href="../../style.css" />
+    <link rel="stylesheet" media="screen and (max-width:720px)" href="../../mobile.css" />
+    <link rel="stylesheet" href="../fiche.css" />
+    <meta name="viewport" content="initial-scale=1" />
+    <!-- DISCORD -->
+    <meta property="og:title" content="AvaN0x - C" />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://avan0x.github.io/" />
+    <meta property="og:image" content="https://avatars3.githubusercontent.com/u/27494805?s=460&v=4" />
+    <meta property="og:description" content="Par AvaN0x" />
 
-  <link href="https://fonts.googleapis.com/css?family=Roboto&display=swap" rel="stylesheet">
-  <link rel="icon" type="image/png" href="https://avatars3.githubusercontent.com/u/27494805?s=460&v=4" />
+    <link href="https://fonts.googleapis.com/css?family=Roboto&display=swap" rel="stylesheet">
+    <link rel="icon" type="image/png" href="https://avatars3.githubusercontent.com/u/27494805?s=460&v=4" />
 
-  <script src="https://kit.fontawesome.com/0383df481c.js" crossorigin="anonymous"></script>
-  <script src="https://code.jquery.com/jquery-3.4.1.js"></script>
+    <script src="https://kit.fontawesome.com/0383df481c.js" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.4.1.js"></script>
 </head>
 
 <body>
-  <div id="menu">
+    <div id="menu">
+        <script>
+            $(function () {
+                $("div#menu").load("../../menu.html");
+            });
+        </script>
+    </div>
+    <div id="cookieAccepter">
+        <p></p>
+        <input type="submit" value="Accepter les cookies" />
+    </div>
+
+
     <script>
-      $(function () {
-        $("div#menu").load("../../menu.html");
-      });
+        $(document).ready(function () {
+            $('.ficheContainer > li > a').click(function () {
+                $(this).parent().toggleClass('active');
+            })
+        })
     </script>
-  </div>
-  <div id="cookieAccepter">
-    <p></p>
-    <input type="submit" value="Accepter les cookies" />
-  </div>
-
-
-  <script>
-    $(document).ready(function () {
-      $('.ficheContainer > li > a').click(function () {
-        $(this).parent().toggleClass('active');
-      })
-    })
-  </script>
-  <section>
-    <h1>C / MinGW / Bibliothèque</h1>
-    <ul class="ficheContainer">
-      <li><a class="text-indent"><i class="fas fa-angle-right" style="position: relative; left: -15px;"></i>Syntaxe
-          C</a>
-        <ol class="fiche">
-          <p class="text-indent">
-            <!-- <i class="fas fa-exclamation-triangle"
+    <section>
+        <h1>C / MinGW / Bibliothèque</h1>
+        <ul class="ficheContainer">
+            <li><a class="text-indent"><i class="fas fa-angle-right"
+                        style="position: relative; left: -15px;"></i>Syntaxe
+                    C</a>
+                <ol class="fiche">
+                    <p class="text-indent">
+                        <!-- <i class="fas fa-exclamation-triangle"
               style="position: relative; left: -15px;"></i>Cette fiche n'est pas un cours, mais une fiche de syntaxe. Je
             vous conseille vivement d'aller faire le cours  -->
-            Je vous conseille vivement d'aller faire le cours
-            <a href="https://openclassrooms.com/fr/courses/19980-apprenez-a-programmer-en-c/13300-vous-avez-dit-programmer"
-              title="Apprenez à programmer en C !">OpenClassRoom sur le C</a>.</p>
-          <!-- <p>A venir</p> -->
-        </ol>
-      </li>
-
-
-      <li><a class="text-indent"><i class="fas fa-angle-right" style="position: relative; left: -15px;"></i>Installer
-          MinGW</a>
-        <ol class="tuto">
-          <p class="text-indent" style="margin-top: 0"><i class="fas fa-address-card"
-              style="position: relative; left: -15px;"></i>Tuto originel par <a
-              href="https://github.com/WildGoat07">WildGoat07</a>.</p>
-          <li>Commencez par télécharger l'installateur MinGW <a
-              href="https://osdn.net/frs/redir.php?m=rwthaachen&f=mingw%2F68260%2Fmingw-get-setup.exe"
-              title="mingw.org">ici</a> et exécutez le</li>
-          <li>Une fois installé, lancez le :</li>
-          <ol>
-            <li>Cochez la case <code>mingw32-base-bin</code></li>
-            <li>Appliquez les changements dans : Installation > Apply Changes > Apply</li>
-            <img src="../src/c_mingw1.png" />
-            <p>Le répertoire par défaut est <code>C:\MinGW</code>, il contient un dossier <code>bin</code> avec les
-              éxécutables.</p>
-          </ol>
-          <li>Pour pouvoir utiliser la commande <code>gcc</code>, nous allons mettre le dossier <code>bin</code> en
-            variable d'environnement :</li>
-          <ol>
-            <li>Allez dans le Panneau de configuration</li>
-            <li>Système et sécurité</li>
-            <img src="../src/c_mingw2.png" />
-            <li>Système</li>
-            <img src="../src/c_mingw3.png" />
-            <li>Paramètres système avancés (sur le panneau latéral gauche)</li>
-            <img src="../src/c_mingw4.png" />
-            <li>Variable d'environnement...</li>
-            <img src="../src/c_mingw5.png" />
-            <li>Sélectionnez PATH et cliquez sur Modifier</li>
-            <img src="../src/c_mingw6.png" />
-            <li>Cliquez sur Nouveau et entrez le chemin complet vers le dossier <code>bin</code>, par défaut ce sera
-              <code>C:\MinGW\bin</code></li>
-            <img src="../src/c_mingw7.png" />
-            <li>Appuyez sur OK et vous avez fini</li>
-          </ol>
-          <p>Vous avez maintenant accès à la commande <code>gcc</code> depuis n'importe où avec : <code>gcc [noms des
-              fichiers] -o [nom de l'executable]</code> par exemple : <code>gcc main.c -o app.exe</code>.</p>
-        </ol>
-      </li>
-
-
-      <li><a class="text-indent"><i class="fas fa-angle-right" style="position: relative; left: -15px;"></i>Installer la
-          SDL</a>
-        <ol class="tuto">
-          <p class="text-indent"><i class="fas fa-exclamation-triangle" style="position: relative; left: -15px;"></i>Ce
-            tuto fonctionne avec la SDL 1.2 nécessaire pour le cours <a
-              href="https://openclassrooms.com/fr/courses/19980-apprenez-a-programmer-en-c/13300-vous-avez-dit-programmer"
-              title="Apprenez à programmer en C !">OpenClassRoom</a>.</p>
-          <p class="text-indent"><i class="fas fa-exclamation-triangle" style="position: relative; left: -15px;"></i>Ce
-            tuto peut fonctionner avec plusieurs autres bibliothèques, tachez surtout de trouver les bons noms de lib.
-          </p>
-          <li>Téléchargez la version Developement pour Mingw32, pour la SDL vous pouvez la trouver sur cette <a
-              href="https://www.libsdl.org/download-1.2.php" target="blank">page</a>.</li>
-          <li>Vous trouvez maintenant plusieurs dossiers ainsi que la documentation, copier le dossier
-            <code>include</code> ainsi que <code>lib</code> à la racine de votre programme.</li>
-          <li>Copier tous les fichiers <code>.dll</code> présents dans le dossier <code>bin</code> à la racine de votre
-            programme.<br />
-            Vous devriez obtenir quelque chose comme cela :</li>
-          <img src="../src/c_sdl1.png" />
-          <li>Le plus simple est maintenant terminé, vous devez maintenant trouver les paramètres nécessaires pour faire
-            fonctionner la bibliothèque.<br />
-            Globalement vous devez prendre les fichiers commençant par lib et d'extension .a ou .lib (il peut aussi ne
-            pas commencer par lib, dans certains cas) dans le dossier <code>lib</code>. Dans le cas de la SDL nous avons
-            deux fichiers dans ce cas : <code>libSDL.dll.a</code> et <code>libSDLmain.a</code>.<br />
-            Pour les ajouter en paramètres à la commande gcc, vous précisez que ce sont des bibliothèques avec
-            <code>-l</code> et vous pouvez enlever le lib au début, ainsi que l'extension, vous avez donc : <code>gcc
-              main.c -o app -lSDL -lSDLmain</code>.<br />
-            Mais ce n'est pas fini, car la SDL a besoin d'autres paramètres (faites des recherches dans le cas d'autres
-            bibliothèques pour savoir s'il est nécessaire d'utiliser d'autres paramètres), ils sont
-            <code>-lmingw32</code> ainsi que <code>-mwindows</code>.<br />
-            Vous avez donc <code>gcc main.c -o app -lSDLmain -lSDL -lmingw32 -mwindows</code>.
-          </li>
-          <li>Pensez à ajouter un #include vers le .h principal de la bibliothèque, ici il se trouve dans
-            <code>include\SDL\SDL.h</code>, vous devez donc mettre <code>#include <<em></em>SDL/SDL.h></code>.</li>
-          <li>Vous avez terminé d'installer la bibliothèque.</li>
-          <li>Si vous voulez ajouter la SDL_image, téléchargez la <a
-              href="https://www.libsdl.org/projects/SDL_image/release-1.2.html">ici</a> (Development > MinGW).</li>
-          <ol>
-            <li>Pour le cas d'un complément de la SDL, placez le fichier du dossier include, vers le dossier SDL
-              (présent dans votre dossier include de votre projet).</li>
-            <li>Ici vous avez deux versions pour le dossier lib, prennez la version correspondant à votre ordinateur, et
-              placez le .lib vers votre dossier lib ainsi que les .dll dans le répertoire de votre projet.</li>
-            <li>Il ne vous reste plus qu'à ajouter <code>-lSDL_image</code> à votre commande gcc (cas spécial dont je
-              vous parlais tout à l'heure, lorsque le fichier ne commence pas par lib).<br />
-              Vous avez donc maintenant : <code>gcc main.c -o app -lSDLmain -lSDL -lmingw32 -mwindows
-                -lSDL_image</code>.
+                        Je vous conseille vivement d'aller faire le cours
+                        <a href="https://openclassrooms.com/fr/courses/19980-apprenez-a-programmer-en-c/13300-vous-avez-dit-programmer"
+                            title="Apprenez à programmer en C !">OpenClassRoom sur le C</a>.
+                    </p>
+                    <!-- <p>A venir</p> -->
+                </ol>
             </li>
-          </ol>
-          <p>Bonne chance, et amusez-vous bien !</p>
-        </ol>
-      </li>
 
-    </ul>
-  </section>
-  <footer></footer>
-  <script src="../../src/cookie.js"></script>
+
+            <li><a class="text-indent"><i class="fas fa-angle-right"
+                        style="position: relative; left: -15px;"></i>Installer
+                    MinGW</a>
+                <ol class="tuto">
+                    <p class="text-indent" style="margin-top: 0"><i class="fas fa-address-card"
+                            style="position: relative; left: -15px;"></i>Tuto originel par <a
+                            href="https://github.com/WildGoat07">WildGoat07</a>.</p>
+                    <li>Commencez par télécharger l'installateur MinGW <a
+                            href="https://osdn.net/frs/redir.php?m=rwthaachen&f=mingw%2F68260%2Fmingw-get-setup.exe"
+                            title="mingw.org">ici</a> et exécutez le</li>
+                    <li>Une fois installé, lancez le :</li>
+                    <ol>
+                        <li>Cochez la case <code>mingw32-base-bin</code></li>
+                        <li>Appliquez les changements dans : Installation > Apply Changes > Apply</li>
+                        <img src="../src/c_mingw1.png" />
+                        <p>Le répertoire par défaut est <code>C:\MinGW</code>, il contient un dossier <code>bin</code>
+                            avec les
+                            éxécutables.</p>
+                    </ol>
+                    <li>Pour pouvoir utiliser la commande <code>gcc</code>, nous allons mettre le dossier
+                        <code>bin</code> en
+                        variable d'environnement :</li>
+                    <ol>
+                        <li>Allez dans le Panneau de configuration</li>
+                        <li>Système et sécurité</li>
+                        <img src="../src/c_mingw2.png" />
+                        <li>Système</li>
+                        <img src="../src/c_mingw3.png" />
+                        <li>Paramètres système avancés (sur le panneau latéral gauche)</li>
+                        <img src="../src/c_mingw4.png" />
+                        <li>Variable d'environnement...</li>
+                        <img src="../src/c_mingw5.png" />
+                        <li>Sélectionnez PATH et cliquez sur Modifier</li>
+                        <img src="../src/c_mingw6.png" />
+                        <li>Cliquez sur Nouveau et entrez le chemin complet vers le dossier <code>bin</code>, par défaut
+                            ce sera
+                            <code>C:\MinGW\bin</code>
+                        </li>
+                        <img src="../src/c_mingw7.png" />
+                        <li>Appuyez sur OK et vous avez fini</li>
+                    </ol>
+                    <p>Vous avez maintenant accès à la commande <code>gcc</code> depuis n'importe où avec : <code>gcc [noms des
+              fichiers] -o [nom de l'executable]</code> par exemple : <code>gcc main.c -o app.exe</code>.</p>
+                </ol>
+            </li>
+
+
+            <li><a class="text-indent"><i class="fas fa-angle-right"
+                        style="position: relative; left: -15px;"></i>Installer la
+                    SDL</a>
+                <ol class="tuto">
+                    <p class="text-indent"><i class="fas fa-exclamation-triangle"
+                            style="position: relative; left: -15px;"></i>Ce
+                        tuto fonctionne avec la SDL 1.2 nécessaire pour le cours <a
+                            href="https://openclassrooms.com/fr/courses/19980-apprenez-a-programmer-en-c/13300-vous-avez-dit-programmer"
+                            title="Apprenez à programmer en C !">OpenClassRoom</a>.</p>
+                    <p class="text-indent"><i class="fas fa-exclamation-triangle"
+                            style="position: relative; left: -15px;"></i>Ce
+                        tuto peut fonctionner avec plusieurs autres bibliothèques, tachez surtout de trouver les bons
+                        noms de lib.
+                    </p>
+                    <li>Téléchargez la version Developement pour Mingw32, pour la SDL vous pouvez la trouver sur cette
+                        <a href="https://www.libsdl.org/download-1.2.php" target="blank">page</a>.</li>
+                    <li>Vous trouvez maintenant plusieurs dossiers ainsi que la documentation, copier le dossier
+                        <code>include</code> ainsi que <code>lib</code> à la racine de votre programme.
+                    </li>
+                    <li>Copier tous les fichiers <code>.dll</code> présents dans le dossier <code>bin</code> à la racine
+                        de votre
+                        programme.<br />
+                        Vous devriez obtenir quelque chose comme cela :</li>
+                    <img src="../src/c_sdl1.png" />
+                    <li>Le plus simple est maintenant terminé, vous devez maintenant trouver les paramètres nécessaires
+                        pour faire
+                        fonctionner la bibliothèque.<br />
+                        Globalement vous devez prendre les fichiers commençant par lib et d'extension .a ou .lib (il
+                        peut aussi ne
+                        pas commencer par lib, dans certains cas) dans le dossier <code>lib</code>. Dans le cas de la
+                        SDL nous avons
+                        deux fichiers dans ce cas : <code>libSDL.dll.a</code> et <code>libSDLmain.a</code>.<br />
+                        Pour les ajouter en paramètres à la commande gcc, vous précisez que ce sont des bibliothèques
+                        avec
+                        <code>-l</code> et vous pouvez enlever le lib au début, ainsi que l'extension, vous avez donc :
+                        <code>gcc
+              main.c -o app -lSDL -lSDLmain</code>.<br />
+                        Mais ce n'est pas fini, car la SDL a besoin d'autres paramètres (faites des recherches dans le
+                        cas d'autres
+                        bibliothèques pour savoir s'il est nécessaire d'utiliser d'autres paramètres), ils sont
+                        <code>-lmingw32</code> ainsi que <code>-mwindows</code>.<br />
+                        Vous avez donc <code>gcc main.c -o app -lSDLmain -lSDL -lmingw32 -mwindows</code>.
+                    </li>
+                    <li>Pensez à ajouter un #include vers le .h principal de la bibliothèque, ici il se trouve dans
+                        <code>include\SDL\SDL.h</code>, vous devez donc mettre
+                        <code>#include <<em></em>SDL/SDL.h></code>.
+                    </li>
+                    <li>Vous avez terminé d'installer la bibliothèque.</li>
+                    <li>Si vous voulez ajouter la SDL_image, téléchargez la <a
+                            href="https://www.libsdl.org/projects/SDL_image/release-1.2.html">ici</a> (Development >
+                        MinGW).</li>
+                    <ol>
+                        <li>Pour le cas d'un complément de la SDL, placez le fichier du dossier include, vers le dossier
+                            SDL
+                            (présent dans votre dossier include de votre projet).</li>
+                        <li>Ici vous avez deux versions pour le dossier lib, prennez la version correspondant à votre
+                            ordinateur, et
+                            placez le .lib vers votre dossier lib ainsi que les .dll dans le répertoire de votre projet.
+                        </li>
+                        <li>Il ne vous reste plus qu'à ajouter <code>-lSDL_image</code> à votre commande gcc (cas
+                            spécial dont je
+                            vous parlais tout à l'heure, lorsque le fichier ne commence pas par lib).<br />
+                            Vous avez donc maintenant : <code>gcc main.c -o app -lSDLmain -lSDL -lmingw32 -mwindows
+                -lSDL_image</code>.
+                        </li>
+                    </ol>
+                    <p>Bonne chance, et amusez-vous bien !</p>
+                </ol>
+            </li>
+
+        </ul>
+    </section>
+    <footer></footer>
+    <script src="../../src/cookie.js"></script>
 </body>
 
 </html>
