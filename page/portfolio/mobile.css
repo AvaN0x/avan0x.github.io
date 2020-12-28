@@ -19,8 +19,8 @@ body {
     margin: 0 0 0 0;
     background: var(--background-color);
     font-family: Roboto, Arial, Helvetica, sans-serif;
-    margin-top: 3.1rem;
-    color: var(--font-color)
+    margin-top: 50px;
+    color: white
 }
 
 header {
@@ -28,7 +28,7 @@ header {
     position: fixed;
     top: 0;
     box-sizing: border-box;
-    height: 3rem;
+    height: 50px;
     background: var(--header-footer-color);
     padding: 5px 25px;
     z-index: 9999
@@ -38,15 +38,9 @@ header img {
     height: 38px;
     border-radius: 50%;
     float: right;
-    border: 1px solid var(--font-color);
+    border: 1px solid white;
     transform: rotate(0);
     transition: .5s
-}
-
-header img:hover {
-    transform: rotate(360deg);
-    border: 1px solid var(--main-color);
-    border-radius: 30%
 }
 
 header>a {
@@ -57,70 +51,11 @@ header>a {
     cursor: pointer;
     transition: .5s;
     text-decoration: none;
-    padding: .7rem 1rem;
+    padding: .7rem .4rem;
 }
 
-header>a:hover {
-    color: var(--main-color);
-}
-
-header>a i {
-    position: relative;
-    font-size: 20px;
-    line-height: 3rem;
-    vertical-align: middle;
-    color: var(--font-color);
-    cursor: pointer;
-    transition: .5s;
-    transform: rotate(0)
-}
-
-header>a:hover i,
-header>label>a i:hover {
-    color: var(--main-color);
-    transform: rotate(1deg) scale(1.1)
-}
-
-/* header>label input {
-    display: none
-}
-
-header>label {
-    cursor: pointer
-}
-
-header>label input:checked~a i {
-    transform: rotate(90deg);
-    color: var(--main-color)
-}
-
-header>label input:checked~a:hover i {
-    transform: rotate(80deg) scale(1.1)
-} */
 
 
-
-
-
-::-webkit-scrollbar {
-    width: 10px
-}
-
-header nav::-webkit-scrollbar {
-    width: 3px
-}
-
-::-webkit-scrollbar-thumb {
-    background: var(--secondary-color)
-}
-
-::-webkit-scrollbar-thumb:hover {
-    background: var(--main-color)
-}
-
-::-webkit-scrollbar-corner {
-    background: var(--secondary-color)
-}
 
 
 div.cover {
@@ -141,14 +76,13 @@ div.cover div {
     font-size: 30px;
     margin: auto;
     display: block;
-    position: sticky;
-    transform: translateY(-50%);
+    position: sticky
 }
 
 div.cover div p,
 div.cover div p a {
     margin: 0;
-    font-size: 1em;
+    font-size: 1.3em;
     color: #fff
 }
 
@@ -169,7 +103,7 @@ div.cover div p:last-of-type {
 
     80% {
         transform: translateY(15px);
-        opacity: .5
+        opacity: .3
     }
 
     100% {
@@ -181,32 +115,29 @@ div.cover div p:last-of-type {
 
 
 
+
 section {
     max-width: 1100px;
     margin: 0 auto;
     padding: 15px;
-    box-sizing: border-box;
     text-align: justify;
-    min-height: calc(100vh - 50px)
+    min-height: calc(100vh - 80px)
 }
 
 section h1 {
     font-size: 1.5em;
     color: var(--main-color);
-    text-align: center;
-    padding-bottom: 8px;
-    border-bottom: 1px solid var(--font-color);
+    text-align: center
 }
 
 section h2 {
     font-size: 1.2em;
-    color: var(--main-color);
-    clear: both
+    color: var(--main-color)
 }
 
 section p {
     font-size: 1em;
-    margin: 8px 0
+    margin: 8px 0;
 }
 
 .text-indent {
@@ -216,17 +147,13 @@ section p {
 footer a,
 section a {
     text-decoration: none;
-    color: var(--main-color)
-}
-
-footer a:hover,
-section a:hover {
+    color: var(--main-color);
     font-weight: bold
 }
 
 footer {
     background-color: var(--header-footer-color);
-    color: var(--font-color);
+    color: #fff;
     position: absolute;
     margin: 0;
     width: 100%;
@@ -235,19 +162,15 @@ footer {
     padding: 10px;
     z-index: 9998;
     display: flex;
-    justify-content: center
+    text-align: center;
+    justify-content: center;
+    flex-direction: column
 }
 
 footer p {
-    margin: 0 20px;
+    margin: 5px 20px;
 }
 
 footer i {
     margin: 0 5px
-}
-
-footer p:not(:last-child):after {
-    content: '-';
-    position: relative;
-    right: -20px
 }
