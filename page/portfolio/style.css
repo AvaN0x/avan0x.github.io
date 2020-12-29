@@ -260,3 +260,24 @@ footer p:not(:last-child):after {
     position: relative;
     right: -20px
 }
+
+
+
+
+
+
+/* ! contact */
+#contact>form * {
+    display: block;
+    margin: 4px 0;
+}
+
+#contact>form>textarea,
+#contact>form>input[type=text] {
+    width: calc(100% - 8px);
+    height: 1.2rem;
+}
+
+#contact>form>textarea {
+    height: 4rem;
+}
