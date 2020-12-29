@@ -125,7 +125,7 @@ header nav::-webkit-scrollbar {
 
 div.cover {
     width: 100%;
-    height: calc(100vh - 50px);
+    height: calc(100vh - 3rem);
     position: relative;
     display: block;
     background-image: url(https://img.wallpapersafari.com/desktop/1920/1080/65/0/BixyA5.jpg);
@@ -187,7 +187,21 @@ section {
     padding: 15px;
     box-sizing: border-box;
     text-align: justify;
-    min-height: calc(100vh - 50px)
+}
+
+section.colored {
+    background-color: var(--secondary-color);
+    margin: 0;
+    max-width: inherit;
+    min-height: inherit;
+}
+
+section.colored>h1 {
+    color: var(--font-color);
+    font-size: 4rem;
+    margin: 0;
+    border-bottom: none;
+    font-variant: small-caps;
 }
 
 section h1 {
@@ -198,11 +212,6 @@ section h1 {
     border-bottom: 1px solid var(--font-color);
 }
 
-section h2 {
-    font-size: 1.2em;
-    color: var(--main-color);
-    clear: both
-}
 
 section p {
     font-size: 1em;

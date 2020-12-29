@@ -76,6 +76,7 @@ div.cover div {
     font-size: 30px;
     margin: auto;
     display: block;
+    transform: translateY(-50%);
     position: sticky
 }
 
