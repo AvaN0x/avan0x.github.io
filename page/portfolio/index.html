@@ -76,17 +76,22 @@
 
     <section id="contact">
         <form>
-            <label for="object">Objet:</label>
-            <input name="object" type="text" />
+            <label for="name">Nom:</label>
+            <input name="name" id="name" type="text" />
             <label for="content">Message:</label>
-            <textarea name="content"></textarea>
-            <input type="submit" value="Send" />
+            <textarea name="content" id="content" rows="5"></textarea>
+            <button type="submit" onclick="sendEmail()">Contacter</button>
         </form>
-
-
-
     </section>
-
+    <script>
+        function sendEmail() {
+            var mail = "XXXXXXXXXXXX@gmail.com";
+            var object = $("#contact > form #name").val().trim();
+            var content = $("#contact > form #content").val().trim();
+            if (object && !object !== "" && content && content !== "")
+                window.location.href = 'mailto:' + mail + '?subject=Contact - ' + object + '&body=' + content;
+        }
+    </script>
 
     <footer></footer>
 </body>
