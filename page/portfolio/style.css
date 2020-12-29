@@ -5,6 +5,7 @@
     --header-footer-color: #291563;
     --background-color: #050E23;
     --font-color: #fff;
+    --cover-url: url(https://img.wallpapersafari.com/desktop/1920/1080/65/0/BixyA5.jpg);
 }
 
 .mainColor {
@@ -128,7 +129,7 @@ div.cover {
     height: calc(100vh - 3rem);
     position: relative;
     display: block;
-    background-image: url(https://img.wallpapersafari.com/desktop/1920/1080/65/0/BixyA5.jpg);
+    background-image: var(--cover-url);
     background-size: cover;
     background-position: center
 }
