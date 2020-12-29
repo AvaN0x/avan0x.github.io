@@ -210,6 +210,9 @@
 
         $('#portfolio > article').click(function () {
             $(this).find('div:first-of-type').fadeIn(1000);
+            $('html').animate({
+                scrollTop: $(this).offset().top - 100
+            });
         })
     </script>
 </body>
