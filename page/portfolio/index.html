@@ -33,7 +33,7 @@
     </div>
 
     <section id="about_title" class="colored">
-        <h1>About</h1>
+        <h1>A propos</h1>
     </section>
 
     <section id="about">
@@ -52,8 +52,35 @@
     </section>
 
     <section id="portfolio">
+        <h1>Projets scolaires</h1>
         <article>
-            <h1>WIP</h1>
+            <h1>PROJET 1<i class="fas fa-mouse-pointer"></i></h1>
+            <div>
+                <p>Informations sur le projet</p>
+            </div>
+            <div>
+                <p>Langages</p>
+            </div>
+        </article>
+        <article>
+            <h1>PROJET 1<i class="fas fa-mouse-pointer"></i></h1>
+            <div>
+                <p>Informations sur le projet</p>
+            </div>
+            <div>
+                <p>Langages</p>
+            </div>
+        </article>
+
+        <h1>Projets personnels</h1>
+        <article>
+            <h1>PROJET 1<i class="fas fa-mouse-pointer"></i></h1>
+            <div>
+                <p>Informations sur le projet</p>
+            </div>
+            <div>
+                <p>Langages</p>
+            </div>
         </article>
     </section>
 
@@ -70,6 +97,8 @@
             <button type="submit" onclick="sendEmail()">Contacter</button>
         </form>
     </section>
+
+    <footer></footer>
     <script>
         function sendEmail() {
             var mail = "XXXXXXXXXXXX@gmail.com";
@@ -78,9 +107,11 @@
             if (object && !object !== "" && content && content !== "")
                 window.location.href = 'mailto:' + mail + '?subject=Contact - ' + object + '&body=' + content;
         }
-    </script>
 
-    <footer></footer>
+        $('#portfolio > article').click(function () {
+            $(this).find('div:first-of-type').show();
+        })
+    </script>
 </body>
 
 </html>

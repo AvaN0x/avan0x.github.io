@@ -197,6 +197,11 @@ section.colored {
     min-height: inherit;
 }
 
+section.colored:not(:first-of-type) {
+    margin-top: 8rem;
+}
+
+
 section.colored>h1 {
     color: var(--font-color);
     font-size: 4rem;
@@ -263,6 +268,40 @@ footer p:not(:last-child):after {
 }
 
 
+/* ! portfolio */
+#portfolio>h1:not(:first-of-type) {
+    margin-top: 4rem;
+}
+
+#portfolio>article {
+    max-width: 80%;
+    margin: 0 auto;
+}
+
+#portfolio>article>h1 {
+    margin-bottom: 0;
+    color: var(--secondary-color);
+    cursor: pointer;
+    font-size: 1.3em;
+}
+
+#portfolio>article>h1>i {
+    margin-left: 8px;
+    color: var(--font-color);
+    font-size: .9rem;
+    transform: rotate(-10deg)
+}
+
+#portfolio>article>div {
+    border: 1px solid var(--font-color);
+    border-top: none;
+    padding: 8px;
+}
+
+
+#portfolio>article>div:first-of-type {
+    display: none;
+}
 
 
 
