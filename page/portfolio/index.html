@@ -52,6 +52,7 @@
     </section>
 
     <section id="portfolio">
+        <i>Cliquez sur un titre pour dérouler des informations sur le projet.</i>
         <h1>Projets scolaires</h1>
         <article>
             <h1>PROJET 1<i class="fas fa-mouse-pointer"></i></h1>
@@ -59,7 +60,7 @@
                 <p>Informations sur le projet</p>
             </div>
             <div>
-                <p>Langages</p>
+                <p>Langages : </p>
             </div>
         </article>
         <article>
@@ -68,7 +69,7 @@
                 <p>Informations sur le projet</p>
             </div>
             <div>
-                <p>Langages</p>
+                <p>Langages : </p>
             </div>
         </article>
 
@@ -79,7 +80,7 @@
                 <p>Informations sur le projet</p>
             </div>
             <div>
-                <p>Langages</p>
+                <p>Langages : </p>
             </div>
         </article>
     </section>
@@ -109,7 +110,7 @@
         }
 
         $('#portfolio > article').click(function () {
-            $(this).find('div:first-of-type').show();
+            $(this).find('div:first-of-type').fadeIn(1000);
         })
     </script>
 </body>

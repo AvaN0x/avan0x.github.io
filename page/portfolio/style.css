@@ -269,6 +269,10 @@ footer p:not(:last-child):after {
 
 
 /* ! portfolio */
+#portfolio>i:first-of-type {
+    color: var(--main-transparent-color)
+}
+
 #portfolio>h1:not(:first-of-type) {
     margin-top: 4rem;
 }
