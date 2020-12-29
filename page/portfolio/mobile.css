@@ -121,14 +121,31 @@ section {
     max-width: 1100px;
     margin: 0 auto;
     padding: 15px;
+    box-sizing: border-box;
     text-align: justify;
-    min-height: calc(100vh - 80px)
+}
+
+section.colored {
+    background-color: var(--secondary-color);
+    margin: 0;
+    max-width: inherit;
+    min-height: inherit;
+}
+
+section.colored>h1 {
+    color: var(--font-color);
+    font-size: 4rem;
+    margin: 0;
+    border-bottom: none;
+    font-variant: small-caps;
 }
 
 section h1 {
     font-size: 1.5em;
     color: var(--main-color);
-    text-align: center
+    text-align: center;
+    padding-bottom: 8px;
+    border-bottom: 1px solid var(--font-color);
 }
 
 section h2 {
@@ -174,4 +191,45 @@ footer p {
 
 footer i {
     margin: 0 5px
+}
+
+
+
+/* ! contact */
+#contact {
+    display: flex;
+    /* align-items: center; */
+    justify-content: center;
+}
+
+#contact>form * {
+    display: block;
+    margin: 4px 0;
+    /* align-self: center; */
+}
+
+#contact>form>textarea,
+#contact>form>input[type=text] {
+    width: 90vw;
+    min-height: 1.2rem;
+}
+
+#contact>form>button {
+    left: 50%;
+    transform: translateX(-50%);
+    position: relative;
+    text-align: center;
+    padding: 10px;
+    margin: 10px;
+    border-radius: 10px;
+    border: 2px solid var(--header-footer-color);
+    background: var(--main-transparent-color);
+    color: var(--font-color);
+    cursor: pointer;
+    transition: .5s;
+    font-size: 1em
+}
+
+#contact>form>button:hover {
+    background: var(--main-color);
 }
