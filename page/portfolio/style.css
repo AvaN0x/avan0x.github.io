@@ -90,7 +90,6 @@ header>a i {
 header>a:hover i,
 header>label>a i:hover {
     color: var(--main-color);
-    transform: rotate(1deg) scale(1.1)
 }
 
 /* header>label input {
