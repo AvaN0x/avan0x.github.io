@@ -2,6 +2,7 @@
     /* --main-color: #8335FF;
     --main-transparent-color: #8335FFb0;
     --secondary-color: #894ee9;
+    --bar-color: #894ee9;
     --header-footer-color: #291563;
     --background-color: #050E23;
     --header-font-color: #fff;
@@ -10,6 +11,7 @@
     --main-color: #74C8FF;
     --main-transparent-color: #74C8FFb0;
     --secondary-color: #73BEFF;
+    --bar-color: #547B9E;
     --header-footer-color: #0D161C;
     --background-color: #272727;
     --header-font-color: #fff;
@@ -200,7 +202,7 @@ section {
 }
 
 section.colored {
-    background-color: var(--secondary-color);
+    background-color: var(--bar-color);
     margin: 0;
     max-width: inherit;
     min-height: inherit;
