@@ -150,7 +150,7 @@ div.cover div p,
 div.cover div p a {
     margin: 0;
     font-size: 1em;
-    color: #fff
+    color: var(--font-color)
 }
 
 div.cover div p:last-of-type {
