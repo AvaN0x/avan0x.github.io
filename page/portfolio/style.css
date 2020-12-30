@@ -288,64 +288,85 @@ footer p:not(:last-child):after {
     margin-top: 4rem;
 }
 
-#portfolio>article {
+#portfolio article {
     max-width: 80%;
     margin: 0 auto;
 }
 
-#portfolio>article>h1 {
-    margin-bottom: 0;
+#portfolio article>h1 {
+    margin: 0;
     color: var(--secondary-color);
     cursor: pointer;
     font-size: 1.3em;
 }
 
-#portfolio>article>h1>i {
+#portfolio article>h1>i {
     margin-left: 8px;
     color: var(--font-color);
     font-size: .9rem;
-    transform: rotate(-10deg)
+    transform: rotate(-0deg)
 }
 
-#portfolio>article>div {
+#portfolio article>div {
     border: 1px solid var(--font-color);
     border-top: none;
     padding: 8px;
 }
 
 
-#portfolio>article>div:first-of-type {
+#portfolio article>div:first-of-type {
     display: none;
 }
 
-#portfolio>article>div:last-of-type>a {
+#portfolio article>div:last-of-type {
+    margin-bottom: 1rem;
+}
+
+#portfolio article>div:last-of-type>a {
     float: right;
     margin-right: 8px;
 }
 
-#portfolio>article>div:last-of-type>a>i {
+#portfolio article>div:last-of-type>a>i {
     margin-right: 8px;
     font-size: 1.2rem;
-    transition: .5s
+    transition: .5s;
 }
 
 
-#portfolio>article>div:last-of-type>a>i.fa-github {
+#portfolio article>div:last-of-type>a>i.fa-github {
     color: #fff;
 }
 
-#portfolio>article>div:last-of-type>a>i.fa-youtube {
+#portfolio article>div:last-of-type>a>i.fa-youtube {
     color: #eb4034;
 }
 
-#portfolio>article>div:last-of-type>a>i.fa-external-link-alt {
+#portfolio article>div:last-of-type>a>i.fa-external-link-alt {
     color: #fff;
 }
 
-#portfolio>article>div:last-of-type>a:hover>i {
+#portfolio article>div:last-of-type>a:hover>i {
     color: var(--main-color)
 }
 
+#portfolio>.semester {
+    transition: .5s;
+    border-left: 2px solid var(--secondary-color);
+    box-sizing: border-box;
+    padding-bottom: .5rem;
+    margin-bottom: 2rem;
+}
+
+#portfolio>h1.semester_title {
+    border: none;
+    border-bottom: 2px solid var(--secondary-color);
+    font-size: 1.2rem;
+    padding: 0 4px;
+    margin: 0;
+    text-align: left;
+    display: inline-block;
+}
 
 /* ! contact */
 #contact {
