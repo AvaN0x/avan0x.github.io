@@ -9,7 +9,7 @@
     --cover-url: url(https://img.wallpapersafari.com/desktop/1920/1080/65/0/BixyA5.jpg); */
     --main-color: #74C8FF;
     --main-transparent-color: #74C8FFb0;
-    --secondary-color: #709AC2;
+    --secondary-color: #73BEFF;
     --header-footer-color: #0D161C;
     --background-color: #272727;
     --header-font-color: #fff;
@@ -279,7 +279,7 @@ footer p:not(:last-child):after {
 
 /* ! portfolio */
 #portfolio>i:first-of-type {
-    color: var(--main-transparent-color)
+    opacity: .5
 }
 
 #portfolio>h1:not(:first-of-type) {
