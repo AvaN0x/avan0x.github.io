@@ -1,11 +1,20 @@
 :root {
-    --main-color: #8335FF;
+    /* --main-color: #8335FF;
     --main-transparent-color: #8335FFb0;
     --secondary-color: #894ee9;
     --header-footer-color: #291563;
     --background-color: #050E23;
+    --header-font-color: #fff;
     --font-color: #fff;
-    --cover-url: url(https://img.wallpapersafari.com/desktop/1920/1080/65/0/BixyA5.jpg);
+    --cover-url: url(https://img.wallpapersafari.com/desktop/1920/1080/65/0/BixyA5.jpg); */
+    --main-color: #74C8FF;
+    --main-transparent-color: #74C8FFb0;
+    --secondary-color: #709AC2;
+    --header-footer-color: #0D161C;
+    --background-color: #2e3035;
+    --header-font-color: #fff;
+    --font-color: #fff;
+    --cover-url: url(https://wallpaperaccess.com/full/521099.jpg);
 }
 
 .mainColor {
@@ -39,7 +48,7 @@ header img {
     height: 38px;
     border-radius: 50%;
     float: right;
-    border: 1px solid var(--font-color);
+    border: 1px solid var(--header-font-color);
     transform: rotate(0);
     transition: .5s
 }
@@ -54,7 +63,7 @@ header>a {
     position: relative;
     font-size: 20px;
     line-height: 2.4rem;
-    color: var(--font-color);
+    color: var(--header-font-color);
     cursor: pointer;
     transition: .5s;
     text-decoration: none;
