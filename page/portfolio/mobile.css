@@ -197,6 +197,74 @@ footer i {
 }
 
 
+.segment {
+    transition: .5s;
+    border-left: 2px solid var(--secondary-color);
+    box-sizing: border-box;
+    padding-bottom: .3rem;
+    margin-bottom: 2rem;
+}
+
+h1.segment_title {
+    border: none;
+    border-bottom: 2px solid var(--secondary-color);
+    font-size: 1.2rem;
+    padding: 0 4px;
+    margin: 0;
+    text-align: left;
+    display: inline-block;
+}
+
+.segment>ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 8px;
+}
+
+/* ! about */
+.container_experience {
+    margin: 0;
+    padding: 4px;
+}
+
+.container_experience>h1 {
+    border: none;
+    text-align: left;
+    font-size: 1rem;
+    margin: 0;
+    padding: 0;
+}
+
+.container_experience>p {
+    text-indent: 20px;
+    margin: 2px;
+}
+
+@keyframes barfill {
+    0% {
+        width: 0
+    }
+}
+
+div.skillbar {
+    height: 10px;
+    width: 100px;
+    border-radius: 5px;
+    display: inline-block;
+    margin: 5px;
+    position: relative;
+    top: 5px;
+    border: 1px solid #ffffff60;
+}
+
+div.skillbar .fill {
+    height: 100%;
+    background-color: var(--main-color);
+    border-radius: 5px;
+    animation: barfill 2s ease-in-out
+}
+
+
 /* ! portfolio */
 #portfolio>i:first-of-type {
     opacity: .5
@@ -267,23 +335,6 @@ footer i {
     color: var(--main-color)
 }
 
-#portfolio>.semester {
-    transition: .5s;
-    border-left: 2px solid var(--secondary-color);
-    box-sizing: border-box;
-    padding-bottom: .5rem;
-    margin-bottom: 2rem;
-}
-
-#portfolio>h1.semester_title {
-    border: none;
-    border-bottom: 2px solid var(--secondary-color);
-    font-size: 1.2rem;
-    padding: 0 4px;
-    margin: 0;
-    text-align: left;
-    display: inline-block;
-}
 
 
 
@@ -314,7 +365,7 @@ footer i {
     padding: 10px;
     margin: 10px;
     border-radius: 10px;
-    border: 2px solid var(--header-footer-color);
+    border: 1px solid var(--font-color);
     background: var(--main-transparent-color);
     color: var(--font-color);
     cursor: pointer;
@@ -323,5 +374,7 @@ footer i {
 }
 
 #contact>form>button:hover {
-    background: var(--main-color);
+    border: 1px solid var(--main-color);
+    background: var(--font-color);
+    color: var(--main-color);
 }
