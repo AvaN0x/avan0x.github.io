@@ -13,7 +13,7 @@
     --secondary-color: #73BEFF;
     --bar-color: #547B9E;
     --header-footer-color: #0D161C;
-    --background-color: #272727;
+    --background-color: #373737;
     --header-font-color: #fff;
     --font-color: #fff;
     --cover-url: url(https://wallpaperaccess.com/full/521099.jpg);
@@ -318,7 +318,33 @@ footer p:not(:last-child):after {
     display: none;
 }
 
+#portfolio>article>div:last-of-type>a {
+    float: right;
+    margin-right: 8px;
+}
 
+#portfolio>article>div:last-of-type>a>i {
+    margin-right: 8px;
+    font-size: 1.2rem;
+    transition: .5s
+}
+
+
+#portfolio>article>div:last-of-type>a>i.fa-github {
+    color: #fff;
+}
+
+#portfolio>article>div:last-of-type>a>i.fa-youtube {
+    color: #eb4034;
+}
+
+#portfolio>article>div:last-of-type>a>i.fa-external-link-alt {
+    color: #fff;
+}
+
+#portfolio>article>div:last-of-type>a:hover>i {
+    color: var(--main-color)
+}
 
 
 /* ! contact */
