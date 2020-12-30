@@ -205,7 +205,7 @@
             var object = $("#contact > form #name").val().trim();
             var content = $("#contact > form #content").val().trim();
             if (object && !object !== "" && content && content !== "")
-                window.location.href = 'mailto:' + mail + '?subject=Contact - ' + object + '&body=' + content;
+                window.open('mailto:' + mail + '?subject=Contact - ' + object + '&body=' + content);
         }
 
         $('#portfolio > article').click(function () {
