@@ -1,10 +1,13 @@
 :root {
-    --main-color: #8335FF;
-    --main-transparent-color: #8335FFb0;
-    --secondary-color: #894ee9;
-    --header-footer-color: #291563;
-    --background-color: #050E23;
+    --main-color: #74C8FF;
+    --main-transparent-color: #74C8FFb0;
+    --secondary-color: #73BEFF;
+    --bar-color: #547B9E;
+    --header-footer-color: #0D161C;
+    --background-color: #373737;
+    --header-font-color: #fff;
     --font-color: #fff;
+    --cover-url: url(https://wallpaperaccess.com/full/521099.jpg);
 }
 
 .mainColor {
@@ -51,7 +54,7 @@ header>a {
     cursor: pointer;
     transition: .5s;
     text-decoration: none;
-    padding: .7rem .4rem;
+    padding: .1rem;
 }
 
 
@@ -63,7 +66,7 @@ div.cover {
     height: calc(100vh - 50px);
     position: relative;
     display: block;
-    background-image: url(https://img.wallpapersafari.com/desktop/1920/1080/65/0/BixyA5.jpg);
+    background-image: var(--cover-url);
     background-size: cover;
     background-position: center
 }
@@ -191,6 +194,96 @@ footer p {
 
 footer i {
     margin: 0 5px
+}
+
+
+/* ! portfolio */
+#portfolio>i:first-of-type {
+    opacity: .5
+}
+
+#portfolio>h1:not(:first-of-type) {
+    margin-top: 4rem;
+}
+
+#portfolio article {
+    max-width: 95%;
+    margin: 0 auto;
+}
+
+#portfolio article>h1 {
+    margin: 0;
+    color: var(--secondary-color);
+    cursor: pointer;
+    font-size: 1.3em;
+}
+
+#portfolio article>h1>i {
+    margin-left: 8px;
+    color: var(--font-color);
+    font-size: .9rem;
+    transform: rotate(-0deg)
+}
+
+#portfolio article>div {
+    border: 1px solid var(--font-color);
+    border-top: none;
+    padding: 8px;
+}
+
+
+#portfolio article>div:first-of-type {
+    display: none;
+}
+
+#portfolio article>div:last-of-type {
+    margin-bottom: 1rem;
+}
+
+#portfolio article>div:last-of-type>a {
+    display: inline-block;
+}
+
+
+#portfolio article>div:last-of-type>a>i {
+    margin-right: 8px;
+    font-size: 1.2rem;
+    transition: .5s;
+}
+
+
+#portfolio article>div:last-of-type>a>i.fa-github {
+    color: #fff;
+}
+
+#portfolio article>div:last-of-type>a>i.fa-youtube {
+    color: #eb4034;
+}
+
+#portfolio article>div:last-of-type>a>i.fa-external-link-alt {
+    color: #fff;
+}
+
+#portfolio article>div:last-of-type>a:hover>i {
+    color: var(--main-color)
+}
+
+#portfolio>.semester {
+    transition: .5s;
+    border-left: 2px solid var(--secondary-color);
+    box-sizing: border-box;
+    padding-bottom: .5rem;
+    margin-bottom: 2rem;
+}
+
+#portfolio>h1.semester_title {
+    border: none;
+    border-bottom: 2px solid var(--secondary-color);
+    font-size: 1.2rem;
+    padding: 0 4px;
+    margin: 0;
+    text-align: left;
+    display: inline-block;
 }
 
 
