@@ -15,7 +15,7 @@ function sendEmail() {
 }
 
 $('#portfolio article > h1:first-of-type').click(function () {
-    var contentElt = $(this).parent().find('div:first-of-type');
+    var contentElt = $(this).parent().find('>div:first-of-type');
     if (!contentElt.is(":visible")) {
         contentElt.fadeIn(1000);
         // scroll to the element
