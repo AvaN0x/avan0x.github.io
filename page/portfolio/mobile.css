@@ -86,9 +86,14 @@ div.cover div {
 div.cover div p,
 div.cover div p a {
     margin: 0;
-    font-size: 1.3em;
-    color: #fff
+    font-size: 1.5rem;
+    color: var(--font-color)
 }
+
+div.cover div p b {
+    font-size: 2rem;
+}
+
 
 div.cover div p:last-of-type {
     margin: 0;
