@@ -297,7 +297,7 @@ div.skillbar .fill {
 
 
 /* ! portfolio */
-#portfolio>i:first-of-type {
+.small_detail {
     opacity: .5
 }
 

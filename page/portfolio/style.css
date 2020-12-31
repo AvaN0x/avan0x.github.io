@@ -92,23 +92,6 @@ header>label>a i:hover {
     color: var(--main-color);
 }
 
-/* header>label input {
-    display: none
-}
-
-header>label {
-    cursor: pointer
-}
-
-header>label input:checked~a i {
-    transform: rotate(90deg);
-    color: var(--main-color)
-}
-
-header>label input:checked~a:hover i {
-    transform: rotate(80deg) scale(1.1)
-} */
-
 
 
 
@@ -374,7 +357,7 @@ div.skillbar .fill {
 }
 
 /* ! portfolio */
-#portfolio>i:first-of-type {
+.small_detail {
     opacity: .5
 }
 
