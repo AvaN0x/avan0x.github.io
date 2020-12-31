@@ -298,7 +298,10 @@ h1.segment_title {
 .skills>li>span>img {
     height: 1rem;
     vertical-align: middle;
-    padding: 0 4px 0 0;
+    margin: 0 4px 0 0;
+    padding: 4px;
+    border-radius: 8px;
+    background-color: #00000060;
 }
 
 #portfolio article>div:last-of-type>span>img {
