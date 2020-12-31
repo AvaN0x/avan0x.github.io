@@ -290,6 +290,10 @@ h1.segment_title {
     padding: 4px 0;
 }
 
+.segment>ul>li>b {
+    letter-spacing: 1px;
+}
+
 #portfolio article>div:last-of-type>span>img,
 .skills>li>span>img {
     height: 1rem;
