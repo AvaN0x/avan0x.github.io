@@ -345,6 +345,17 @@ div.skillbar .fill {
     font-size: 1.2rem;
 }
 
+#portfolio article>div:first-of-type>ul {
+    list-style-type: "\21AA \0020";
+    margin: 0;
+    margin-left: 18px;
+    padding: 0;
+}
+
+#portfolio article>div:first-of-type>ul>li {
+    padding: 2px 0;
+}
+
 #portfolio article>div:first-of-type>div:last-of-type {
     -webkit-touch-callout: none;
     -webkit-user-select: none;
