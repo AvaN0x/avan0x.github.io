@@ -201,7 +201,7 @@ footer i {
     transition: .5s;
     border-left: 2px solid var(--secondary-color);
     box-sizing: border-box;
-    padding-bottom: .3rem;
+    padding-bottom: .1rem;
     margin-bottom: 2rem;
 }
 
@@ -219,6 +219,10 @@ h1.segment_title {
     list-style-type: none;
     margin: 0;
     padding: 8px;
+}
+
+.segment>ul>li {
+    padding: 4px 0;
 }
 
 #portfolio article>div:last-of-type>span>img,
@@ -243,7 +247,7 @@ h1.segment_title {
     text-align: left;
     font-size: 1rem;
     margin: 0;
-    padding: 0 4px;
+    padding: 8px 4px 0 4px;
 }
 
 
