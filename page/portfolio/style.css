@@ -402,6 +402,33 @@ div.skillbar .fill {
     display: none;
 }
 
+#portfolio article>div:first-of-type>h2 {
+    color: var(--secondary-color);
+    margin: 0;
+    font-size: 1.2rem;
+}
+
+#portfolio article>div:first-of-type>ul {
+    list-style-type: "\21AA \0020";
+    margin: 0;
+    margin-left: 18px;
+    padding: 0;
+}
+
+#portfolio article>div:first-of-type>ul>li {
+    padding: 2px 0;
+}
+
+#portfolio article>div:first-of-type>div:last-of-type {
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+
 #portfolio article>div:last-of-type {
     margin-bottom: 1rem;
 }
