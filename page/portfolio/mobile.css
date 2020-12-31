@@ -221,6 +221,33 @@ h1.segment_title {
     padding: 8px;
 }
 
+#portfolio article>div:last-of-type>span>img,
+.skills>li>span>img {
+    height: 1rem;
+    vertical-align: middle;
+    padding: 0 4px 0 0;
+}
+
+#portfolio article>div:last-of-type>span>img {
+    vertical-align: top;
+}
+
+#portfolio article>div:last-of-type>span:not(:last-of-type):after,
+.skills>li>span:not(:last-of-type):after {
+    content: "-";
+    margin: 0 6px;
+}
+
+.segment>h1 {
+    border: none;
+    text-align: left;
+    font-size: 1rem;
+    margin: 0;
+    padding: 0 4px;
+}
+
+
+
 /* ! about */
 .container_experience {
     margin: 0;
@@ -307,31 +334,32 @@ div.skillbar .fill {
     margin-bottom: 1rem;
 }
 
-#portfolio article>div:last-of-type>a {
-    display: inline-block;
+#portfolio article>div:last-of-type>.links {
+    margin-top: 10px;
+    display: block;
 }
 
 
-#portfolio article>div:last-of-type>a>i {
+#portfolio article>div:last-of-type>.links>a>i {
     margin-right: 8px;
     font-size: 1.2rem;
     transition: .5s;
 }
 
 
-#portfolio article>div:last-of-type>a>i.fa-github {
+#portfolio article>div:last-of-type>.links>a>i.fa-github {
     color: #fff;
 }
 
-#portfolio article>div:last-of-type>a>i.fa-youtube {
+#portfolio article>div:last-of-type>.links>a>i.fa-youtube {
     color: #eb4034;
 }
 
-#portfolio article>div:last-of-type>a>i.fa-external-link-alt {
+#portfolio article>div:last-of-type>.links>a>i.fa-external-link-alt {
     color: #fff;
 }
 
-#portfolio article>div:last-of-type>a:hover>i {
+#portfolio article>div:last-of-type>.links>a:hover>i {
     color: var(--main-color)
 }
 
