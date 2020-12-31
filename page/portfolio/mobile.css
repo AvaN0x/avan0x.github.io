@@ -241,10 +241,6 @@ h1.segment_title {
     padding: 0 4px 0 0;
 }
 
-#portfolio article>div:last-of-type>span>img {
-    vertical-align: top;
-}
-
 #portfolio article>div:last-of-type>span:not(:last-of-type):after,
 .skills>li>span:not(:last-of-type):after {
     content: "-";
