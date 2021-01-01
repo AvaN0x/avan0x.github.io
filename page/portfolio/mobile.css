@@ -346,9 +346,9 @@ div.skillbar .fill {
 }
 
 #portfolio article>div:first-of-type>ul {
-    list-style-type: "\21AA \0020";
+    list-style-type: "- ";
     margin: 0;
-    margin-left: 18px;
+    margin-left: 12px;
     padding: 0;
 }
 
