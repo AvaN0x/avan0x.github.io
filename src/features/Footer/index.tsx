@@ -18,12 +18,7 @@ const FooterContainer = styled.div`
 
     & > p {
         margin: 0 20px;
-        
-        & > a {
-            color: var(--main-color);
-        }
     }
-
 
     & > svg {
         margin: 0 5px
