@@ -32,7 +32,7 @@ header nav::-webkit-scrollbar {
 }
 
 ::-webkit-scrollbar-thumb {
-    background: var(--secondary-color)
+    background: var(--header-footer-color)
 }
 
 ::-webkit-scrollbar-thumb:hover {
@@ -40,7 +40,7 @@ header nav::-webkit-scrollbar {
 }
 
 ::-webkit-scrollbar-corner {
-    background: var(--secondary-color)
+    background: var(--header-footer-color)
 }
 
 
