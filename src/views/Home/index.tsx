@@ -1,6 +1,6 @@
 import React from 'react';
 import Cover from '../../components/Cover';
-import NavBar, { NavBarLink } from '../../features/NavBar';
+import NavBar from '../../features/NavBar';
 
 import logo from '../../logo.svg';
 
@@ -8,8 +8,8 @@ const Home = () => {
     return (
         <>
             <NavBar>
-                <NavBarLink href="/">About</NavBarLink>
-                <NavBarLink href="/">Portfolio</NavBarLink>
+                <a href="/">About</a>
+                <a href="/">Portfolio</a>
             </NavBar>
 
             <Cover url={"https://wallpaperaccess.com/full/521099.jpg"} >

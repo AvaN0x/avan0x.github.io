@@ -20,7 +20,7 @@ const NavBar = ({ children }: PropsType) => {
     return (
         <NavContainer>
             <NavBarToggle isOpen={navState} onClick={handleToggleMenu} />
-            <NavBarLink href="/"><FontAwesomeIcon icon={faHome} /></NavBarLink> {/* // TODO use history.push() */}
+            <a href="/"><FontAwesomeIcon icon={faHome} /></a> {/* // TODO use history.push() */}
             {!isMobile &&
                 children
             }
@@ -43,43 +43,43 @@ const NavContainer = styled.div`
     padding: 0 5px;
     display: flex;
     z-index: 1000;
-`;
 
-export const NavBarLink = styled.a`
-    cursor: pointer;
-    position: relative;
-    font-size: 1.2rem;
-    line-height: calc(3rem - 2 * .7rem);
-    color: var(--header-font-color);
-    text-decoration: none;
-    padding: .7rem 1rem;
-    transition: .5s;
-
-    & > svg {
+    & > a {
+        cursor: pointer;
+        position: relative;
+        font-size: 1.2rem;
+        line-height: calc(3rem - 2 * .7rem);
+        color: var(--header-font-color);
+        text-decoration: none;
+        padding: .7rem 1rem;
         transition: .5s;
-        font-size: 1.6rem;
-    }
-
-    &:hover {
-        color: var(--main-color);
 
         & > svg {
-            transform: rotate(5deg) scale(1.1)
+            transition: .5s;
+            font-size: 1.6rem;
+        }
+
+        &:hover {
+            color: var(--main-color);
+
+            & > svg {
+                transform: rotate(5deg) scale(1.1)
+            }
         }
     }
 `;
 
-const ToggleLink = styled(NavBarLink) <{ isOpen?: boolean }>`
+const ToggleLink = styled.a<{ isOpen?: boolean }>`
     width: 1.2rem;
 
     ${props => props.isOpen && css`
-        color: var(--main-color);
-
         & svg {
             transform: rotate(90deg);
+            color: var(--main-color);
         }
-        &:hover svg{
-            transform: rotate(80deg) scale(1.1)
+
+        &:hover svg {
+            transform: rotate(80deg) scale(1.1) !important;
         }
     `}
 `;
