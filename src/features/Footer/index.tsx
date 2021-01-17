@@ -1,7 +1,11 @@
 import React from 'react';
 import styled from '@emotion/styled';
+import { css } from '@emotion/react';
+import { isMobile } from 'react-device-detect';
+
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faGithub } from '@fortawesome/free-brands-svg-icons';
+
 
 const FooterContainer = styled.div`
     background-color: var(--header-footer-color);
@@ -15,6 +19,9 @@ const FooterContainer = styled.div`
     display: flex;
     justify-content: center;
     box-sizing: border-box;
+    ${isMobile && css`
+        flex-direction: column;
+    `}
 
     & > p {
         margin: 0 20px;
@@ -24,11 +31,13 @@ const FooterContainer = styled.div`
         margin: 0 5px
     }
 
-    & > p:not(:last-child):after {
-        content: '-';
-        position: relative;
-        right: -20px
-    }
+    ${!isMobile && css`
+        & > p:not(:last-child):after {
+            content: '-';
+            position: relative;
+            right: -20px
+        }
+    `}
 `;
 
 const Footer = () => {

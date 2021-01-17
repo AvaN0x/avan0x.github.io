@@ -1,5 +1,6 @@
 import React from 'react';
 import styled from '@emotion/styled';
+
 import { keyframes } from '@emotion/react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faAngleDoubleDown } from '@fortawesome/free-solid-svg-icons';
@@ -36,7 +37,6 @@ const CoverContentContainer = styled.div`
     top: 50%;
     width: 100%;
     text-align: center;
-    font-size: 30px;
     margin: auto;
     display: flex;
     justify-content: center;
@@ -56,11 +56,11 @@ const CoverContentContainer = styled.div`
 `;
 
 const AnimatedScroller = styled.a`
-    padding-bottom: 15px;
+    padding-bottom: 1rem;
     animation: ${Scroll} 1.8s linear infinite;
 
     & > svg {
-        font-size: 1.2em;
+        font-size: 1.8rem;
     }
 `;
 
