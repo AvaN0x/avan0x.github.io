@@ -1,8 +1,37 @@
 import React from 'react';
 import styled from '@emotion/styled';
 import { isMobile } from 'react-device-detect';
+
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faBars, faHome } from '@fortawesome/free-solid-svg-icons';
+import { faBars, faHome, faTimes } from '@fortawesome/free-solid-svg-icons';
+
+import { css } from '@emotion/react';
+
+type PropsType = {
+    children?: React.ReactNode;
+}
+
+// TODO children parameter to add specific link to pages (display on bar if desktop, and in menu if mobile)
+const NavBar = ({ children }: PropsType) => {
+    const [navState, setNavState] = React.useState<boolean>(false);
+
+    const handleToggleMenu = () => setNavState(!navState);
+
+    return (
+        <NavContainer>
+            <NavBarToggle isOpen={navState} onClick={handleToggleMenu} />
+            <NavBarLink href="/"><FontAwesomeIcon icon={faHome} /></NavBarLink> {/* // TODO use history.push() */}
+            {!isMobile &&
+                children
+            }
+            {/* <a href="https://github.com/AvaN0x" target="_blank" rel="noreferrer">
+                <img
+                    src="https://avatars3.githubusercontent.com/u/27494805?s=460&v=4" title="github.com/AvaN0x" alt="github.com/AvaN0x" />
+            </a> */}
+        </NavContainer>
+    );
+}
+
 
 const NavContainer = styled.div`
     width: 100vw;
@@ -16,7 +45,7 @@ const NavContainer = styled.div`
     z-index: 1000;
 `;
 
-const Link = styled.a`
+export const NavBarLink = styled.a`
     cursor: pointer;
     position: relative;
     font-size: 1.2rem;
@@ -24,7 +53,6 @@ const Link = styled.a`
     color: var(--header-font-color);
     text-decoration: none;
     padding: .7rem 1rem;
-    /* padding: 0 1rem; */
     transition: .5s;
 
     & > svg {
@@ -41,24 +69,28 @@ const Link = styled.a`
     }
 `;
 
-type PropsType = {
-    children?: React.ReactNode;
-}
+const ToggleLink = styled(NavBarLink) <{ isOpen?: boolean }>`
+    width: 1.2rem;
 
-// TODO children parameter to add specific link to pages (display on bar if desktop, and in menu if mobile)
-const NavBar = ({ children }: PropsType) => {
+    ${props => props.isOpen && css`
+        color: var(--main-color);
+
+        & svg {
+            transform: rotate(90deg);
+        }
+        &:hover svg{
+            transform: rotate(80deg) scale(1.1)
+        }
+    `}
+`;
+
+const NavBarToggle = ({ isOpen, onClick }: { isOpen?: boolean; onClick?: (event: React.SyntheticEvent) => void; }) => {
     return (
-        <NavContainer>
-            <Link href="/"><FontAwesomeIcon icon={faBars} /></Link>
-            <Link href="/"><FontAwesomeIcon icon={faHome} /></Link>
-            <Link href="/">About</Link>
-            <Link href="/">Portfolio</Link>
-            {/* <a href="https://github.com/AvaN0x" target="_blank" rel="noreferrer">
-                <img
-                    src="https://avatars3.githubusercontent.com/u/27494805?s=460&v=4" title="github.com/AvaN0x" alt="github.com/AvaN0x" />
-            </a> */}
-        </NavContainer>
+        <ToggleLink isOpen={isOpen} onClick={onClick}>
+            <FontAwesomeIcon icon={isOpen ? faTimes : faBars} />
+        </ToggleLink>
     );
 }
+
 
 export default NavBar;
