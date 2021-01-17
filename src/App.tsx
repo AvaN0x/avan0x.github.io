@@ -21,8 +21,6 @@ const Redirect = (link: string) => {
 function App() {
     return (
         <Router>
-            {/* <Navbar /> */}
-
             <PageContainer>
                 <Switch>
                     <Route exact path='/' component={Home} />

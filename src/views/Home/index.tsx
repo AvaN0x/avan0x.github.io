@@ -1,11 +1,16 @@
 import React from 'react';
 import Cover from '../../components/Cover';
+import NavBar from '../../features/NavBar';
 
 import logo from '../../logo.svg';
 
 const Home = () => {
     return (
         <>
+            <NavBar>
+
+            </NavBar>
+
             <Cover url={"https://wallpaperaccess.com/full/521099.jpg"} >
                 <p>Développeur</p>
                 <h1>Clément RICATTE</h1>
