@@ -26,15 +26,15 @@ const CoverContainer = styled.div<{ url: string }>`
     width: 100%;
     height: 100vh;
     position: relative;
-    display: flex;
     background-image: url(${props => props.url});
     background-size: cover;
     background-position: center;
 `;
 
-const CoverContentContainer = styled.div`
+const CoverContentContainer = styled.div<{ actualHeight: number }>`
+    position: relative;
     background-color: var(--main-transparent-color);
-    top: 50%;
+    top: calc(50% ${props => " - " + props.actualHeight / 2 + "px"});
     width: 100%;
     text-align: center;
     margin: auto;
@@ -42,7 +42,6 @@ const CoverContentContainer = styled.div`
     justify-content: center;
     flex-direction: column;
     position: sticky;
-    transform: translateY(-50%);
 
     & * {
         margin: 0;
@@ -75,10 +74,17 @@ type PropsType = {
  * @param {React.ReactNode} children content of the cover
  */
 const Cover = ({ url, children }: PropsType) => {
+    const [contentHeight, setContentHeight] = React.useState(0);
+    const contentRef = React.useRef(null);
+
+    React.useEffect(() => {
+        setContentHeight((contentRef?.current as unknown as Element).clientHeight);
+    }, [contentRef]);
+
     return (
         <>
             <CoverContainer url={url}>
-                <CoverContentContainer>
+                <CoverContentContainer ref={contentRef} actualHeight={contentHeight}>
                     {children}
                     <AnimatedScroller href="#scroll">
                         <FontAwesomeIcon icon={faAngleDoubleDown} />
