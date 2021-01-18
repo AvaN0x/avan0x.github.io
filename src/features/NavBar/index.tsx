@@ -20,15 +20,20 @@ const NavBar = ({ children }: PropsType) => {
 
     return (
         <NavContainer>
-            <NavBarToggle isOpen={navState} onClick={handleToggleMenu} />
-            <NavLink to="/"><FontAwesomeIcon icon={faHome} /></NavLink>
-            {!isMobile &&
-                children
-            }
-            {/* <a href="https://github.com/AvaN0x" target="_blank" rel="noreferrer">
-                <img
-                    src="https://avatars3.githubusercontent.com/u/27494805?s=460&v=4" title="github.com/AvaN0x" alt="github.com/AvaN0x" />
-            </a> */}
+            <LeftItemContainer>
+                <NavBarToggle isOpen={navState} onClick={handleToggleMenu} />
+                <NavLink to="/"><FontAwesomeIcon icon={faHome} /></NavLink>
+                {!isMobile &&
+                    children
+                }
+            </LeftItemContainer>
+
+            <RightItemContainer>
+                <a href="https://github.com/AvaN0x" target="_blank" rel="noreferrer">
+                    <GitImage
+                        src="https://avatars3.githubusercontent.com/u/27494805?s=460&v=4" title="github.com/AvaN0x" alt="github.com/AvaN0x" />
+                </a>
+            </RightItemContainer>
         </NavContainer>
     );
 }
@@ -44,6 +49,10 @@ const NavContainer = styled.div`
     padding: 0 5px;
     display: flex;
     z-index: 1000;
+`;
+
+const NavItemContainer = styled.div`
+    display: flex;
 
     & > a {
         cursor: pointer;
@@ -72,6 +81,13 @@ const NavContainer = styled.div`
     }
 `;
 
+const LeftItemContainer = styled(NavItemContainer)`
+    flex-grow: 1;
+`;
+
+const RightItemContainer = styled(NavItemContainer)`
+`;
+
 const ToggleLink = styled.a<{ isOpen?: boolean }>`
     width: 1.2rem;
 
@@ -87,6 +103,23 @@ const ToggleLink = styled.a<{ isOpen?: boolean }>`
             }
         `}
     `}
+`;
+
+const GitImage = styled.img`
+    height: 2.4rem;
+    position: relative;
+    top: -8px;
+    border-radius: 50%;
+    float: right;
+    border: 1px solid var(--header-font-color);
+    transform: rotate(0);
+    transition: .5s;
+
+    &:hover {
+        transform: rotate(360deg);
+        border: 1px solid var(--main-color);
+        border-radius: 30%
+    }
 `;
 
 const NavBarToggle = ({ isOpen, onClick }: { isOpen?: boolean; onClick?: (event: React.SyntheticEvent) => void; }) => {
