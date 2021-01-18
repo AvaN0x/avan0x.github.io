@@ -4,9 +4,10 @@
     --main-transparent-color: #74C8FFb0;
     --secondary-color: #73BEFF;
     --bar-color: #547B9E;
-    --header-footer-color: #0D161C;
     --background-color: #373737;
+    --header-footer-color: #0D161C;
     --header-font-color: #fff;
+    --nav-menu-color: #0D161Cdd;
 }
 
 html {

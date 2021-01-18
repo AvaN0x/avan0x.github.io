@@ -3,6 +3,7 @@ import styled from '@emotion/styled';
 import { isMobile } from 'react-device-detect';
 
 import NavHeader from './NavHeader';
+import NavMenu from './NavMenu';
 
 type PropsType = {
     children?: React.ReactNode;
@@ -20,6 +21,11 @@ const NavBar = ({ children }: PropsType) => {
                     children
                 }
             </NavHeader>
+            <NavMenu isOpen={navState}>
+                {childrenInMenu &&
+                    children
+                }
+            </NavMenu>
         </>
     );
 }
