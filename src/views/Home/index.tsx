@@ -1,4 +1,5 @@
 import React from 'react';
+import { NavLink } from 'react-router-dom';
 import Cover from '../../components/Cover';
 import NavBar from '../../features/NavBar';
 
@@ -8,8 +9,8 @@ const Home = () => {
     return (
         <>
             <NavBar>
-                <a href="/">About</a>
-                <a href="/">Portfolio</a>
+                <NavLink to="/">About</NavLink>
+                <NavLink to="/">Portfolio</NavLink>
             </NavBar>
 
             <Cover url={"https://wallpaperaccess.com/full/521099.jpg"} >

@@ -6,6 +6,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faBars, faHome, faTimes } from '@fortawesome/free-solid-svg-icons';
 
 import { css } from '@emotion/react';
+import { NavLink } from 'react-router-dom';
 
 type PropsType = {
     children?: React.ReactNode;
@@ -20,7 +21,7 @@ const NavBar = ({ children }: PropsType) => {
     return (
         <NavContainer>
             <NavBarToggle isOpen={navState} onClick={handleToggleMenu} />
-            <a href="/"><FontAwesomeIcon icon={faHome} /></a> {/* // TODO use history.push() */}
+            <NavLink to="/"><FontAwesomeIcon icon={faHome} /></NavLink>
             {!isMobile &&
                 children
             }
@@ -59,13 +60,15 @@ const NavContainer = styled.div`
             font-size: 1.6rem;
         }
 
-        &:hover {
-            color: var(--main-color);
+        ${!isMobile && css`
+            &:hover {
+                color: var(--main-color);
 
-            & > svg {
-                transform: rotate(5deg) scale(1.1)
+                & > svg {
+                    transform: rotate(5deg) scale(1.1);
+                }
             }
-        }
+        `}
     }
 `;
 
@@ -78,9 +81,11 @@ const ToggleLink = styled.a<{ isOpen?: boolean }>`
             color: var(--main-color);
         }
 
-        &:hover svg {
-            transform: rotate(80deg) scale(1.1) !important;
-        }
+        ${!isMobile && css`
+            &:hover svg {
+                transform: rotate(80deg) scale(1.1) !important;
+            }
+        `}
     `}
 `;
 
