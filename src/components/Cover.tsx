@@ -75,10 +75,10 @@ type PropsType = {
  */
 const Cover = ({ url, children }: PropsType) => {
     const [contentHeight, setContentHeight] = React.useState(0);
-    const contentRef = React.useRef(null);
+    const contentRef = React.useRef<HTMLDivElement>(null);
 
     React.useEffect(() => {
-        setContentHeight((contentRef?.current as unknown as Element).clientHeight);
+        setContentHeight(contentRef.current?.clientHeight || 0);
     }, [contentRef]);
 
     return (
