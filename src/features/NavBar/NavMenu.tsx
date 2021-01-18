@@ -65,15 +65,17 @@ const MenuSection = styled.div`
             transition: .5s;
         }
 
-        &:hover {
-            color: var(--main-color);
-            padding-left: calc(2.3rem + 5px);
-
-            & > svg {
+        ${!isMobile && css`
+            &:hover {
                 color: var(--main-color);
-                left: 20px;
+                padding-left: calc(2.3rem + 5px);
+
+                & > svg {
+                    color: var(--main-color);
+                    left: 20px;
+                }
             }
-        }
+        `}
     }
 `;
 
