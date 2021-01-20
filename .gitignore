@@ -26,3 +26,9 @@ yarn-error.log*
 
 # Windows folder Icon
 desktop.ini
+
+# Package lock
+package-lock.json
+
+# Firebase Config
+src/firebase/config.ts
