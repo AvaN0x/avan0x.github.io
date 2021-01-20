@@ -1,11 +1,16 @@
 import React from 'react';
 
+import firebase from "firebase/app";
+import "firebase/database";
+import { FirebaseDatabaseProvider } from "@react-firebase/database";
+import { firebaseConfig } from './firebase/config';
+
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 
 import './App.css';
 
 import NotFound from "./views/Errors/NotFound";
-import Home from './views/Home';
+import Portfolio from './views/Portfolio';
 import Footer from './features/Footer';
 import styled from '@emotion/styled';
 
@@ -21,23 +26,25 @@ const Redirect = (link: string) => {
 function App() {
     return (
         <Router>
-            <PageContainer>
-                <Switch>
-                    <Route exact path='/' component={Home} />
+            <FirebaseDatabaseProvider firebase={firebase} {...firebaseConfig}>
+                <PageContainer>
+                    <Switch>
+                        <Route exact path='/' component={Portfolio} />
 
-                    {/* GitHub Pages */}
-                    <Route exact path="/IUT-ProjetWeb" component={() => Redirect('https://avan0x.github.io/IUT-ProjetWeb/')} />
-                    <Route exact path="/AnciensEtudiantsIUTMetz" component={() => Redirect('https://oxypomme.github.io/AnciensEtudiantsIUTMetz/')} />
+                        {/* GitHub Pages */}
+                        <Route exact path="/IUT-ProjetWeb" component={() => Redirect('https://avan0x.github.io/IUT-ProjetWeb/')} />
+                        <Route exact path="/AnciensEtudiantsIUTMetz" component={() => Redirect('https://oxypomme.github.io/AnciensEtudiantsIUTMetz/')} />
 
-                    {/* Other pages */}
-                    <Route exact path="/Matchable" component={() => Redirect('https://matchable-80a41.web.app/')} />
+                        {/* Other pages */}
+                        <Route exact path="/Matchable" component={() => Redirect('https://matchable-80a41.web.app/')} />
 
-                    {/* Error pages */}
-                    <Route component={NotFound} />
-                </Switch>
-            </PageContainer>
+                        {/* Error pages */}
+                        <Route component={NotFound} />
+                    </Switch>
+                </PageContainer>
 
-            <Footer></Footer>
+                <Footer></Footer>
+            </FirebaseDatabaseProvider>
         </Router>
     );
 }

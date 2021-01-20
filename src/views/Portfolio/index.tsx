@@ -2,10 +2,11 @@ import React from 'react';
 import { NavLink } from 'react-router-dom';
 import Cover from '../../components/Cover';
 import NavBar from '../../features/NavBar';
+import Experiences from '../../features/Portfolio/Experiences';
 
 import logo from '../../logo.svg';
 
-const Home = () => {
+const Portfolio = () => {
     return (
         <>
             <NavBar>
@@ -17,6 +18,8 @@ const Home = () => {
                 <p>Développeur</p>
                 <h1>Clément RICATTE</h1>
             </Cover>
+
+            <Experiences />
 
             <div className="App">
                 <header className="App-header">
@@ -38,4 +41,4 @@ const Home = () => {
     );
 }
 
-export default Home;
+export default Portfolio;
