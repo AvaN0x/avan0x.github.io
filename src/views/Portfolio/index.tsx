@@ -5,7 +5,7 @@ import ColoredSection from '../../components/ColoredSection';
 import Cover from '../../components/Cover';
 import NavBar from '../../features/NavBar';
 
-import About from './About';
+import About from '../../features/Portfolio/About';
 
 const Portfolio = () => {
     return (
