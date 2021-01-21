@@ -11,7 +11,7 @@ const Experiences = () => {
         >
             {data => !data.isLoading && data.value &&
                 <>
-                    {data.value.map((value: { label: any; }) => value.label)}
+                    {/* {data.value.map((value: { label: any; }) => value.label)} */}
                     <button onClick={() => console.log(data)}>click test</button>
                 </>
             }

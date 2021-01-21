@@ -32,3 +32,4 @@ package-lock.json
 
 # Firebase Config
 src/firebase/config.ts
+debug.log
