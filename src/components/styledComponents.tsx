@@ -8,3 +8,47 @@ export const Section = styled.section`
     box-sizing: border-box;
     text-align: justify;
 `;
+
+export const SegmentTitle = styled.h1`
+    border: none;
+    border-bottom: 2px solid var(--secondary-color);
+    font-size: 1.2rem;
+    padding: 0 4px;
+    margin: 0;
+    text-align: left;
+    display: inline-block;
+`;
+
+export const Segment = styled.div`
+    transition: .5s;
+    border-left: 2px solid var(--secondary-color);
+    box-sizing: border-box;
+    padding-bottom: .1rem;
+    margin-bottom: 2rem;
+
+    & > ul {
+        list-style-type: none;
+        margin: 0;
+        padding: 8px;
+
+        & > li {
+            padding: 4px 0;
+        }
+    }
+`;
+
+export const LanguageContainer = styled.div`
+    &:not(:last-of-type):after {
+        content: "-";
+        margin: 0 6px;
+    }
+`;
+
+export const LanguageImg = styled.img`
+    height: 1rem;
+    vertical-align: middle;
+    margin: 0 4px 0 0;
+    padding: 4px;
+    border-radius: 8px;
+    background-color: #00000060;
+`;
