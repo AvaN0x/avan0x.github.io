@@ -1,5 +1,6 @@
 import React from 'react';
 import styled from '@emotion/styled';
+import { isMobile } from 'react-device-detect';
 
 import { FirebaseDatabaseNode } from '@react-firebase/database';
 import { Section } from '../../components/styledComponents';
@@ -19,7 +20,7 @@ const AboutContainerStyle = styled.div`
 `;
 
 export const AboutItem = styled.div`
-    width: clamp(500px, 500px, 100%);
+    width: ${isMobile ? "100%" : "clamp(500px, 500px, 100%)"};
 `;
 
 const AboutContainer = ({ about }: { about: IAbout }) => {
