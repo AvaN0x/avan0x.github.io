@@ -5,6 +5,7 @@ import Cover from '../../components/Cover';
 import NavBar from '../../features/NavBar';
 
 import About from '../../features/Portfolio/About';
+import Contact from '../../features/Portfolio/Contact';
 
 const Portfolio = (): JSX.Element => {
     return (
@@ -27,7 +28,7 @@ const Portfolio = (): JSX.Element => {
 
 
             <ColoredSection title="Contact" id="contact" />
-
+            <Contact />
         </>
     );
 }
