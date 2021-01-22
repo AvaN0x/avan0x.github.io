@@ -17,6 +17,7 @@ export const SegmentTitle = styled.h1`
     margin: 0;
     text-align: left;
     display: inline-block;
+    color: var(--main-color);
 `;
 
 export const Segment = styled.div`
@@ -52,3 +53,24 @@ export const LanguageImg = styled.img`
     border-radius: 8px;
     background-color: #00000060;
 `;
+
+export const EducationContainer = styled.div`
+    margin: 0;
+    padding: 4px;
+
+    &>h1 {
+        border: none;
+        text-align: left;
+        font-size: 1rem;
+        margin: 0;
+        padding: 0;
+        color: var(--main-color);
+    }
+
+    &>p {
+        text-indent: 20px;
+        margin: 2px;
+    }
+`;
+
+export const ExperienceContainer = styled(EducationContainer);

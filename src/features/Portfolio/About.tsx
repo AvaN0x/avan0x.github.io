@@ -15,17 +15,18 @@ import Qualities from './About/Qualities/Qualities';
 const AboutContainerStyle = styled.div`
     display: flex;
     flex-wrap: wrap;
+    flex-direction: column;
 `;
 
 export const AboutItem = styled.div`
-    width: clamp(300px, 300px, 100%);
+    width: clamp(500px, 500px, 100%);
 `;
 
 const AboutContainer = ({ about }: { about: IAbout }) => {
     return (
         <AboutContainerStyle>
             <Personal personal={about.personal} />
-            {/* <Educations /> */}
+            <Educations educations={about.educations} />
             {/* <Experiences /> */}
             <Languages languages={about.languages} />
             <Qualities qualities={about.qualities} />
