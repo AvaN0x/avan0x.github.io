@@ -6,7 +6,7 @@ import { FirebaseDatabaseNode } from '@react-firebase/database';
 const Experiences = () => {
     return (
         <FirebaseDatabaseNode
-            path="/experiences/"
+            path="/about/experiences/"
             orderByKey
         >
             {data => !data.isLoading && data.value &&

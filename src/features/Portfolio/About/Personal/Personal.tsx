@@ -9,7 +9,7 @@ import PersonalComponent from './PersonalComponent';
 const Personal = () => {
     return (
         <FirebaseDatabaseNode
-            path="/personal/"
+            path="/about/personal/"
             orderByKey
         >
             {data => !data.isLoading && data.value &&
