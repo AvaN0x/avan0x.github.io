@@ -3,7 +3,7 @@ import NavBar from '../../features/NavBar';
 
 import logo from '../../logo.svg';
 
-const NotFound = () => {
+const NotFound = (): JSX.Element => {
     return (
         <>
             <NavBar />

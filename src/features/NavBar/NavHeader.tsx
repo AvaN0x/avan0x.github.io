@@ -13,7 +13,7 @@ type PropsType = {
     children?: React.ReactNode;
 }
 
-const NavHeader = ({ children, toggleMenu }: PropsType) => {
+const NavHeader = ({ children, toggleMenu }: PropsType): JSX.Element => {
     const [navState, setNavState] = React.useState<boolean>(false);
 
     const handleToggleMenu = () => {

@@ -1,7 +1,4 @@
 import React from 'react';
-import styled from '@emotion/styled';
-import { isMobile } from 'react-device-detect';
-import { FirebaseDatabaseNode } from '@react-firebase/database';
 
 import { EducationContainer, Segment, SegmentTitle } from '../../../../components/styledComponents';
 
@@ -12,7 +9,7 @@ type PropsType = {
     educations: IEducation[];
 }
 
-const Educations = ({ educations }: PropsType) => {
+const Educations = ({ educations }: PropsType): JSX.Element => {
     return (
         <AboutItem>
             <SegmentTitle>Diplômes</SegmentTitle>

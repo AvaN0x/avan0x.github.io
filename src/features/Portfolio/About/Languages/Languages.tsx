@@ -1,6 +1,4 @@
 import React from 'react';
-import styled from '@emotion/styled';
-import { isMobile } from 'react-device-detect';
 
 import { Segment, SegmentTitle } from '../../../../components/styledComponents';
 import LoadBar from '../../../../components/LoadBar';
@@ -12,7 +10,7 @@ type PropsType = {
     languages: ILanguage[];
 }
 
-const Languages = ({ languages }: PropsType) => {
+const Languages = ({ languages }: PropsType): JSX.Element => {
     return (
         <AboutItem>
             <SegmentTitle>Langues</SegmentTitle>

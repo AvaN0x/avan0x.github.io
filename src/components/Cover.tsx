@@ -73,7 +73,7 @@ type PropsType = {
  * @param {string} url url of the image
  * @param {React.ReactNode} children content of the cover
  */
-const Cover = ({ url, children }: PropsType) => {
+const Cover = ({ url, children }: PropsType): JSX.Element => {
     const [contentHeight, setContentHeight] = React.useState(0);
     const contentRef = React.useRef<HTMLDivElement>(null);
 

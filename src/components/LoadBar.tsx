@@ -1,6 +1,5 @@
 import React from 'react';
 import styled from '@emotion/styled';
-import { isMobile } from 'react-device-detect';
 
 const Container = styled.div`
     height: 10px;
@@ -21,7 +20,7 @@ const Fill = styled.div<{ pourcent: number }>`
     animation: barfill 2s ease-in-out;
 `;
 
-const LoadBar = ({ pourcent }: { pourcent: number }) => {
+const LoadBar = ({ pourcent }: { pourcent: number }): JSX.Element => {
     return (
         <Container>
             <Fill pourcent={pourcent}></Fill>

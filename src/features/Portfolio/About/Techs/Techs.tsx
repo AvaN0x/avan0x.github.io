@@ -1,9 +1,6 @@
 import React from 'react';
-import styled from '@emotion/styled';
-import { isMobile } from 'react-device-detect';
 
 import { LanguageList, Segment, SegmentTitle } from '../../../../components/styledComponents';
-import LoadBar from '../../../../components/LoadBar';
 
 import { AboutItem } from '../../About';
 import ITechs from './ITechs';
@@ -13,7 +10,7 @@ type PropsType = {
     techs: ITechs;
 }
 
-const Techs = ({ techs }: PropsType) => {
+const Techs = ({ techs }: PropsType): JSX.Element => {
     return (
         <AboutItem>
             <SegmentTitle>Langues</SegmentTitle>

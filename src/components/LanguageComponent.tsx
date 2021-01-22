@@ -1,6 +1,5 @@
 import React from 'react';
 import styled from '@emotion/styled';
-import { isMobile } from 'react-device-detect';
 
 const LanguageImg = styled.img`
     height: 1rem;
@@ -39,7 +38,7 @@ const icons: { [id: string]: IIcon; } = {
     "asm": { label: "x86 ASM", icons: ["https://www.flaticon.com/svg/static/icons/svg/987/987983.svg"] }
 }
 
-const LanguageComponent = ({ name }: { name: string }) => {
+const LanguageComponent = ({ name }: { name: string }): JSX.Element => {
     if (icons[name]) {
         return (
             <span>

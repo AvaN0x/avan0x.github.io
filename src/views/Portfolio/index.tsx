@@ -1,13 +1,12 @@
 import React from 'react';
 
-import { NavLink } from 'react-router-dom';
 import ColoredSection from '../../components/ColoredSection';
 import Cover from '../../components/Cover';
 import NavBar from '../../features/NavBar';
 
 import About from '../../features/Portfolio/About';
 
-const Portfolio = () => {
+const Portfolio = (): JSX.Element => {
     return (
         <>
             <NavBar>

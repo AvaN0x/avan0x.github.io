@@ -1,7 +1,4 @@
 import React from 'react';
-import styled from '@emotion/styled';
-import { isMobile } from 'react-device-detect';
-import { FirebaseDatabaseNode } from '@react-firebase/database';
 
 import { EducationContainer, Segment, SegmentTitle } from '../../../../components/styledComponents';
 
@@ -12,7 +9,7 @@ type PropsType = {
     experiences: IExperience[];
 }
 
-const Educations = ({ experiences }: PropsType) => {
+const Educations = ({ experiences }: PropsType): JSX.Element => {
     return (
         <AboutItem>
             <SegmentTitle>Formations</SegmentTitle>

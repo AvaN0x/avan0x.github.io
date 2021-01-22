@@ -85,7 +85,7 @@ type PropsType = {
     children?: React.ReactNode;
 }
 
-const NavMenu = ({ isOpen, children }: PropsType) => {
+const NavMenu = ({ isOpen, children }: PropsType): JSX.Element => {
     return (
         <MenuContainer isOpen={isOpen}>
             {children &&

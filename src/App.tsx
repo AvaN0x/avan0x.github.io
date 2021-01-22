@@ -23,7 +23,7 @@ const Redirect = (link: string) => {
     return null;
 }
 
-function App() {
+const App = (): JSX.Element => {
     return (
         <Router>
             <FirebaseDatabaseProvider firebase={firebase} {...firebaseConfig}>

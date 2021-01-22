@@ -40,7 +40,7 @@ const FooterContainer = styled.div`
     `}
 `;
 
-const Footer = () => {
+const Footer = (): JSX.Element => {
     return (
         <FooterContainer>
             <p>Site réalisé par <a href="https://github.com/AvaN0x">Clément RICATTE <FontAwesomeIcon icon={faGithub} /></a></p>

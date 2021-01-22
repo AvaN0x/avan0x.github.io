@@ -1,6 +1,5 @@
 import React from 'react';
 import styled from '@emotion/styled';
-import { isMobile } from 'react-device-detect';
 
 import { FirebaseDatabaseNode } from '@react-firebase/database';
 import { Section } from '../../components/styledComponents';
@@ -36,7 +35,7 @@ const AboutContainer = ({ about }: { about: IAbout }) => {
     );
 }
 
-const About = () => {
+const About = (): JSX.Element => {
     return (
         <Section>
             <FirebaseDatabaseNode

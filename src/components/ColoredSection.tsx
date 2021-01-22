@@ -1,7 +1,5 @@
 import React from 'react';
 import styled from '@emotion/styled';
-import { isMobile } from 'react-device-detect';
-
 
 const ColoredSectionComponent = styled.section`
     background-color: var(--bar-color);
@@ -28,7 +26,7 @@ type PropsType = {
     id?: string;
 }
 
-const ColoredSection = ({ title, id }: PropsType) => {
+const ColoredSection = ({ title, id }: PropsType): JSX.Element => {
     return (
         <ColoredSectionComponent id={id}>
             <h1>{title}</h1>

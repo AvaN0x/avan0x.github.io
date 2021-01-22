@@ -8,7 +8,7 @@ type PropsType = {
     children?: React.ReactNode;
 }
 
-const NavBar = ({ children }: PropsType) => {
+const NavBar = ({ children }: PropsType): JSX.Element => {
     const [navState, setNavState] = React.useState<boolean>(false);
 
     const childrenInMenu: boolean = React.Children.count(children) > 4 || isMobile;

@@ -1,6 +1,6 @@
 import React from 'react';
 import styled from '@emotion/styled';
-import { isMobile } from 'react-device-detect';
+
 import IPersonal from './IPersonal';
 import { Segment, SegmentTitle } from '../../../../components/styledComponents';
 import { AboutItem } from '../../About';
@@ -14,7 +14,7 @@ type PropsType = {
     personal: IPersonal;
 }
 
-const Personal = ({ personal }: PropsType) => {
+const Personal = ({ personal }: PropsType): JSX.Element => {
     const yearOld = new Date(new Date().getTime() - moment(personal.dateofbirth, "YYYY-MM-DD").toDate().getTime()).getFullYear() - 1970;
     const daysSinceBirthday = Math.floor((new Date().getTime() - new Date(2001 + yearOld, 9, 9).getTime()) / 86400000);
 
