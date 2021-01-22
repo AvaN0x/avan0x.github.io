@@ -54,15 +54,6 @@ export const LanguageList = styled.li`
     }
 `;
 
-export const LanguageImg = styled.img`
-    height: 1rem;
-    vertical-align: middle;
-    margin: 0 4px 0 0;
-    padding: 4px;
-    border-radius: 8px;
-    background-color: #00000060;
-`;
-
 export const EducationContainer = styled.div`
     margin: 0;
     padding: 4px;

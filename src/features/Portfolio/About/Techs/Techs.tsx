@@ -7,6 +7,7 @@ import LoadBar from '../../../../components/LoadBar';
 
 import { AboutItem } from '../../About';
 import ITechs from './ITechs';
+import LanguageComponent from '../../../../components/LanguageComponent';
 
 type PropsType = {
     techs: ITechs;
@@ -21,7 +22,7 @@ const Techs = ({ techs }: PropsType) => {
                     {techs.others.map((techList, index) => (
                         <LanguageList key={index}>
                             {techList.map((tech, techIndex) => (
-                                <span key={techIndex}>{tech}</span>
+                                <LanguageComponent name={tech} key={techIndex} />
                             ))}
                         </LanguageList>
                     ))}
@@ -31,7 +32,7 @@ const Techs = ({ techs }: PropsType) => {
                     {techs.codingLanguages.map((techList, index) => (
                         <LanguageList key={index}>
                             {techList.map((tech, techIndex) => (
-                                <span key={techIndex}>{tech}</span>
+                                <LanguageComponent name={tech} key={techIndex} />
                             ))}
                         </LanguageList>
                     ))}
