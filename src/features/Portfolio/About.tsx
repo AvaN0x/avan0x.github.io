@@ -27,7 +27,7 @@ const AboutContainer = ({ about }: { about: IAbout }) => {
         <AboutContainerStyle>
             <Personal personal={about.personal} />
             <Educations educations={about.educations} />
-            {/* <Experiences /> */}
+            <Experiences experiences={about.experiences} />
             <Languages languages={about.languages} />
             <Qualities qualities={about.qualities} />
         </AboutContainerStyle>

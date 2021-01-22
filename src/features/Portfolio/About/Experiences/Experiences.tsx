@@ -3,20 +3,31 @@ import styled from '@emotion/styled';
 import { isMobile } from 'react-device-detect';
 import { FirebaseDatabaseNode } from '@react-firebase/database';
 
-const Experiences = () => {
+import { EducationContainer, Segment, SegmentTitle } from '../../../../components/styledComponents';
+
+import IExperience from './IExperience';
+import { AboutItem } from '../../About';
+
+type PropsType = {
+    experiences: IExperience[];
+}
+
+const Educations = ({ experiences }: PropsType) => {
     return (
-        <FirebaseDatabaseNode
-            path="/about/experiences/"
-            orderByKey
-        >
-            {data => !data.isLoading && data.value &&
-                <>
-                    {/* {data.value.map((value: { label: any; }) => value.label)} */}
-                    <button onClick={() => console.log(data)}>click test</button>
-                </>
-            }
-        </FirebaseDatabaseNode>
+        <AboutItem>
+            <SegmentTitle>Formations</SegmentTitle>
+            <Segment>
+                {experiences.map((experience, index) => (
+                    <EducationContainer key={index}>
+                        <h1>{experience.label}</h1>
+                        {experience.subtitle && <p><i>{experience.subtitle}</i></p>}
+                        <p>{experience.location}</p>
+                        <p>{experience.date.start} – {experience.date.end}</p>
+                    </EducationContainer>
+                ))}
+            </Segment>
+        </AboutItem>
     );
 }
 
-export default Experiences;
+export default Educations;
