@@ -1,5 +1,6 @@
 import React from 'react';
 import styled from '@emotion/styled';
+import { isMobile } from 'react-device-detect';
 
 const ColoredSectionComponent = styled.section`
     background-color: var(--bar-color);
@@ -8,7 +9,7 @@ const ColoredSectionComponent = styled.section`
     box-sizing: border-box;
 
     &:not(:first-of-type) {
-        margin-top: 8rem;
+        margin-top: ${isMobile ? 4 : 6}rem;
     }
 
     & > h1 {
