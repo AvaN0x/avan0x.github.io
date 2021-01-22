@@ -3,7 +3,8 @@ import IPersonal from './Personal/IPersonal';
 
 interface IAbout {
     personal: IPersonal,
-    languages: ILanguage[]
+    languages: ILanguage[],
+    qualities: string[]
 }
 
 export default IAbout;

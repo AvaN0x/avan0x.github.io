@@ -5,21 +5,20 @@ import { isMobile } from 'react-device-detect';
 import { Segment, SegmentTitle } from '../../../../components/styledComponents';
 import LoadBar from '../../../../components/LoadBar';
 
-import ILanguage from './ILanguage';
 import { AboutItem } from '../../About';
 
 type PropsType = {
-    languages: ILanguage[];
+    qualities: string[];
 }
 
-const Languages = ({ languages }: PropsType) => {
+const Qualities = ({ qualities }: PropsType) => {
     return (
         <AboutItem>
-            <SegmentTitle>Langues</SegmentTitle>
+            <SegmentTitle>Qualités</SegmentTitle>
             <Segment>
                 <ul>
-                    {languages.map((language, index) => (
-                        <li key={index}>{language.label}<LoadBar pourcent={language.pourcent} /></li>
+                    {qualities.map((quality, index) => (
+                        <li key={index}>{quality}</li>
                     ))}
                 </ul>
             </Segment>
@@ -27,4 +26,4 @@ const Languages = ({ languages }: PropsType) => {
     );
 }
 
-export default Languages;
+export default Qualities;
