@@ -6,6 +6,7 @@ import NavBar from '../../features/NavBar';
 
 import About from '../../features/Portfolio/About';
 import Contact from '../../features/Portfolio/Contact';
+import DiscordInvite from '../../components/DiscordInvite';
 
 const Portfolio = (): JSX.Element => {
     return (
@@ -29,6 +30,7 @@ const Portfolio = (): JSX.Element => {
 
             <ColoredSection title="Contact" id="contact" />
             <Contact />
+            <DiscordInvite />
         </>
     );
 }
