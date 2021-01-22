@@ -36,11 +36,20 @@ export const Segment = styled.div`
             padding: 4px 0;
         }
     }
+
+    & > h1 {
+        border: none;
+        text-align: left;
+        font-size: 1rem;
+        margin: 0;
+        padding: 8px 4px 0 4px;
+        color: var(--main-color);
+    }
 `;
 
-export const LanguageContainer = styled.div`
-    &:not(:last-of-type):after {
-        content: "-";
+export const LanguageList = styled.li`
+    &>span:not(:last-of-type):after {
+        content: "–";
         margin: 0 6px;
     }
 `;

@@ -1,5 +1,5 @@
 interface ITechs {
-    techs: (string[])[];
+    others: (string[])[];
     codingLanguages: (string[])[];
 }
 

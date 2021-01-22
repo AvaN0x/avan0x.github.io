@@ -11,6 +11,7 @@ import Experiences from './About/Experiences/Experiences';
 import Educations from './About/Educations/Educations';
 import Languages from './About/Languages/Languages';
 import Qualities from './About/Qualities/Qualities';
+import Techs from './About/Techs/Techs';
 
 const AboutContainerStyle = styled.div`
     display: flex;
@@ -28,6 +29,7 @@ const AboutContainer = ({ about }: { about: IAbout }) => {
             <Personal personal={about.personal} />
             <Educations educations={about.educations} />
             <Experiences experiences={about.experiences} />
+            <Techs techs={about.techs} />
             <Languages languages={about.languages} />
             <Qualities qualities={about.qualities} />
         </AboutContainerStyle>
