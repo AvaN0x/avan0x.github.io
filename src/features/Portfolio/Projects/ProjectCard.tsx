@@ -4,11 +4,11 @@ import { isMobile } from 'react-device-detect';
 
 import IProject from './IProject';
 
-type ProjectType = {
+type PropsType = {
     project: IProject;
 }
 
-const ProjectCard = ({ project }: ProjectType): JSX.Element => {
+const ProjectCard = ({ project }: PropsType): JSX.Element => {
     return (
         <div>
             {project.label}
