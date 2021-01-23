@@ -11,6 +11,7 @@ import './App.css';
 
 import NotFound from "./views/Errors/NotFound";
 import Portfolio from './views/Portfolio';
+import Discord from './views/Discord';
 import Footer from './features/Footer';
 import styled from '@emotion/styled';
 
@@ -30,6 +31,7 @@ const App = (): JSX.Element => {
                 <PageContainer>
                     <Switch>
                         <Route exact path='/' component={Portfolio} />
+                        <Route exact path='/discord' component={Discord} />
 
                         {/* GitHub Pages */}
                         <Route exact path="/IUT-ProjetWeb" component={() => Redirect('https://avan0x.github.io/IUT-ProjetWeb/')} />

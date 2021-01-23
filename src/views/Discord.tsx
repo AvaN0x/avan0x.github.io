@@ -1,0 +1,25 @@
+import React from 'react';
+
+import Loading from '../components/Loading';
+import NavBar from '../features/NavBar';
+
+const Discord = (): JSX.Element => {
+    React.useEffect(() => {
+        fetch("https://discordapp.com/api/guilds/673139614927683594/widget.json")
+            .then(res => res.json())
+            .then(
+                (result) => {
+                    window.location.href = result.instant_invite;
+                }
+            )
+    }, [])
+
+    return (
+        <>
+            <NavBar />
+            <Loading title="Vous allez être redirigé vers l'invitation Discord." />
+        </>
+    );
+}
+
+export default Discord;

@@ -99,9 +99,9 @@ const NavMenu = ({ isOpen, children }: PropsType): JSX.Element => {
                 <a href="https://github.com/AvaN0x" target="_blank" rel="noreferrer">
                     <FontAwesomeIcon icon={faGithub} />GitHub
                 </a>
-                <a href="https://discord.gg/uDPqGyQ" target="_blank" rel="noreferrer">
+                <NavLink to="/discord">
                     <FontAwesomeIcon icon={faDiscord} />Discord
-                </a>
+                </NavLink>
                 <NavLink to="/">
                     <FontAwesomeIcon icon={faPortrait} />Portfolio
                 </NavLink>

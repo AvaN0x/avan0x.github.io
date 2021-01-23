@@ -1,5 +1,6 @@
 import React from 'react';
 import styled from '@emotion/styled';
+import { NavLink } from 'react-router-dom';
 
 const Container = styled.div`
     width: 432px;
@@ -50,7 +51,7 @@ const DetailsContainer = styled.div`
     }
 `;
 
-const JoinButton = styled.a`
+const JoinButton = styled(NavLink)`
     background-color: #43b581;
     text-decoration: none;
     float: right;
@@ -86,7 +87,6 @@ const DiscordBubble = styled.i`
 
 interface IDiscordInvite {
     name: string;
-    invite: string;
     onlines: number;
 }
 
@@ -99,7 +99,6 @@ const DiscordInvite = (): JSX.Element => {
             .then(
                 (result) => {
                     setDiscord({
-                        invite: result.instant_invite,
                         name: result.name,
                         onlines: result.presence_count
                     });
@@ -112,12 +111,12 @@ const DiscordInvite = (): JSX.Element => {
             <p>Tu as reçu une invitation à rejoindre un serveur par AvaN0x#6348</p>
             <DiscordLogo src="https://avatars3.githubusercontent.com/u/27494805?s=460&v=4" />
             <DetailsContainer>
-                <a href={discord?.invite || ""} target="_blank" rel="noreferrer">
+                <NavLink to="/discord">
                     {discord?.name || ""}
-                </a>
+                </NavLink>
                 <p><DiscordBubble /> <strong>{discord?.onlines || -1}</strong> en ligne</p>
             </DetailsContainer>
-            <JoinButton href={discord?.invite || ""} target="_blank" rel="noreferrer">
+            <JoinButton to="/discord">
                 Rejoindre
             </JoinButton>
         </Container>
