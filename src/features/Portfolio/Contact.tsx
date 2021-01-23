@@ -3,8 +3,10 @@ import styled from '@emotion/styled';
 import { isMobile } from 'react-device-detect';
 
 import { Section } from '../../components/styledComponents';
+import { FirebaseDatabaseNode } from '@react-firebase/database';
+import DiscordInvite from '../../components/DiscordInvite';
 
-const ContactContainer = styled.div`
+const ContactContainerStyle = styled.div`
     display: flex;
     align-items: center;
     justify-content: center;
@@ -42,9 +44,8 @@ const ContactContainer = styled.div`
     }
 `;
 
-const Contact = (): JSX.Element => {
-    const mail = "XXXXXXXXXXXX@gmail.com";
-
+const ContactContainer = ({ mail }: { mail: string }): JSX.Element => {
+    //TODO size max
     const [name, setName] = React.useState("");
     const [content, setContent] = React.useState("");
 
@@ -62,22 +63,37 @@ const Contact = (): JSX.Element => {
     }
 
     return (
+        <ContactContainerStyle>
+            <label htmlFor="name">Nom:</label>
+            <input
+                type="text"
+                name="name"
+                onChange={handleSetNameOnChange}
+            />
+            <label htmlFor="content">Message:</label>
+            <textarea
+                name="content"
+                rows={5}
+                onChange={handleSetContentOnChange}
+            ></textarea>
+            <button onClick={handleOnSubmit}>Contacter</button>
+        </ContactContainerStyle>
+    );
+}
+
+
+const Contact = (): JSX.Element => {
+    return (
         <Section>
-            <ContactContainer>
-                <label htmlFor="name">Nom:</label>
-                <input
-                    type="text"
-                    name="name"
-                    onChange={handleSetNameOnChange}
-                />
-                <label htmlFor="content">Message:</label>
-                <textarea
-                    name="content"
-                    rows={5}
-                    onChange={handleSetContentOnChange}
-                ></textarea>
-                <button onClick={handleOnSubmit}>Contacter</button>
-            </ContactContainer>
+            <FirebaseDatabaseNode
+                path="/email/"
+                orderByKey
+            >
+                {data => !data.isLoading && data.value &&
+                    <ContactContainer mail={data.value} />
+                }
+            </FirebaseDatabaseNode>
+            <DiscordInvite />
         </Section>
     );
 }
