@@ -18,12 +18,13 @@ const Container = styled.div`
         cursor: default;
         font-size: 13px;
 
-        &:first-child {
+        &:first-of-type {
             text-transform: uppercase;
             margin-bottom: 12px;
             overflow: hidden;
             font-weight: 700;
-            font-size: 12px
+            font-size: 12px;
+            margin-top: 0;
         }
     }
 
