@@ -21,6 +21,7 @@ const FooterContainer = styled.div`
     box-sizing: border-box;
     ${isMobile && css`
         flex-direction: column;
+        text-align: center;
     `}
 
     & > p {

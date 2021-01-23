@@ -9,6 +9,7 @@ const Container = styled.div`
     background-color: #2f3136;
     box-sizing: border-box;
     overflow: hidden;
+    max-width: 96vw;
 
     & > p {
         color: #b9bbbe;
@@ -35,7 +36,7 @@ const Container = styled.div`
 `;
 
 const DetailsContainer = styled.div`
-    width: 220px;
+    max-width: 220px;
     position: relative;
     display: inline-block;
     box-sizing: border-box;
