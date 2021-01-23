@@ -1,11 +1,12 @@
 import React from 'react';
+import { ViewContainer } from '../../App';
 import NavBar from '../../features/NavBar';
 
 import logo from '../../logo.svg';
 
 const NotFound = (): JSX.Element => {
     return (
-        <>
+        <ViewContainer>
             <NavBar />
             <div className="App">
                 <header>
@@ -18,7 +19,7 @@ const NotFound = (): JSX.Element => {
                     </div>
                 </header>
             </div>
-        </>
+        </ViewContainer>
     );
 }
 

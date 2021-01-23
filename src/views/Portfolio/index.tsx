@@ -1,4 +1,5 @@
 import React from 'react';
+import { ViewContainer } from '../../App';
 
 import ColoredSection from '../../components/ColoredSection';
 import Cover from '../../components/Cover';
@@ -10,7 +11,7 @@ import DiscordInvite from '../../components/DiscordInvite';
 
 const Portfolio = (): JSX.Element => {
     return (
-        <>
+        <ViewContainer>
             <NavBar>
                 <a href="#about">About</a>
                 <a href="#portfolio">Portfolio</a>
@@ -31,7 +32,7 @@ const Portfolio = (): JSX.Element => {
             <ColoredSection title="Contact" id="contact" />
             <Contact />
             <DiscordInvite />
-        </>
+        </ViewContainer>
     );
 }
 

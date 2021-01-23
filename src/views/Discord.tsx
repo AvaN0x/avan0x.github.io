@@ -1,4 +1,5 @@
 import React from 'react';
+import { ViewContainer } from '../App';
 
 import Loading from '../components/Loading';
 import NavBar from '../features/NavBar';
@@ -15,10 +16,10 @@ const Discord = (): JSX.Element => {
     }, [])
 
     return (
-        <>
+        <ViewContainer>
             <NavBar />
             <Loading title="Vous allez être redirigé vers l'invitation Discord." />
-        </>
+        </ViewContainer>
     );
 }
 

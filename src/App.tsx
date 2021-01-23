@@ -7,6 +7,10 @@ import { firebaseConfig } from './firebase/config';
 
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 
+
+import { AnimatePresence } from "framer-motion";
+import { motion } from "framer-motion"
+
 import './App.css';
 
 import NotFound from "./views/Errors/NotFound";
@@ -29,25 +33,39 @@ const App = (): JSX.Element => {
         <Router>
             <FirebaseDatabaseProvider firebase={firebase} {...firebaseConfig}>
                 <PageContainer>
-                    <Switch>
-                        <Route exact path='/' component={Portfolio} />
-                        <Route exact path='/discord' component={Discord} />
+                    <AnimatePresence exitBeforeEnter>
+                        <Switch>
+                            <Route exact path='/' component={Portfolio} />
+                            <Route exact path='/discord' component={Discord} />
 
-                        {/* GitHub Pages */}
-                        <Route exact path="/IUT-ProjetWeb" component={() => Redirect('https://avan0x.github.io/IUT-ProjetWeb/')} />
-                        <Route exact path="/AnciensEtudiantsIUTMetz" component={() => Redirect('https://oxypomme.github.io/AnciensEtudiantsIUTMetz/')} />
+                            {/* GitHub Pages */}
+                            <Route exact path="/IUT-ProjetWeb" component={() => Redirect('https://avan0x.github.io/IUT-ProjetWeb/')} />
+                            <Route exact path="/AnciensEtudiantsIUTMetz" component={() => Redirect('https://oxypomme.github.io/AnciensEtudiantsIUTMetz/')} />
 
-                        {/* Other pages */}
-                        <Route exact path="/Matchable" component={() => Redirect('https://matchable-80a41.web.app/')} />
+                            {/* Other pages */}
+                            <Route exact path="/Matchable" component={() => Redirect('https://matchable-80a41.web.app/')} />
 
-                        {/* Error pages */}
-                        <Route component={NotFound} />
-                    </Switch>
+                            {/* Error pages */}
+                            <Route component={NotFound} />
+                        </Switch>
+                    </AnimatePresence>
                 </PageContainer>
 
                 <Footer></Footer>
             </FirebaseDatabaseProvider>
         </Router>
+    );
+}
+
+export const ViewContainer = ({ children }: { children: React.ReactNode }): JSX.Element => {
+    return (
+        <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+        >
+            {children}
+        </motion.div>
     );
 }
 
