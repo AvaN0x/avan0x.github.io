@@ -2,9 +2,10 @@ import React from 'react';
 import styled from '@emotion/styled';
 
 import { FirebaseDatabaseNode } from '@react-firebase/database';
-import { Section } from '../../components/styledComponents';
+import { Section, Segment, SegmentTitle } from '../../components/styledComponents';
 
 import IProjects from './Projects/IProjects';
+import ProjectCard from './Projects/ProjectCard';
 
 const ProjectsContainerStyle = styled.div`
     display: flex;
@@ -12,34 +13,44 @@ const ProjectsContainerStyle = styled.div`
     flex-direction: column;
 `;
 
+const CategoryTitle = styled.h1`
+    font-size: 1.5rem;
+    color: var(--main-color);
+    text-align: center;
+    padding-bottom: 8px;
+    border-bottom: 1px solid var(--font-color);
+
+    &:not(:first-of-type) {
+        margin-top: 4rem;
+    }
+`;
 
 const ProjectsContainer = ({ projects }: { projects: IProjects }) => {
-    console.log(projects);
-
     return (
         <ProjectsContainerStyle>
             {projects.schoolProjects?.map((school, schoolIndex) =>
                 <div key={schoolIndex}>
-                    <h1>Projets scolaires ({school.label})</h1>
-
+                    <CategoryTitle>Projets scolaires ({school.label})</CategoryTitle>
                     {school.semesters && school.semesters?.map((semester, semesterIndex) =>
                         <div key={semesterIndex}>
-                            <h1>Semestre {semester.number}</h1>
-                            {semester.projects?.map((project, index) =>
-                                <p key={index}>{project.label}</p>
-                            )}
+                            <SegmentTitle>Semestre {semester.number}</SegmentTitle>
+                            <Segment>
+                                {semester.projects?.map((project, index) =>
+                                    <ProjectCard project={project} key={index} />
+                                )}
+                            </Segment>
                         </div>
                     )}
                     {school.projects?.map((project, index) =>
-                        <p key={index}>{project.label}</p>
+                        <ProjectCard project={project} key={index} />
                     )}
                 </div>
             )}
             {projects.personalProjects &&
                 <>
-                    <h1>Projets personnels</h1>
+                    <CategoryTitle>Projets personnels</CategoryTitle>
                     {projects.personalProjects?.map((project, index) =>
-                        <p key={index}>{project.label}</p>
+                        <ProjectCard project={project} key={index} />
                     )}
                 </>
             }
