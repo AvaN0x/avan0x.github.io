@@ -13,7 +13,7 @@ const Portfolio = (): JSX.Element => {
         <ViewContainer>
             <NavBar>
                 <a href="#about">About</a>
-                <a href="#portfolio">Portfolio</a>
+                <a href="#projects">Projets</a>
                 <a href="#contact">Contact</a>
             </NavBar>
 
@@ -25,7 +25,7 @@ const Portfolio = (): JSX.Element => {
             <ColoredSection title="A propos" id="about" />
             <About />
 
-            <ColoredSection title="Portfolio" id="portfolio" />
+            <ColoredSection title="Projets" id="projects" />
 
 
             <ColoredSection title="Contact" id="contact" />
