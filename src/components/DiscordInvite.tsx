@@ -108,7 +108,7 @@ const DiscordInvite = (): JSX.Element => {
 
     return (
         <Container>
-            <p>Tu as reçu une invitation à rejoindre un serveur</p>
+            <p>Tu as reçu une invitation à rejoindre un serveur par AvaN0x#6348</p>
             <DiscordLogo src="https://avatars3.githubusercontent.com/u/27494805?s=460&v=4" />
             <DetailsContainer>
                 <a href={discord?.invite || ""} target="_blank" rel="noreferrer">

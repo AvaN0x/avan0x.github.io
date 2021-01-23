@@ -28,6 +28,9 @@ const Personal = ({ personal }: PropsType): JSX.Element => {
                     {yearOld && <li><Label>Age</Label> : <span title={"et " + daysSinceBirthday + " jours."}>{yearOld}</span></li>}
                     <li><Label>Date de naissance</Label> : <span>{moment(personal.dateofbirth, "YYYY-MM-DD").format("DD/MM/YYYY")}</span></li>
                     <li><Label>Lieu</Label> : <span>{personal.place}</span></li>
+                    {personal.license?.car?.ownLicense &&
+                        <li>Permis B{personal.license.car?.ownVehicle && <> + Véhicule</>}</li>
+                    }
                 </ul>
             </Segment>
         </AboutItem>
