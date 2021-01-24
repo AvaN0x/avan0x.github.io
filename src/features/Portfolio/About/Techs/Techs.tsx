@@ -21,7 +21,7 @@ type PropsType = {
 const Techs = ({ techs }: PropsType): JSX.Element => {
     return (
         <AboutItem>
-            <SegmentTitle>Langues</SegmentTitle>
+            <SegmentTitle>Informatique</SegmentTitle>
             <Segment>
                 <ul>
                     {techs.others.map((techList, index) => (
