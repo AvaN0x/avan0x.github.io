@@ -4,6 +4,7 @@ import { ViewContainer } from '../../App';
 import ColoredSection from '../../components/ColoredSection';
 import Cover from '../../components/Cover';
 import NavBar from '../../features/NavBar';
+import { HashLink } from 'react-router-hash-link';
 
 import About from '../../features/Portfolio/About';
 import Contact from '../../features/Portfolio/Contact';
@@ -13,9 +14,9 @@ const Portfolio = (): JSX.Element => {
     return (
         <ViewContainer>
             <NavBar>
-                <a href="#about">About</a>
-                <a href="#projects">Projets</a>
-                <a href="#contact">Contact</a>
+                <HashLink smooth to="#about">About</HashLink>
+                <HashLink smooth to="#projects">Projets</HashLink>
+                <HashLink smooth to="#contact">Contact</HashLink>
             </NavBar>
 
             <Cover url={"https://wallpaperaccess.com/full/521099.jpg"} >

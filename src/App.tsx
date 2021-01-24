@@ -5,8 +5,7 @@ import "firebase/database";
 import { FirebaseDatabaseProvider } from "@react-firebase/database";
 import { firebaseConfig } from './firebase/config';
 
-import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
-
+import { Route, HashRouter as Router, Switch } from 'react-router-dom';
 
 import { AnimatePresence } from "framer-motion";
 import { motion } from "framer-motion"
@@ -30,7 +29,7 @@ const Redirect = (link: string) => {
 
 const App = (): JSX.Element => {
     return (
-        <Router>
+        <Router basename='/'>
             <FirebaseDatabaseProvider firebase={firebase} {...firebaseConfig}>
                 <PageContainer>
                     <AnimatePresence exitBeforeEnter>
