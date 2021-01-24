@@ -58,6 +58,7 @@ const ContactContainer = ({ mail }: { mail: string }): JSX.Element => {
         event.preventDefault();
 
         // TODO add alert for else case
+        // TODO clear input and textarea
         if (name && content)
             window.open('mailto:' + mail + '?subject=Contact - ' + name + '&body=' + content);
     }
