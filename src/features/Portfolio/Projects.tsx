@@ -31,7 +31,7 @@ const ProjectsContainer = ({ projects }: { projects: IProjects }) => {
             {projects.schoolProjects?.map((school, schoolIndex) =>
                 <div key={schoolIndex}>
                     <CategoryTitle>Projets scolaires ({school.label})</CategoryTitle>
-                    {school.semesters && school.semesters?.map((semester, semesterIndex) =>
+                    {school.semesters?.map((semester, semesterIndex) =>
                         <div key={semesterIndex}>
                             <SegmentTitle>Semestre {semester.number}</SegmentTitle>
                             <Segment>

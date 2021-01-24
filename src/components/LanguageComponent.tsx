@@ -14,7 +14,7 @@ const LanguageImg = styled.img`
 
 interface IIcon {
     label: string;
-    icons: string[];
+    icons?: string[];
 }
 
 //! source : https://worldvectorlogo.com/fr
@@ -26,6 +26,7 @@ const icons: { [id: string]: IIcon; } = {
     "git": { label: "Git", icons: ["https://cdn.worldvectorlogo.com/logos/git-icon.svg"] },
     "c": { label: "C", icons: ["https://cdn.worldvectorlogo.com/logos/c-2975.svg"] },
     "cs": { label: "C#", icons: ["https://cdn.worldvectorlogo.com/logos/c--4.svg"] },
+    "wpf": { label: "WPF" },
     "java": { label: "Java", icons: ["https://cdn.worldvectorlogo.com/logos/java-14.svg"] },
     "lua": { label: "Lua", icons: ["https://cdn.worldvectorlogo.com/logos/lua-5.svg"] },
     "php": { label: "PHP", icons: ["https://cdn.worldvectorlogo.com/logos/php-1.svg"] },
@@ -42,7 +43,7 @@ const LanguageComponent = ({ name }: { name: string }): JSX.Element => {
     if (icons[name]) {
         return (
             <span>
-                {icons[name].icons.map((icon, techIndex) => (
+                {icons[name].icons?.map((icon, techIndex) => (
                     <LanguageImg src={icon} key={techIndex} />
                 ))}
 

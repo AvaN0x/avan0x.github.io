@@ -1,10 +1,18 @@
 import React from 'react';
+import styled from '@emotion/styled';
 
-import { LanguageList, Segment, SegmentTitle } from '../../../../components/styledComponents';
+import { Segment, SegmentTitle } from '../../../../components/styledComponents';
 
 import { AboutItem } from '../../About';
 import ITechs from './ITechs';
 import LanguageComponent from '../../../../components/LanguageComponent';
+
+const LanguageList = styled.li`
+    &>span:not(:last-of-type):after {
+        content: "–";
+        margin: 0 6px;
+    }
+`;
 
 type PropsType = {
     techs: ITechs;

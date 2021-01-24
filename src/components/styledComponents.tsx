@@ -46,13 +46,6 @@ export const Segment = styled.div`
     }
 `;
 
-export const LanguageList = styled.li`
-    &>span:not(:last-of-type):after {
-        content: "–";
-        margin: 0 6px;
-    }
-`;
-
 export const EducationContainer = styled.div`
     margin: 0;
     padding: 4px;
