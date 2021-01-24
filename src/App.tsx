@@ -3,7 +3,7 @@ import React from 'react';
 import firebase from "firebase/app";
 import "firebase/database";
 import { FirebaseDatabaseProvider } from "@react-firebase/database";
-import { firebaseConfig } from './firebase/config';
+import firebaseConfig from './firebase/config';
 
 import { Route, HashRouter as Router, Switch } from 'react-router-dom';
 
