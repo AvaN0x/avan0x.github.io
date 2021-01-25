@@ -46,6 +46,7 @@ const ContentContainer = styled.div<{ show: boolean }>`
             max-height: 0;
             overflow: hidden;
             padding: 0 8px;
+            border: none;
         `
     }
 `
