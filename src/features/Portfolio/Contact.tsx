@@ -49,18 +49,20 @@ const ContactContainer = ({ mail }: { mail: string }): JSX.Element => {
     const [name, setName] = React.useState("");
     const [content, setContent] = React.useState("");
 
-    const handleSetNameOnChange = (event: React.ChangeEvent<HTMLInputElement>) => setName(event.target.value.trim());
+    const handleSetNameOnChange = (event: React.ChangeEvent<HTMLInputElement>) => setName(event.target.value);
 
-    const handleSetContentOnChange = (event: React.ChangeEvent<HTMLTextAreaElement>) => setContent(event.target.value.trim());
+    const handleSetContentOnChange = (event: React.ChangeEvent<HTMLTextAreaElement>) => setContent(event.target.value);
 
 
     const handleOnSubmit = (event: React.MouseEvent<HTMLButtonElement, MouseEvent>) => {
         event.preventDefault();
 
         // TODO add alert for else case
-        // TODO clear input and textarea
-        if (name && content)
-            window.open('mailto:' + mail + '?subject=Contact - ' + name + '&body=' + content);
+        if (name.trim() && content.trim()) {
+            window.open('mailto:' + mail + '?subject=Contact - ' + name.trim() + '&body=' + content.trim());
+            setName("");
+            setContent("");
+        }
     }
 
     return (
@@ -69,12 +71,14 @@ const ContactContainer = ({ mail }: { mail: string }): JSX.Element => {
             <input
                 type="text"
                 name="name"
+                value={name}
                 onChange={handleSetNameOnChange}
             />
             <label htmlFor="content">Message:</label>
             <textarea
                 name="content"
                 rows={5}
+                value={content}
                 onChange={handleSetContentOnChange}
             ></textarea>
             <button onClick={handleOnSubmit}>Contacter</button>
