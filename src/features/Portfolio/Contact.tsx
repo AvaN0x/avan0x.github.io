@@ -2,6 +2,8 @@ import React from 'react';
 import styled from '@emotion/styled';
 import { isMobile } from 'react-device-detect';
 
+import { useAlert } from 'react-alert'
+
 import { Section } from '../../components/styledComponents';
 import { FirebaseDatabaseNode } from '@react-firebase/database';
 import DiscordInvite from '../../components/DiscordInvite';
@@ -45,6 +47,8 @@ const ContactContainerStyle = styled.div`
 `;
 
 const ContactContainer = ({ mail }: { mail: string }): JSX.Element => {
+    const alert = useAlert();
+
     //TODO size max
     const [name, setName] = React.useState("");
     const [content, setContent] = React.useState("");
@@ -56,10 +60,20 @@ const ContactContainer = ({ mail }: { mail: string }): JSX.Element => {
 
     const handleOnSubmit = (event: React.MouseEvent<HTMLButtonElement, MouseEvent>) => {
         event.preventDefault();
+        let error = false;
 
-        // TODO add alert for else case
-        if (name.trim() && content.trim()) {
+        if (!name.trim()) {
+            alert.error("Veuillez saisir votre nom.");
+            error = true;
+        }
+        if (!content.trim()) {
+            alert.error("Veuillez saisir un message.");
+            error = true;
+        }
+
+        if (!error) {
             window.open('mailto:' + mail + '?subject=Contact - ' + name.trim() + '&body=' + content.trim());
+            alert.success("Une fenêtre devrait s'ouvrir pour vous permettre d'envoyer le message.")
             setName("");
             setContent("");
         }
