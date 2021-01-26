@@ -8,6 +8,7 @@ import { faChevronDown, faChevronUp, faExternalLinkAlt, faUser } from '@fortawes
 import LanguageComponent from '../../../components/LanguageComponent';
 import { faGithub, faYoutube } from '@fortawesome/free-brands-svg-icons';
 import { css } from '@emotion/react';
+import Markdown from 'markdown-to-jsx';
 
 const Container = styled.div`
     width: ${isMobile ? "90vw" : "80%"};
@@ -48,6 +49,10 @@ const ContentContainer = styled.div<{ show: boolean }>`
             padding: 0 8px;
             border: none;
         `
+    }
+
+    & p {
+        margin: 4px 0;
     }
 `
 
@@ -172,7 +177,8 @@ const ProjectCard = ({ project }: PropsType): JSX.Element => {
                 {project.objective &&
                     <>
                         <SecondaryTitle>Objectif</SecondaryTitle>
-                        <p>{project.objective}</p>
+                        {/* <p>{project.objective}</p> */}
+                        <p><Markdown>{project.objective}</Markdown></p>
                     </>
                 }
                 {project.aimedSkills &&
@@ -180,7 +186,7 @@ const ProjectCard = ({ project }: PropsType): JSX.Element => {
                         <SecondaryTitle>Compétences visées</SecondaryTitle>
                         <List>
                             {project.aimedSkills.map((skill, index) =>
-                                <li key={index}>{skill}</li>
+                                <li key={index}><Markdown>{skill}</Markdown></li>
                             )}
                         </List>
                     </>
@@ -190,7 +196,7 @@ const ProjectCard = ({ project }: PropsType): JSX.Element => {
                         <SecondaryTitle>Compétences visées</SecondaryTitle>
                         <List>
                             {project.features.map((skill, index) =>
-                                <li key={index}>{skill}</li>
+                                <li key={index}><Markdown>{skill}</Markdown></li>
                             )}
                         </List>
                     </>
