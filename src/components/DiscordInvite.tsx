@@ -3,7 +3,7 @@ import styled from '@emotion/styled';
 import { NavLink } from 'react-router-dom';
 
 const Container = styled.div`
-    width: 432px;
+    width: min(432px, 90vw);
     padding: 16px;
     margin: 1rem auto;
     border-radius: 4px;
@@ -15,6 +15,7 @@ const Container = styled.div`
     & > p {
         color: #b9bbbe;
         text-overflow: ellipsis;
+        text-align: left;
         cursor: default;
         font-size: 13px;
 
