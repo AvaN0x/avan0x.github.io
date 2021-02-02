@@ -20,7 +20,7 @@ const Portfolio = (): JSX.Element => {
     return (
         <ViewContainer>
             <NavBar>
-                <HashLink smooth to="#about">About</HashLink>
+                <HashLink smooth to="#about">A propos</HashLink>
                 <HashLink smooth to="#projects">Projets</HashLink>
                 <HashLink smooth to="#contact">Contact</HashLink>
             </NavBar>
