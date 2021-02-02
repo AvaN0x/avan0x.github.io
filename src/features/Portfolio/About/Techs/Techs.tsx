@@ -5,7 +5,7 @@ import { Segment, SegmentTitle } from '../../../../components/styledComponents';
 
 import { AboutItem } from '../../About';
 import ITechs from './ITechs';
-import LanguageComponent from '../../../../components/LanguageComponent';
+import LanguageComponent from '../../../LanguagesIcons/LanguageComponent';
 
 const LanguageList = styled.li`
     &>span:not(:last-of-type):after {

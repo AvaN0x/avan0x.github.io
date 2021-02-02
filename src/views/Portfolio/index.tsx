@@ -1,6 +1,8 @@
 import React from 'react';
 import { ViewContainer } from '../../App';
 
+import { useFirebaseConnect } from 'react-redux-firebase';
+
 import ColoredSection from '../../components/ColoredSection';
 import Cover from '../../components/Cover';
 import NavBar from '../../features/NavBar';
@@ -11,6 +13,10 @@ import Contact from '../../features/Portfolio/Contact';
 import Projects from '../../features/Portfolio/Projects';
 
 const Portfolio = (): JSX.Element => {
+    useFirebaseConnect([
+        { type: 'value', path: 'icons', queryParams: ['orderByKey'] }
+    ])
+
     return (
         <ViewContainer>
             <NavBar>

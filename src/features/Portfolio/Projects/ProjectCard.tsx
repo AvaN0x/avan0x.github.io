@@ -5,7 +5,7 @@ import { isMobile } from 'react-device-detect';
 import IProject from './IProject';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faChevronDown, faChevronUp, faExternalLinkAlt, faUser } from '@fortawesome/free-solid-svg-icons';
-import LanguageComponent from '../../../components/LanguageComponent';
+import LanguageComponent from '../../LanguagesIcons/LanguageComponent';
 import { faGithub, faYoutube } from '@fortawesome/free-brands-svg-icons';
 import { css } from '@emotion/react';
 import Markdown from 'markdown-to-jsx';
