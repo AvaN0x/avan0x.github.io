@@ -10,6 +10,9 @@ import { Route, HashRouter as Router, Switch } from 'react-router-dom';
 import { AnimatePresence } from "framer-motion";
 import { motion } from "framer-motion"
 
+import { transitions, positions, Provider as AlertProvider } from 'react-alert';
+import AlertTemplate from './AlertTemplate';
+
 import './App.css';
 
 import NotFound from "./views/Errors/NotFound";
@@ -27,31 +30,44 @@ const Redirect = (link: string) => {
     return null;
 }
 
+const options = {
+    position: positions.BOTTOM_RIGHT,
+    transition: transitions.FADE,
+    timeout: 5000,
+    offset: '10px',
+    containerStyle: {
+        zIndex: 10000,
+        bottom: 50
+    }
+}
+
 const App = (): JSX.Element => {
     return (
         <Router basename='/'>
-            <FirebaseDatabaseProvider firebase={firebase} {...firebaseConfig}>
-                <PageContainer>
-                    <AnimatePresence exitBeforeEnter>
-                        <Switch>
-                            <Route exact path='/' component={Portfolio} />
-                            <Route exact path='/discord' component={Discord} />
+            <AlertProvider template={AlertTemplate} {...options}>
+                <FirebaseDatabaseProvider firebase={firebase} {...firebaseConfig}>
+                    <PageContainer>
+                        <AnimatePresence exitBeforeEnter>
+                            <Switch>
+                                <Route exact path='/' component={Portfolio} />
+                                <Route exact path='/discord' component={Discord} />
 
-                            {/* GitHub Pages */}
-                            <Route exact path="/IUT-ProjetWeb" component={() => Redirect('https://avan0x.github.io/IUT-ProjetWeb/')} />
-                            <Route exact path="/AnciensEtudiantsIUTMetz" component={() => Redirect('https://oxypomme.github.io/AnciensEtudiantsIUTMetz/')} />
+                                {/* GitHub Pages */}
+                                <Route exact path="/IUT-ProjetWeb" component={() => Redirect('https://avan0x.github.io/IUT-ProjetWeb/')} />
+                                <Route exact path="/AnciensEtudiantsIUTMetz" component={() => Redirect('https://oxypomme.github.io/AnciensEtudiantsIUTMetz/')} />
 
-                            {/* Other pages */}
-                            <Route exact path="/Matchable" component={() => Redirect('https://matchable-80a41.web.app/')} />
+                                {/* Other pages */}
+                                <Route exact path="/Matchable" component={() => Redirect('https://matchable-80a41.web.app/')} />
 
-                            {/* Error pages */}
-                            <Route component={NotFound} />
-                        </Switch>
-                    </AnimatePresence>
-                </PageContainer>
+                                {/* Error pages */}
+                                <Route component={NotFound} />
+                            </Switch>
+                        </AnimatePresence>
+                    </PageContainer>
 
-                <Footer></Footer>
-            </FirebaseDatabaseProvider>
+                    <Footer></Footer>
+                </FirebaseDatabaseProvider>
+            </AlertProvider>
         </Router>
     );
 }

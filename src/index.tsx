@@ -5,37 +5,16 @@ import { Provider } from 'react-redux'
 import 'firebase/auth'
 import { ReactReduxFirebaseProvider } from 'react-redux-firebase'
 
-import { transitions, positions, Provider as AlertProvider } from 'react-alert';
-
-import AlertTemplate from './AlertTemplate';
-
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 import { rrfProps, store } from './firebase/store';
 
-const options = {
-    position: positions.BOTTOM_RIGHT,
-    transition: transitions.FADE,
-    timeout: 5000,
-    offset: '10px',
-    containerStyle: {
-        zIndex: 10000,
-        bottom: 50
-    }
-}
-
-
-
-
-// TODO move Alert to App.tsx
 ReactDOM.render(
     <React.StrictMode>
         <Provider store={store}>
             <ReactReduxFirebaseProvider {...rrfProps}>
-                <AlertProvider template={AlertTemplate} {...options}>
-                    <App />
-                </AlertProvider>
+                <App />
             </ReactReduxFirebaseProvider>
         </Provider>
     </React.StrictMode >,
