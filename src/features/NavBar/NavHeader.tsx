@@ -32,7 +32,7 @@ const NavHeader = ({ children, toggleMenu }: PropsType): JSX.Element => {
             <RightItemContainer>
                 <a href="https://github.com/AvaN0x" target="_blank" rel="noreferrer">
                     <GitImage
-                        src="https://avatars3.githubusercontent.com/u/27494805?s=460&v=4" title="github.com/AvaN0x" alt="github.com/AvaN0x" />
+                        src="https://avatars3.githubusercontent.com/u/27494805" title="github.com/AvaN0x" alt="github.com/AvaN0x" />
                 </a>
             </RightItemContainer>
         </NavContainer>

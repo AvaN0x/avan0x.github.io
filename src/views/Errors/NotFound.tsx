@@ -1,24 +1,13 @@
 import React from 'react';
 import { ViewContainer } from '../../App';
+import Loading from '../../components/Loading';
 import NavBar from '../../features/NavBar';
-
-import logo from '../../logo.svg';
 
 const NotFound = (): JSX.Element => {
     return (
         <ViewContainer>
             <NavBar />
-            <div className="App">
-                <header>
-                    <div className="App-header">
-                        <img src={logo} className="App-logo" alt="logo" />
-                        <h1>404 Not Found</h1>
-                        <p>
-                            Seems like you are lost ...
-                    </p>
-                    </div>
-                </header>
-            </div>
+            <Loading title="404 Not Found" subtitle="Seems like you are lost ..." allowClick noSpinning />
         </ViewContainer>
     );
 }

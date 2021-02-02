@@ -1,7 +1,7 @@
 import React from 'react';
 import styled from '@emotion/styled';
 
-import { keyframes } from '@emotion/react';
+import { css, keyframes } from '@emotion/react';
 
 const InfiniteRotate = keyframes`
     from {
@@ -18,7 +18,7 @@ const InfiniteRotate = keyframes`
 
 
 
-const StyledFrontContainer = styled.div`
+const StyledFrontContainer = styled.div<{ allowClick: boolean }>`
     background-color: #3333337D;
     position: fixed;
     top:0;
@@ -31,19 +31,25 @@ const StyledFrontContainer = styled.div`
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    z-index: 10000;
-
-    & > img {
-        color: white;
-        animation: ${InfiniteRotate} 2s linear infinite;
+    ${props => !props.allowClick &&
+        css`
+            z-index: 10000;
+        `
     }
 
     & > h1 {
         color: var(--font-color);
+        margin: 4px;
+    }
+
+    & > p {
+        color: var(--font-color);
+        margin: 4px;
+        opacity: .8;
     }
 `;
 
-const LoadImage = styled.img`
+const LoadImage = styled.img<{ spin: boolean }>`
     height: 8rem;
     position: relative;
     top: -8px;
@@ -52,18 +58,32 @@ const LoadImage = styled.img`
     border: 1px solid var(--header-font-color);
     transform: rotate(0);
     transition: .5s;
+    color: white;
+    ${props => props.spin &&
+        css`
+            animation: ${InfiniteRotate} 2s linear infinite;
+        `
+    }
 `;
 
 type PropsType = {
     title?: string;
+    subtitle?: string;
+    allowClick?: boolean;
+    noSpinning?: boolean;
 }
 
-const Loading = ({ title }: PropsType): JSX.Element => {
+const Loading = ({ title, subtitle, allowClick, noSpinning }: PropsType): JSX.Element => {
     return (
-        <StyledFrontContainer>
+        <StyledFrontContainer allowClick={!!allowClick}>
             <LoadImage
-                src="https://avatars3.githubusercontent.com/u/27494805?s=460&v=4" title="github.com/AvaN0x" alt="github.com/AvaN0x" />
+                src="https://avatars3.githubusercontent.com/u/27494805"
+                title="github.com/AvaN0x"
+                alt="github.com/AvaN0x"
+                spin={!noSpinning}
+            />
             {title && <h1>{title}</h1>}
+            {subtitle && <p>{subtitle}</p>}
         </StyledFrontContainer>
     );
 }
