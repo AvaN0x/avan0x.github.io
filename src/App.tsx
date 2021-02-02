@@ -13,8 +13,6 @@ import { motion } from "framer-motion"
 import { transitions, positions, Provider as AlertProvider } from 'react-alert';
 import AlertTemplate from './AlertTemplate';
 
-import './App.css';
-
 import NotFound from "./views/Errors/NotFound";
 import Portfolio from './views/Portfolio';
 import Discord from './views/Discord';
