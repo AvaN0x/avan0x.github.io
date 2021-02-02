@@ -7,7 +7,7 @@ import firebaseConfig from "./config";
 
 import IAbout from '../features/Portfolio/About/IAbout';
 import IProjects from '../features/Portfolio/Projects/IProjects';
-import IIcon from "../features/LanguagesIcons/IIcon";
+import IIcon from "../components/LanguagesIcons/IIcon";
 
 firebase.initializeApp(firebaseConfig)
 
