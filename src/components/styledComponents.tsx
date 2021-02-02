@@ -56,7 +56,7 @@ export const EducationContainer = styled.div`
         font-size: 1rem;
         margin: 0;
         padding: 0;
-        color: var(--main-color);
+        color: var(--secondary-color);
     }
 
     &>p {
