@@ -36,7 +36,7 @@ const LanguageComponent = ({ name }: { name: string }): JSX.Element => {
     else {
         // only print error if icons have loaded
         if (isLoaded(icons)) {
-            console.error("`" + name + "` is missing from LanguageComponent.tsx");
+            console.error("`" + name + "` is missing from icons");
         }
 
         return (

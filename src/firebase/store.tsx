@@ -8,6 +8,7 @@ import firebaseConfig from "./config";
 import IAbout from '../features/Portfolio/About/IAbout';
 import IProjects from '../features/Portfolio/Projects/IProjects';
 import IIcon from "../components/LanguagesIcons/IIcon";
+import ILang from "../components/Lang/ILang";
 
 firebase.initializeApp(firebaseConfig)
 
@@ -36,6 +37,7 @@ export type RootState = DefaultRootState & {
             email?: string;
             projects?: IProjects;
             icons?: { [id: string]: IIcon; };
+            langs?: { [id: string]: ILang; };
         }
     }
 }

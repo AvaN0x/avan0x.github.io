@@ -12,6 +12,8 @@ import About from '../../features/Portfolio/About';
 import Contact from '../../features/Portfolio/Contact';
 import Projects from '../../features/Portfolio/Projects';
 
+import Lang, { LangString } from '../../components/Lang/Lang';
+
 const Portfolio = (): JSX.Element => {
     useFirebaseConnect([
         { type: 'value', path: 'icons', queryParams: ['orderByKey'] }
@@ -20,23 +22,23 @@ const Portfolio = (): JSX.Element => {
     return (
         <ViewContainer>
             <NavBar>
-                <HashLink smooth to="#about">A propos</HashLink>
-                <HashLink smooth to="#projects">Projets</HashLink>
-                <HashLink smooth to="#contact">Contact</HashLink>
+                <HashLink smooth to="#about"><Lang name={"about"} /></HashLink>
+                <HashLink smooth to="#projects"><Lang name={"projects"} /></HashLink>
+                <HashLink smooth to="#contact"><Lang name={"contact"} /></HashLink>
             </NavBar>
 
             <Cover url={"https://wallpaperaccess.com/full/521099.jpg"} >
-                <p>Développeur</p>
+                <p><Lang name={"portfolio_cover_subtitle"} /></p>
                 <h1>Clément RICATTE</h1>
             </Cover>
 
-            <ColoredSection title="A propos" id="about" />
+            <ColoredSection title={LangString("about")} id="about" />
             <About />
 
-            <ColoredSection title="Projets" id="projects" />
+            <ColoredSection title={LangString("projects")} id="projects" />
             <Projects />
 
-            <ColoredSection title="Contact" id="contact" />
+            <ColoredSection title={LangString("contact")} id="contact" />
             <Contact />
         </ViewContainer>
     );

@@ -6,6 +6,7 @@ import { Section, Segment, SegmentTitle } from '../../components/styledComponent
 
 import IProjects from './Projects/IProjects';
 import ProjectCard from './Projects/ProjectCard';
+import Lang from '../../components/Lang/Lang';
 
 const ProjectsContainerStyle = styled.div`
     display: flex;
@@ -30,10 +31,10 @@ const ProjectsContainer = ({ projects }: { projects: IProjects }) => {
         <ProjectsContainerStyle>
             {projects.schoolProjects?.map((school, schoolIndex) =>
                 <div key={schoolIndex}>
-                    <CategoryTitle>Projets scolaires ({school.label})</CategoryTitle>
+                    <CategoryTitle><Lang name={"school_projects"} /> ({school.label})</CategoryTitle>
                     {school.semesters?.map((semester, semesterIndex) =>
                         <div key={semesterIndex}>
-                            <SegmentTitle>Semestre {semester.number}</SegmentTitle>
+                            <SegmentTitle><Lang name={"semester"} /> {semester.number}</SegmentTitle>
                             <Segment>
                                 {semester.projects?.map((project, index) =>
                                     <ProjectCard project={project} key={index} />
@@ -48,7 +49,7 @@ const ProjectsContainer = ({ projects }: { projects: IProjects }) => {
             )}
             {projects.personalProjects &&
                 <>
-                    <CategoryTitle>Projets personnels</CategoryTitle>
+                    <CategoryTitle><Lang name={"personal_projects"} /></CategoryTitle>
                     {projects.personalProjects?.map((project, index) =>
                         <ProjectCard project={project} key={index} />
                     )}

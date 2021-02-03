@@ -18,6 +18,7 @@ import Portfolio from './views/Portfolio';
 import Discord from './views/Discord';
 import Footer from './features/Footer';
 import styled from '@emotion/styled';
+import { useFirebaseConnect } from 'react-redux-firebase';
 
 const PageContainer = styled.div`
     min-height: 100vh;
@@ -40,6 +41,10 @@ const options = {
 }
 
 const App = (): JSX.Element => {
+    useFirebaseConnect([
+        { type: 'value', path: 'langs', queryParams: ['orderByKey'] }
+    ])
+
     return (
         <Router basename='/'>
             <AlertProvider template={AlertTemplate} {...options}>

@@ -7,6 +7,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faDiscord, faGithub } from '@fortawesome/free-brands-svg-icons';
 import { faPortrait } from '@fortawesome/free-solid-svg-icons';
 import { css } from '@emotion/react';
+import Lang from '../../components/Lang/Lang';
 
 const MenuContainer = styled.div<{ isOpen: boolean }>`
     position: fixed;
@@ -90,12 +91,12 @@ const NavMenu = ({ isOpen, children }: PropsType): JSX.Element => {
         <MenuContainer isOpen={isOpen}>
             {children &&
                 <MenuSection>
-                    <h1>Sur cette page</h1>
+                    <h1><Lang name={"on_this_page"} /></h1>
                     {children}
                 </MenuSection>
             }
             <MenuSection>
-                <h1>A propos</h1>
+                <h1><Lang name={"about"} /></h1>
                 <a href="https://github.com/AvaN0x" target="_blank" rel="noreferrer">
                     <FontAwesomeIcon icon={faGithub} />GitHub
                 </a>
