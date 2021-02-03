@@ -35,7 +35,7 @@ const Personal = ({ personal }: PropsType): JSX.Element => {
                             </span>
                         </li>
                     }
-                    <li><Label><Lang name="about_location" /></Label> : <span>{personal.place}</span></li>
+                    <li><Label><Lang name="about_location" /></Label> : <span><Lang content={personal.place} /></span></li>
                     {personal.license?.car?.ownLicense &&
                         <li><Lang name="about_car_license" />{personal.license.car?.ownVehicle && <> + <Lang name="about_license_vehicle" /></>}</li>
                     }

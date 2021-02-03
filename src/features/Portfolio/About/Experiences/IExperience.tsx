@@ -1,11 +1,13 @@
+import ILang from "../../../../components/Lang/ILang";
+
 interface IExperience {
     date: {
-        start: string,
-        end: string
+        start: ILang | string,
+        end: ILang | string
     }
-    label: string,
-    location: string,
-    subtitle?: string
+    label: ILang | string,
+    location: ILang | string,
+    subtitle?: ILang | string
 }
 
 export default IExperience;

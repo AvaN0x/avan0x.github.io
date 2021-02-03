@@ -1,6 +1,8 @@
+import ILang from "../Lang/ILang";
+
 interface IIcon {
-    label: string;
-    title?: string;
+    label: ILang | string;
+    title?: ILang | string;
     icons?: { src: string; href?: string }[];
 }
 

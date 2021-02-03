@@ -4,7 +4,7 @@ import { css } from '@emotion/react';
 import { useSelector } from 'react-redux';
 import { isLoaded } from 'react-redux-firebase';
 import { RootState } from '../../firebase/store';
-import Lang from '../Lang/Lang';
+import Lang, { LangStringFromILang } from '../Lang/Lang';
 
 const LanguageImg = styled.img`
     height: 1rem;
@@ -23,7 +23,7 @@ const LanguageComponent = ({ name }: { name: string }): JSX.Element => {
 
     if (icons && icons[name]) {
         return (
-            <span title={icons[name].title || ""}>
+            <span title={LangStringFromILang(icons[name].title) || ""}>
                 {icons[name].icons?.map((icon, techIndex) => (
                     <LanguageLink key={techIndex} target="_blank" rel="noreferrer" href={icon.href}>
                         <LanguageImg src={icon.src} />

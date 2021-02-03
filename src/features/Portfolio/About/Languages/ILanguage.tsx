@@ -1,5 +1,7 @@
+import ILang from "../../../../components/Lang/ILang";
+
 interface ILanguage {
-    label: string,
+    label: ILang | string,
     pourcent: number
 }
 

@@ -1,4 +1,5 @@
 import React from 'react';
+import ILang from '../../../../components/Lang/ILang';
 import Lang from '../../../../components/Lang/Lang';
 
 import { Segment, SegmentTitle } from '../../../../components/styledComponents';
@@ -6,7 +7,7 @@ import { Segment, SegmentTitle } from '../../../../components/styledComponents';
 import { AboutItem } from '../../About';
 
 type PropsType = {
-    qualities: string[];
+    qualities: (ILang | string)[];
 }
 
 const Qualities = ({ qualities }: PropsType): JSX.Element => {
