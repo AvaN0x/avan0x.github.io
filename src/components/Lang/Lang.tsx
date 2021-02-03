@@ -1,6 +1,4 @@
 import React from 'react';
-import styled from '@emotion/styled';
-import { isMobile } from 'react-device-detect';
 
 import ILang from './ILang';
 import { useSelector } from 'react-redux';
@@ -28,7 +26,7 @@ export const LangString = (name: string): string => {
 }
 
 export const LangStringFromILang = (content: ILang | string): string => {
-    const language = "en";
+    const language = "fr";
 
     if (typeof content === "string")
         return content;

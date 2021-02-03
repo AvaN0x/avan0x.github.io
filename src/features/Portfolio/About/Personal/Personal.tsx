@@ -5,6 +5,7 @@ import IPersonal from './IPersonal';
 import { Segment, SegmentTitle } from '../../../../components/styledComponents';
 import { AboutItem } from '../../About';
 import moment from 'moment';
+import Lang, { LangString } from '../../../../components/Lang/Lang';
 
 const Label = styled.b`
     letter-spacing: 1px;
@@ -17,19 +18,26 @@ type PropsType = {
 const Personal = ({ personal }: PropsType): JSX.Element => {
     const yearOld = new Date(new Date().getTime() - moment(personal.dateofbirth, "YYYY-MM-DD").toDate().getTime()).getFullYear() - 1970;
     const daysSinceBirthday = Math.floor((new Date().getTime() - new Date(2001 + yearOld, 9, 9).getTime()) / 86400000);
+    const date_format: string = LangString("date_format");
 
     return (
         <AboutItem>
-            <SegmentTitle>Informations personnelles</SegmentTitle>
+            <SegmentTitle><Lang name="about_personal_informations" /></SegmentTitle>
             <Segment>
                 <ul>
-                    <li><Label>Nom</Label> : <span>{personal.lastname}</span></li>
-                    <li><Label>Prénom</Label> : <span>{personal.firstname}</span></li>
-                    {yearOld && <li><Label>Age</Label> : <span title={"et " + daysSinceBirthday + " jours."}>{yearOld}</span></li>}
-                    <li><Label>Date de naissance</Label> : <span>{moment(personal.dateofbirth, "YYYY-MM-DD").format("DD/MM/YYYY")}</span></li>
-                    <li><Label>Lieu</Label> : <span>{personal.place}</span></li>
+                    <li><Label><Lang name="about_lastname" /></Label> : <span>{personal.lastname}</span></li>
+                    <li><Label><Lang name="about_firstname" /></Label> : <span>{personal.firstname}</span></li>
+                    {yearOld && <li><Label><Lang name="about_age" /></Label> : <span title={LangString("about_age_and") + " " + daysSinceBirthday + " " + LangString("about_age_days")}>{yearOld}</span></li>}
+                    {date_format.length > 0 && date_format !== "date_format" &&
+                        <li>
+                            <Label><Lang name="about_date_of_birth" /></Label> : <span>
+                                {moment(personal.dateofbirth, "YYYY-MM-DD").format(date_format)}
+                            </span>
+                        </li>
+                    }
+                    <li><Label><Lang name="about_location" /></Label> : <span>{personal.place}</span></li>
                     {personal.license?.car?.ownLicense &&
-                        <li>Permis B{personal.license.car?.ownVehicle && <> + Véhicule</>}</li>
+                        <li><Lang name="about_car_license" />{personal.license.car?.ownVehicle && <> + <Lang name="about_license_vehicle" /></>}</li>
                     }
                 </ul>
             </Segment>

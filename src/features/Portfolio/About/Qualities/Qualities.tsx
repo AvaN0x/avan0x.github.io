@@ -1,4 +1,5 @@
 import React from 'react';
+import Lang from '../../../../components/Lang/Lang';
 
 import { Segment, SegmentTitle } from '../../../../components/styledComponents';
 
@@ -11,11 +12,11 @@ type PropsType = {
 const Qualities = ({ qualities }: PropsType): JSX.Element => {
     return (
         <AboutItem>
-            <SegmentTitle>Qualités</SegmentTitle>
+            <SegmentTitle><Lang name="about_qualities" /></SegmentTitle>
             <Segment>
                 <ul>
                     {qualities.map((quality, index) => (
-                        <li key={index}>{quality}</li>
+                        <li key={index}><Lang content={quality} /></li>
                     ))}
                 </ul>
             </Segment>

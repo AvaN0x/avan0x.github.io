@@ -5,6 +5,7 @@ import LoadBar from '../../../../components/LoadBar';
 
 import ILanguage from './ILanguage';
 import { AboutItem } from '../../About';
+import Lang from '../../../../components/Lang/Lang';
 
 type PropsType = {
     languages: ILanguage[];
@@ -13,11 +14,11 @@ type PropsType = {
 const Languages = ({ languages }: PropsType): JSX.Element => {
     return (
         <AboutItem>
-            <SegmentTitle>Langues</SegmentTitle>
+            <SegmentTitle><Lang name="about_languages" /></SegmentTitle>
             <Segment>
                 <ul>
                     {languages.map((language, index) => (
-                        <li key={index}>{language.label}<LoadBar pourcent={language.pourcent} /></li>
+                        <li key={index}><Lang content={language.label} /><LoadBar pourcent={language.pourcent} /></li>
                     ))}
                 </ul>
             </Segment>

@@ -4,6 +4,7 @@ import { css } from '@emotion/react';
 import { useSelector } from 'react-redux';
 import { isLoaded } from 'react-redux-firebase';
 import { RootState } from '../../firebase/store';
+import Lang from '../Lang/Lang';
 
 const LanguageImg = styled.img`
     height: 1rem;
@@ -29,7 +30,7 @@ const LanguageComponent = ({ name }: { name: string }): JSX.Element => {
                     </LanguageLink>
                 ))}
 
-                {icons[name].label}
+                <Lang content={icons[name].label} />
             </span>
         );
     }

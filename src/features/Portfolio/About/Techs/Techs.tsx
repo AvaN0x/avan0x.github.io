@@ -6,6 +6,7 @@ import { Segment, SegmentTitle } from '../../../../components/styledComponents';
 import { AboutItem } from '../../About';
 import ITechs from './ITechs';
 import LanguageComponent from '../../../../components/LanguagesIcons/LanguageComponent';
+import Lang from '../../../../components/Lang/Lang';
 
 const LanguageList = styled.li`
     &>span:not(:last-of-type):after {
@@ -21,7 +22,7 @@ type PropsType = {
 const Techs = ({ techs }: PropsType): JSX.Element => {
     return (
         <AboutItem>
-            <SegmentTitle>Informatique</SegmentTitle>
+            <SegmentTitle><Lang name="about_techs" /></SegmentTitle>
             <Segment>
                 <ul>
                     {techs.others.map((techList, index) => (
@@ -32,7 +33,7 @@ const Techs = ({ techs }: PropsType): JSX.Element => {
                         </LanguageList>
                     ))}
                 </ul>
-                <h1>Langages</h1>
+                <h1><Lang name="about_languages" /></h1>
                 <ul>
                     {techs.codingLanguages.map((techList, index) => (
                         <LanguageList key={index}>
