@@ -9,6 +9,7 @@ import LanguageComponent from '../../../components/LanguagesIcons/LanguageCompon
 import { faGithub, faYoutube } from '@fortawesome/free-brands-svg-icons';
 import { css } from '@emotion/react';
 import Markdown from 'markdown-to-jsx';
+import Lang, { LangString, LangStringFromILang } from '../../../components/Lang/Lang';
 
 const Container = styled.div`
     width: ${isMobile ? "90vw" : "80%"};
@@ -171,38 +172,37 @@ const ProjectCard = ({ project }: PropsType): JSX.Element => {
     return (
         <Container ref={cardRef}>
             <ProjectTitle onClick={handleTitleClick}>
-                {project.label}<FontAwesomeIcon icon={show ? faChevronUp : faChevronDown} />
+                <Lang content={project.label} /><FontAwesomeIcon icon={show ? faChevronUp : faChevronDown} />
             </ProjectTitle>
             <ContentContainer show={show}>
                 {project.objective &&
                     <>
-                        <SecondaryTitle>Objectif</SecondaryTitle>
-                        {/* <p>{project.objective}</p> */}
-                        <p><Markdown>{project.objective}</Markdown></p>
+                        <SecondaryTitle><Lang name={"project_objective"} /></SecondaryTitle>
+                        <p><Markdown>{LangStringFromILang(project.objective)}</Markdown></p>
                     </>
                 }
                 {project.aimedSkills &&
                     <>
-                        <SecondaryTitle>Compétences visées</SecondaryTitle>
+                        <SecondaryTitle><Lang name={"project_aimed_skills"} /></SecondaryTitle>
                         <List>
                             {project.aimedSkills.map((skill, index) =>
-                                <li key={index}><Markdown>{skill}</Markdown></li>
+                                <li key={index}><Markdown>{LangStringFromILang(skill)}</Markdown></li>
                             )}
                         </List>
                     </>
                 }
                 {project.features &&
                     <>
-                        <SecondaryTitle>Compétences visées</SecondaryTitle>
+                        <SecondaryTitle><Lang name={"project_features"} /></SecondaryTitle>
                         <List>
                             {project.features.map((skill, index) =>
-                                <li key={index}><Markdown>{skill}</Markdown></li>
+                                <li key={index}><Markdown>{LangStringFromILang(skill)}</Markdown></li>
                             )}
                         </List>
                     </>
                 }
                 {project.numberOfContributors && project.numberOfContributors > 0 &&
-                    <ContributorsContainer title={project.numberOfContributors + " contributeurs"}>
+                    <ContributorsContainer title={project.numberOfContributors + LangString("project_number_of_contributors")}>
                         {Array.from(Array(project.numberOfContributors), (e, i) => {
                             return <FontAwesomeIcon icon={faUser} key={i} />
                         })}
