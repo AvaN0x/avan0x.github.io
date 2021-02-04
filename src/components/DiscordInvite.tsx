@@ -1,6 +1,7 @@
 import React from 'react';
 import styled from '@emotion/styled';
 import { NavLink } from 'react-router-dom';
+import Lang from './Lang/Lang';
 
 const Container = styled.div`
     width: min(432px, 90vw);
@@ -110,16 +111,16 @@ const DiscordInvite = (): JSX.Element => {
 
     return (
         <Container>
-            <p>Tu as reçu une invitation à rejoindre un serveur par AvaN0x#6348</p>
+            <p><Lang name="discord_invite_title" /></p>
             <DiscordLogo src="https://avatars3.githubusercontent.com/u/27494805" />
             <DetailsContainer>
                 <NavLink to="/discord">
                     {discord?.name || ""}
                 </NavLink>
-                <p><DiscordBubble /> <strong>{discord?.onlines || -1}</strong> en ligne</p>
+                <p><DiscordBubble /> <strong>{discord?.onlines || -1}</strong> <Lang name="discord_invite_online" /></p>
             </DetailsContainer>
             <JoinButton to="/discord">
-                Rejoindre
+                <Lang name="discord_invite_join" />
             </JoinButton>
         </Container>
     );
