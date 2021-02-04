@@ -12,7 +12,7 @@ import Markdown from 'markdown-to-jsx';
 import Lang, { LangString, LangStringFromILang } from '../../../components/Lang/Lang';
 
 const Container = styled.div`
-    width: ${isMobile ? "90vw" : "80%"};
+    width: ${isMobile ? "88vw" : "80%"};
     margin: 0 auto;
 `;
 
