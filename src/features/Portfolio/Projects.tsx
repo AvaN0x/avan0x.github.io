@@ -31,7 +31,7 @@ const ProjectsContainer = ({ projects }: { projects: IProjects }) => {
         <ProjectsContainerStyle>
             {projects.schoolProjects?.map((school, schoolIndex) =>
                 <div key={schoolIndex}>
-                    <CategoryTitle><Lang name={"school_projects"} /> ({school.label})</CategoryTitle>
+                    <CategoryTitle><Lang name={"school_projects"} /> (<Lang content={school.label} />)</CategoryTitle>
                     {school.semesters?.map((semester, semesterIndex) =>
                         <div key={semesterIndex}>
                             <SegmentTitle><Lang name={"semester"} /> {semester.number}</SegmentTitle>

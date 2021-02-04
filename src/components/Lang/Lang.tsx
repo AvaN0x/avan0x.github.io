@@ -26,7 +26,7 @@ export const LangString = (name: string): string => {
 }
 
 export const LangStringFromILang = (content: ILang | string | undefined): string => {
-    const language = "en";
+    const language = "fr";
 
     if (typeof content === "string")
         return content;
