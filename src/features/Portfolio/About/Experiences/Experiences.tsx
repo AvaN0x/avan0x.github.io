@@ -20,7 +20,7 @@ const Educations = ({ experiences }: PropsType): JSX.Element => {
                         <h1><Lang content={experience.label} /></h1>
                         {experience.subtitle && <p><i><Lang content={experience.subtitle} /></i></p>}
                         <p><Lang content={experience.location} /></p>
-                        <p>{experience.date.start} – {experience.date.end}</p>
+                        <p><Lang content={experience.date.start} /> – <Lang content={experience.date.end} /></p>
                     </EducationContainer>
                 ))}
             </Segment>
