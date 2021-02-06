@@ -5,9 +5,10 @@ import { isMobile } from 'react-device-detect';
 import { NavLink } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faDiscord, faGithub } from '@fortawesome/free-brands-svg-icons';
-import { faPortrait } from '@fortawesome/free-solid-svg-icons';
+import { faGlobe, faPortrait } from '@fortawesome/free-solid-svg-icons';
 import { css } from '@emotion/react';
 import Lang from '../../components/Lang/Lang';
+import Cookies from 'js-cookie';
 
 const MenuContainer = styled.div<{ isOpen: boolean }>`
     position: fixed;
@@ -107,9 +108,53 @@ const NavMenu = ({ isOpen, children }: PropsType): JSX.Element => {
                     <FontAwesomeIcon icon={faPortrait} />Portfolio
                 </NavLink>
             </MenuSection>
-
+            <MenuSection>
+                <h1><Lang name={"website_languages"} /></h1>
+                <SetLanguage language="fr">
+                    <FontAwesomeIcon icon={faGlobe} /><Lang name="french" />
+                </SetLanguage>
+                <SetLanguage language="en">
+                    <FontAwesomeIcon icon={faGlobe} /><Lang name="english" />
+                </SetLanguage>
+            </MenuSection>
 
         </MenuContainer>
+    );
+}
+
+const SetLanguageLink = styled.a<{ current?: boolean }>`
+    ${props => props.current ?
+        css`
+            color: var(--secondary-color);
+            opacity: .5;
+            cursor: default;
+        `
+        :
+        css`
+            cursor: pointer;
+
+        `
+    }
+`;
+
+const SetLanguage = ({ language, children }: { language: string; children?: React.ReactNode; }): JSX.Element => {
+    const current = (Cookies.get("language") || "fr") === language;
+
+    const handleOnClick = (event: React.MouseEvent<HTMLAnchorElement, MouseEvent>) => {
+        event.preventDefault();
+        if (!current) {
+            Cookies.set("language", language, { expires: 365 });
+            window.location.reload();
+        }
+    }
+
+    return (
+        <SetLanguageLink
+            current={current}
+            onClick={handleOnClick}
+        >
+            {children}
+        </SetLanguageLink>
     );
 }
 

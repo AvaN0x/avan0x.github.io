@@ -1,5 +1,7 @@
 import React from 'react';
 
+import Cookies from 'js-cookie';
+
 import ILang from './ILang';
 import { useSelector } from 'react-redux';
 import { RootState } from '../../firebase/store';
@@ -26,7 +28,7 @@ export const LangString = (name: string): string => {
 }
 
 export const LangStringFromILang = (content: ILang | string | undefined): string => {
-    const language = "fr";
+    const language = Cookies.get("language") || "fr";
 
     if (typeof content === "string")
         return content;
