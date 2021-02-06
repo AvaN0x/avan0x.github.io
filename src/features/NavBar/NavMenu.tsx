@@ -7,7 +7,10 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faDiscord, faGithub } from '@fortawesome/free-brands-svg-icons';
 import { faGlobe, faPortrait } from '@fortawesome/free-solid-svg-icons';
 import { css } from '@emotion/react';
+
 import Lang from '../../components/Lang/Lang';
+import LangsList from '../../components/Lang/LangsList';
+
 import Cookies from 'js-cookie';
 
 const MenuContainer = styled.div<{ isOpen: boolean }>`
@@ -92,12 +95,12 @@ const NavMenu = ({ isOpen, children }: PropsType): JSX.Element => {
         <MenuContainer isOpen={isOpen}>
             {children &&
                 <MenuSection>
-                    <h1><Lang name={"on_this_page"} /></h1>
+                    <h1><Lang name={LangsList.on_this_page} /></h1>
                     {children}
                 </MenuSection>
             }
             <MenuSection>
-                <h1><Lang name={"about"} /></h1>
+                <h1><Lang name={LangsList.about} /></h1>
                 <a href="https://github.com/AvaN0x" target="_blank" rel="noreferrer">
                     <FontAwesomeIcon icon={faGithub} />GitHub
                 </a>
@@ -111,10 +114,10 @@ const NavMenu = ({ isOpen, children }: PropsType): JSX.Element => {
             <MenuSection>
                 <h1><Lang name={"website_languages"} /></h1>
                 <SetLanguage language="fr">
-                    <FontAwesomeIcon icon={faGlobe} /><Lang name="french" />
+                    <FontAwesomeIcon icon={faGlobe} /><Lang name={LangsList.french} />
                 </SetLanguage>
                 <SetLanguage language="en">
-                    <FontAwesomeIcon icon={faGlobe} /><Lang name="english" />
+                    <FontAwesomeIcon icon={faGlobe} /><Lang name={LangsList.english} />
                 </SetLanguage>
             </MenuSection>
 

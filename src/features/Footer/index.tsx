@@ -5,7 +5,9 @@ import { isMobile } from 'react-device-detect';
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faGithub } from '@fortawesome/free-brands-svg-icons';
+
 import Lang from '../../components/Lang/Lang';
+import LangsList from '../../components/Lang/LangsList';
 
 
 const FooterContainer = styled.div`
@@ -45,8 +47,8 @@ const FooterContainer = styled.div`
 const Footer = (): JSX.Element => {
     return (
         <FooterContainer>
-            <p><Lang name={"footer_website_made_by"} /> <a href="https://github.com/AvaN0x">Clément RICATTE <FontAwesomeIcon icon={faGithub} /></a></p>
-            <p><a href="https://github.com/AvaN0x/avan0x.github.io/blob/master/LICENSE"><Lang name={"license"} /></a></p >
+            <p><Lang name={LangsList.footer_website_made_by} /> <a href="https://github.com/AvaN0x">Clément RICATTE <FontAwesomeIcon icon={faGithub} /></a></p>
+            <p><a href="https://github.com/AvaN0x/avan0x.github.io/blob/master/LICENSE"><Lang name={LangsList.license} /></a></p >
         </FooterContainer >
     );
 }

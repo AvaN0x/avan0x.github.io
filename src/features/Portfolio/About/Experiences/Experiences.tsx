@@ -4,7 +4,9 @@ import { EducationContainer, Segment, SegmentTitle } from '../../../../component
 
 import IExperience from './IExperience';
 import { AboutItem } from '../../About';
+
 import Lang from '../../../../components/Lang/Lang';
+import LangsList from '../../../../components/Lang/LangsList';
 
 type PropsType = {
     experiences: IExperience[];
@@ -13,7 +15,7 @@ type PropsType = {
 const Educations = ({ experiences }: PropsType): JSX.Element => {
     return (
         <AboutItem>
-            <SegmentTitle><Lang name="about_experiences" /></SegmentTitle>
+            <SegmentTitle><Lang name={LangsList.about_experiences} /></SegmentTitle>
             <Segment>
                 {experiences.map((experience, index) => (
                     <EducationContainer key={index}>

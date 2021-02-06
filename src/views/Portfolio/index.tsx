@@ -3,6 +3,9 @@ import { ViewContainer } from '../../App';
 
 import { useFirebaseConnect } from 'react-redux-firebase';
 
+import Lang, { LangString } from '../../components/Lang/Lang';
+import LangsList from '../../components/Lang/LangsList';
+
 import ColoredSection from '../../components/ColoredSection';
 import Cover from '../../components/Cover';
 import NavBar from '../../features/NavBar';
@@ -12,7 +15,6 @@ import About from '../../features/Portfolio/About';
 import Contact from '../../features/Portfolio/Contact';
 import Projects from '../../features/Portfolio/Projects';
 
-import Lang, { LangString } from '../../components/Lang/Lang';
 
 const Portfolio = (): JSX.Element => {
     useFirebaseConnect([
@@ -22,23 +24,23 @@ const Portfolio = (): JSX.Element => {
     return (
         <ViewContainer>
             <NavBar>
-                <HashLink smooth to="#about"><Lang name={"about"} /></HashLink>
-                <HashLink smooth to="#projects"><Lang name={"projects"} /></HashLink>
-                <HashLink smooth to="#contact"><Lang name={"contact"} /></HashLink>
+                <HashLink smooth to="#about"><Lang name={LangsList.about} /></HashLink>
+                <HashLink smooth to="#projects"><Lang name={LangsList.projects} /></HashLink>
+                <HashLink smooth to="#contact"><Lang name={LangsList.contact} /></HashLink>
             </NavBar>
 
             <Cover url={"https://wallpaperaccess.com/full/521099.jpg"} >
-                <p><Lang name={"portfolio_cover_subtitle"} /></p>
+                <p><Lang name={LangsList.portfolio_cover_subtitle} /></p>
                 <h1>Clément RICATTE</h1>
             </Cover>
 
-            <ColoredSection title={LangString("about")} id="about" />
+            <ColoredSection title={LangString(LangsList.about)} id="about" />
             <About />
 
-            <ColoredSection title={LangString("projects")} id="projects" />
+            <ColoredSection title={LangString(LangsList.projects)} id="projects" />
             <Projects />
 
-            <ColoredSection title={LangString("contact")} id="contact" />
+            <ColoredSection title={LangString(LangsList.contact)} id="contact" />
             <Contact />
         </ViewContainer>
     );

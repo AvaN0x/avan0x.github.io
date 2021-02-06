@@ -9,7 +9,9 @@ import LanguageComponent from '../../../components/LanguagesIcons/LanguageCompon
 import { faGithub, faYoutube } from '@fortawesome/free-brands-svg-icons';
 import { css } from '@emotion/react';
 import Markdown from 'markdown-to-jsx';
+
 import Lang, { LangString, LangStringFromILang } from '../../../components/Lang/Lang';
+import LangsList from '../../../components/Lang/LangsList';
 
 const Container = styled.div`
     width: ${isMobile ? "88vw" : "80%"};
@@ -177,13 +179,13 @@ const ProjectCard = ({ project }: PropsType): JSX.Element => {
             <ContentContainer show={show}>
                 {project.objective &&
                     <>
-                        <SecondaryTitle><Lang name={"project_objective"} /></SecondaryTitle>
+                        <SecondaryTitle><Lang name={LangsList.project_objective} /></SecondaryTitle>
                         <p><Markdown>{LangStringFromILang(project.objective)}</Markdown></p>
                     </>
                 }
                 {project.aimedSkills &&
                     <>
-                        <SecondaryTitle><Lang name={"project_aimed_skills"} /></SecondaryTitle>
+                        <SecondaryTitle><Lang name={LangsList.project_aimed_skills} /></SecondaryTitle>
                         <List>
                             {project.aimedSkills.map((skill, index) =>
                                 <li key={index}><Markdown>{LangStringFromILang(skill)}</Markdown></li>
@@ -193,7 +195,7 @@ const ProjectCard = ({ project }: PropsType): JSX.Element => {
                 }
                 {project.features &&
                     <>
-                        <SecondaryTitle><Lang name={"project_features"} /></SecondaryTitle>
+                        <SecondaryTitle><Lang name={LangsList.project_features} /></SecondaryTitle>
                         <List>
                             {project.features.map((skill, index) =>
                                 <li key={index}><Markdown>{LangStringFromILang(skill)}</Markdown></li>
@@ -202,7 +204,7 @@ const ProjectCard = ({ project }: PropsType): JSX.Element => {
                     </>
                 }
                 {project.numberOfContributors && project.numberOfContributors > 0 &&
-                    <ContributorsContainer title={project.numberOfContributors + LangString("project_number_of_contributors")}>
+                    <ContributorsContainer title={project.numberOfContributors + LangString(LangsList.project_number_of_contributors)}>
                         {Array.from(Array(project.numberOfContributors), (e, i) => {
                             return <FontAwesomeIcon icon={faUser} key={i} />
                         })}

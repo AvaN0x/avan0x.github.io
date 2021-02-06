@@ -1,6 +1,8 @@
 import React from 'react';
 import { ViewContainer } from '../App';
+
 import { LangString } from '../components/Lang/Lang';
+import LangsList from '../components/Lang/LangsList';
 
 import Loading from '../components/Loading';
 import NavBar from '../features/NavBar';
@@ -19,7 +21,7 @@ const Discord = (): JSX.Element => {
     return (
         <ViewContainer>
             <NavBar />
-            <Loading title={LangString("discord_redirection")} />
+            <Loading title={LangString(LangsList.discord_redirection)} />
         </ViewContainer>
     );
 }

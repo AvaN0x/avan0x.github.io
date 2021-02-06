@@ -7,7 +7,9 @@ import { useAlert } from 'react-alert'
 import { Section } from '../../components/styledComponents';
 import { FirebaseDatabaseNode } from '@react-firebase/database';
 import DiscordInvite from '../../components/DiscordInvite';
+
 import Lang, { LangString } from '../../components/Lang/Lang';
+import LangsList from '../../components/Lang/LangsList';
 
 const ContactContainerStyle = styled.div`
     display: flex;
@@ -50,9 +52,9 @@ const ContactContainerStyle = styled.div`
 const ContactContainer = ({ mail }: { mail: string }): JSX.Element => {
     const alert = useAlert();
 
-    const contact_error_name: string = LangString("contact_error_name");
-    const contact_error_message: string = LangString("contact_error_message");
-    const contact_success: string = LangString("contact_success");
+    const contact_error_name: string = LangString(LangsList.contact_error_name);
+    const contact_error_message: string = LangString(LangsList.contact_error_message);
+    const contact_success: string = LangString(LangsList.contact_success);
 
     //TODO size max
     const [name, setName] = React.useState("");
@@ -86,21 +88,21 @@ const ContactContainer = ({ mail }: { mail: string }): JSX.Element => {
 
     return (
         <ContactContainerStyle>
-            <label htmlFor="name"><Lang name={"contact_name"} />:</label>
+            <label htmlFor="name"><Lang name={LangsList.contact_name} />:</label>
             <input
                 type="text"
                 name="name"
                 value={name}
                 onChange={handleSetNameOnChange}
             />
-            <label htmlFor="content"><Lang name={"contact_message"} />:</label>
+            <label htmlFor="content"><Lang name={LangsList.contact_message} />:</label>
             <textarea
                 name="content"
                 rows={5}
                 value={content}
                 onChange={handleSetContentOnChange}
             ></textarea>
-            <button onClick={handleOnSubmit}><Lang name={"contact_button"} /></button>
+            <button onClick={handleOnSubmit}><Lang name={LangsList.contact_button} /></button>
         </ContactContainerStyle>
     );
 }

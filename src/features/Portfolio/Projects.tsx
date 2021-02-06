@@ -6,7 +6,9 @@ import { Section, Segment, SegmentTitle } from '../../components/styledComponent
 
 import IProjects from './Projects/IProjects';
 import ProjectCard from './Projects/ProjectCard';
+
 import Lang from '../../components/Lang/Lang';
+import LangsList from '../../components/Lang/LangsList';
 
 const ProjectsContainerStyle = styled.div`
     display: flex;
@@ -31,10 +33,10 @@ const ProjectsContainer = ({ projects }: { projects: IProjects }) => {
         <ProjectsContainerStyle>
             {projects.schoolProjects?.map((school, schoolIndex) =>
                 <div key={schoolIndex}>
-                    <CategoryTitle><Lang name={"school_projects"} /> (<Lang content={school.label} />)</CategoryTitle>
+                    <CategoryTitle><Lang name={LangsList.school_projects} /> (<Lang content={school.label} />)</CategoryTitle>
                     {school.semesters?.map((semester, semesterIndex) =>
                         <div key={semesterIndex}>
-                            <SegmentTitle><Lang name={"semester"} /> {semester.number}</SegmentTitle>
+                            <SegmentTitle><Lang name={LangsList.semester} /> {semester.number}</SegmentTitle>
                             <Segment>
                                 {semester.projects?.map((project, index) =>
                                     <ProjectCard project={project} key={index} />
@@ -49,7 +51,7 @@ const ProjectsContainer = ({ projects }: { projects: IProjects }) => {
             )}
             {projects.personalProjects &&
                 <>
-                    <CategoryTitle><Lang name={"personal_projects"} /></CategoryTitle>
+                    <CategoryTitle><Lang name={LangsList.personal_projects} /></CategoryTitle>
                     {projects.personalProjects?.map((project, index) =>
                         <ProjectCard project={project} key={index} />
                     )}
