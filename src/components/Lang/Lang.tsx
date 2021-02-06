@@ -22,7 +22,7 @@ export const LangString = (name: string): string => {
 
             return name;
         } else {
-            return "";
+            return "↺"; // possible other character : ⌴
         }
     }
 }
