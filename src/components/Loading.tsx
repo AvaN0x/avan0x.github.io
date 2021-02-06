@@ -71,17 +71,20 @@ type PropsType = {
     subtitle?: string;
     allowClick?: boolean;
     noSpinning?: boolean;
+    noImage?: boolean;
 }
 
-const Loading = ({ title, subtitle, allowClick, noSpinning }: PropsType): JSX.Element => {
+const Loading = ({ title, subtitle, allowClick, noSpinning, noImage }: PropsType): JSX.Element => {
     return (
-        <StyledFrontContainer allowClick={!!allowClick}>
-            <LoadImage
-                src="https://avatars3.githubusercontent.com/u/27494805"
-                title="github.com/AvaN0x"
-                alt="github.com/AvaN0x"
-                spin={!noSpinning}
-            />
+        <StyledFrontContainer allowClick={!!allowClick} >
+            {!noImage &&
+                <LoadImage
+                    src="https://avatars3.githubusercontent.com/u/27494805"
+                    title="github.com/AvaN0x"
+                    alt="github.com/AvaN0x"
+                    spin={!noSpinning}
+                />
+            }
             {title && <h1>{title}</h1>}
             {subtitle && <p>{subtitle}</p>}
         </StyledFrontContainer>

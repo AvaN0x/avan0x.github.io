@@ -18,7 +18,10 @@ import Portfolio from './views/Portfolio';
 import Discord from './views/Discord';
 import Footer from './features/Footer';
 import styled from '@emotion/styled';
-import { useFirebaseConnect } from 'react-redux-firebase';
+import { isLoaded, useFirebaseConnect } from 'react-redux-firebase';
+import { useSelector } from 'react-redux';
+import { RootState } from './firebase/store';
+import Loading from './components/Loading';
 
 const PageContainer = styled.div`
     min-height: 100vh;
@@ -44,6 +47,7 @@ const App = (): JSX.Element => {
     useFirebaseConnect([
         { type: 'value', path: 'langs', queryParams: ['orderByKey'] }
     ])
+    const langs = useSelector((state: RootState) => state.firebase.data.langs);
 
     return (
         <Router basename='/'>
@@ -51,6 +55,10 @@ const App = (): JSX.Element => {
                 <FirebaseDatabaseProvider firebase={firebase} {...firebaseConfig}>
                     <PageContainer>
                         <AnimatePresence exitBeforeEnter>
+                            {!isLoaded(langs) &&
+                                <Loading noImage />
+                            }
+
                             <Switch>
                                 <Route exact path='/' component={Portfolio} />
                                 <Route exact path='/discord' component={Discord} />

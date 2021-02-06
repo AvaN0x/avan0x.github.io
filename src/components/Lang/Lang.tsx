@@ -13,7 +13,7 @@ type PropsType = {
 }
 
 export const LangString = (name: string): string => {
-    const langs = useSelector((state: RootState) => state.firebase.data.langs)
+    const langs = useSelector((state: RootState) => state.firebase.data.langs);
     if (langs && langs[name]) {
         return LangStringFromILang(langs[name]);
     } else {
