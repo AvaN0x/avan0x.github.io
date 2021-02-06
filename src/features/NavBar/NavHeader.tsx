@@ -9,12 +9,13 @@ import { css } from '@emotion/react';
 import { NavLink } from 'react-router-dom';
 
 type PropsType = {
+    defaultMenuState: boolean;
     toggleMenu: (value: boolean) => void;
     children?: React.ReactNode;
 }
 
-const NavHeader = ({ children, toggleMenu }: PropsType): JSX.Element => {
-    const [navState, setNavState] = React.useState<boolean>(false);
+const NavHeader = ({ children, toggleMenu, defaultMenuState }: PropsType): JSX.Element => {
+    const [navState, setNavState] = React.useState<boolean>(defaultMenuState);
 
     const handleToggleMenu = () => {
         toggleMenu(!navState);
