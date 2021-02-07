@@ -13,7 +13,7 @@ const LangsList = {
 
     about: "about",
     about_age: "about_age",
-    about_age_and: "about_age_and", // TODO formatter
+    // about_age_and: "about_age_and", // TODO formatter
     about_age_days: "about_age_days",
     about_car_license: "about_car_license",
     about_date_of_birth: "about_date_of_birth",

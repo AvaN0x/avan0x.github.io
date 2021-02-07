@@ -4,9 +4,13 @@ import styled from '@emotion/styled';
 import IPersonal from './IPersonal';
 import { Segment, SegmentTitle } from '../../../../components/styledComponents';
 import { AboutItem } from '../../About';
+
 import moment from 'moment';
+import format from "string-format";
+
 import Lang, { LangString } from '../../../../components/Lang/Lang';
 import LangsList from '../../../../components/Lang/LangsList';
+
 
 const Label = styled.b`
     letter-spacing: 1px;
@@ -28,7 +32,7 @@ const Personal = ({ personal }: PropsType): JSX.Element => {
                 <ul>
                     <li><Label><Lang name={LangsList.about_lastname} /></Label> : <span>{personal.lastname}</span></li>
                     <li><Label><Lang name={LangsList.about_firstname} /></Label> : <span>{personal.firstname}</span></li>
-                    {yearOld && <li><Label><Lang name={LangsList.about_age} /></Label> : <span title={LangString(LangsList.about_age_and) + " " + daysSinceBirthday + " " + LangString(LangsList.about_age_days)}>{yearOld}</span></li>}
+                    {yearOld && <li><Label><Lang name={LangsList.about_age} /></Label> : <span title={format(LangString(LangsList.about_age_days), daysSinceBirthday.toString())}>{yearOld}</span></li>}
                     {date_format.length > 0 && date_format !== "date_format" &&
                         <li>
                             <Label><Lang name={LangsList.about_date_of_birth} /></Label> : <span>
