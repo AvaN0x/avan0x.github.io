@@ -1,7 +1,7 @@
 import React from 'react';
 import styled from '@emotion/styled';
 
-import { Route, HashRouter as Router, Switch } from 'react-router-dom';
+import { Route, HashRouter as Router, Switch, useParams } from 'react-router-dom';
 
 import firebase from "firebase/app";
 import "firebase/database";
@@ -25,6 +25,7 @@ import Footer from 'features/Footer';
 import Loading from 'components/Loading';
 
 import useKonami from 'react-use-konami';
+import SetPageLanguages from 'views/SetPageLanguages';
 
 const PageContainer = styled.div`
     min-height: 100vh;
@@ -78,6 +79,9 @@ const App = (): JSX.Element => {
 
                                 {/* Other pages */}
                                 <Route exact path="/Matchable" component={() => Redirect('https://matchable-80a41.web.app/')} />
+
+                                {/* Set Languages */}
+                                <Route path="/lang/:language" component={SetPageLanguages} />
 
                                 {/* Error pages */}
                                 <Route component={NotFound} />
