@@ -1,13 +1,13 @@
 import React from 'react';
 
-import { Segment, SegmentTitle } from '../../../../components/styledComponents';
-import LoadBar from '../../../../components/LoadBar';
+import { Segment, SegmentTitle } from 'components/styledComponents';
+import LoadBar from 'components/LoadBar';
 
 import ILanguage from './ILanguage';
-import { AboutItem } from '../../About';
+import { AboutItem } from 'features/Portfolio/About';
 
-import Lang from '../../../../components/Lang/Lang';
-import LangsList from '../../../../components/Lang/LangsList';
+import Lang from 'components/Lang/Lang';
+import LangsList from 'components/Lang/LangsList';
 
 type PropsType = {
     languages: ILanguage[];

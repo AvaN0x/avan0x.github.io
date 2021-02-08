@@ -4,12 +4,12 @@ import { isMobile } from 'react-device-detect';
 
 import { useAlert } from 'react-alert'
 
-import { Section } from '../../components/styledComponents';
+import { Section } from 'components/styledComponents';
 import { FirebaseDatabaseNode } from '@react-firebase/database';
-import DiscordInvite from '../../components/DiscordInvite';
+import DiscordInvite from 'components/DiscordInvite';
 
-import Lang, { LangString } from '../../components/Lang/Lang';
-import LangsList from '../../components/Lang/LangsList';
+import Lang, { LangString } from 'components/Lang/Lang';
+import LangsList from 'components/Lang/LangsList';
 
 const ContactContainerStyle = styled.div`
     display: flex;

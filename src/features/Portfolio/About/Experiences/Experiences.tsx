@@ -1,12 +1,12 @@
 import React from 'react';
 
-import { EducationContainer, Segment, SegmentTitle } from '../../../../components/styledComponents';
+import { EducationContainer, Segment, SegmentTitle } from 'components/styledComponents';
 
 import IExperience from './IExperience';
-import { AboutItem } from '../../About';
+import { AboutItem } from 'features/Portfolio/About';
 
-import Lang from '../../../../components/Lang/Lang';
-import LangsList from '../../../../components/Lang/LangsList';
+import Lang from 'components/Lang/Lang';
+import LangsList from 'components/Lang/LangsList';
 
 type PropsType = {
     experiences: IExperience[];

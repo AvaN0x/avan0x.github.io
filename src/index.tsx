@@ -5,10 +5,10 @@ import { Provider } from 'react-redux'
 import 'firebase/auth'
 import { ReactReduxFirebaseProvider } from 'react-redux-firebase'
 
-import './index.css';
-import App from './App';
-import reportWebVitals from './reportWebVitals';
-import { rrfProps, store } from './firebase/store';
+import 'index.css';
+import App from 'App';
+import reportWebVitals from 'reportWebVitals';
+import { rrfProps, store } from 'firebase/store';
 
 ReactDOM.render(
     <React.StrictMode>

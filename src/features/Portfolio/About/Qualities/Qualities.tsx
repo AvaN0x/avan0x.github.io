@@ -1,12 +1,12 @@
 import React from 'react';
 
-import ILang from '../../../../components/Lang/ILang';
-import Lang from '../../../../components/Lang/Lang';
-import LangsList from '../../../../components/Lang/LangsList';
+import ILang from 'components/Lang/ILang';
+import Lang from 'components/Lang/Lang';
+import LangsList from 'components/Lang/LangsList';
 
-import { Segment, SegmentTitle } from '../../../../components/styledComponents';
+import { Segment, SegmentTitle } from 'components/styledComponents';
 
-import { AboutItem } from '../../About';
+import { AboutItem } from 'features/Portfolio/About';
 
 type PropsType = {
     qualities: (ILang | string)[];

@@ -8,8 +8,8 @@ import { faDiscord, faGithub } from '@fortawesome/free-brands-svg-icons';
 import { faGlobe, faPortrait } from '@fortawesome/free-solid-svg-icons';
 import { css } from '@emotion/react';
 
-import Lang from '../../components/Lang/Lang';
-import LangsList from '../../components/Lang/LangsList';
+import Lang from 'components/Lang/Lang';
+import LangsList from 'components/Lang/LangsList';
 
 import Cookies from 'js-cookie';
 

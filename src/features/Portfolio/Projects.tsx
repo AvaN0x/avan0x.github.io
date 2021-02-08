@@ -2,13 +2,13 @@ import React from 'react';
 import styled from '@emotion/styled';
 
 import { FirebaseDatabaseNode } from '@react-firebase/database';
-import { Section, Segment, SegmentTitle } from '../../components/styledComponents';
+import { Section, Segment, SegmentTitle } from 'components/styledComponents';
 
 import IProjects from './Projects/IProjects';
 import ProjectCard from './Projects/ProjectCard';
 
-import Lang from '../../components/Lang/Lang';
-import LangsList from '../../components/Lang/LangsList';
+import Lang from 'components/Lang/Lang';
+import LangsList from 'components/Lang/LangsList';
 
 const ProjectsContainerStyle = styled.div`
     display: flex;

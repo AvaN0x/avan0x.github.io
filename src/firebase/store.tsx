@@ -5,10 +5,10 @@ import { firebaseReducer, FirebaseReducer } from "react-redux-firebase";
 import firebaseConfig from "./config";
 
 
-import IAbout from '../features/Portfolio/About/IAbout';
-import IProjects from '../features/Portfolio/Projects/IProjects';
-import IIcon from "../components/LanguagesIcons/IIcon";
-import ILang from "../components/Lang/ILang";
+import IAbout from 'features/Portfolio/About/IAbout';
+import IProjects from 'features/Portfolio/Projects/IProjects';
+import IIcon from "components/LanguagesIcons/IIcon";
+import ILang from "components/Lang/ILang";
 
 firebase.initializeApp(firebaseConfig)
 

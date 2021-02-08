@@ -1,19 +1,19 @@
 import React from 'react';
-import { ViewContainer } from '../../App';
+import { ViewContainer } from 'App';
 
 import { useFirebaseConnect } from 'react-redux-firebase';
 
-import Lang, { LangString } from '../../components/Lang/Lang';
-import LangsList from '../../components/Lang/LangsList';
+import Lang, { LangString } from 'components/Lang/Lang';
+import LangsList from 'components/Lang/LangsList';
 
-import ColoredSection from '../../components/ColoredSection';
-import Cover from '../../components/Cover';
-import NavBar from '../../features/NavBar';
+import ColoredSection from 'components/ColoredSection';
+import Cover from 'components/Cover';
+import NavBar from 'features/NavBar';
 import { HashLink } from 'react-router-hash-link';
 
-import About from '../../features/Portfolio/About';
-import Contact from '../../features/Portfolio/Contact';
-import Projects from '../../features/Portfolio/Projects';
+import About from 'features/Portfolio/About';
+import Contact from 'features/Portfolio/Contact';
+import Projects from 'features/Portfolio/Projects';
 
 
 const Portfolio = (): JSX.Element => {

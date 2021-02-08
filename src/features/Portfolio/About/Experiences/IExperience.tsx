@@ -1,4 +1,4 @@
-import ILang from "../../../../components/Lang/ILang";
+import ILang from "components/Lang/ILang";
 
 interface IExperience {
     date: {

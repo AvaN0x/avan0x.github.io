@@ -1,15 +1,14 @@
 import React from 'react';
 import styled from '@emotion/styled';
-import { css } from '@emotion/react';
 
 import { Route, HashRouter as Router, Switch } from 'react-router-dom';
 
 import firebase from "firebase/app";
 import "firebase/database";
 import { FirebaseDatabaseProvider } from "@react-firebase/database";
-import firebaseConfig from './firebase/config';
+import firebaseConfig from 'firebase/config';
 import { isLoaded, useFirebaseConnect } from 'react-redux-firebase';
-import { RootState } from './firebase/store';
+import { RootState } from 'firebase/store';
 
 import { useSelector } from 'react-redux';
 
@@ -17,13 +16,13 @@ import { AnimatePresence } from "framer-motion";
 import { motion } from "framer-motion"
 
 import { transitions, positions, Provider as AlertProvider } from 'react-alert';
-import AlertTemplate from './AlertTemplate';
+import AlertTemplate from 'AlertTemplate';
 
-import NotFound from "./views/Errors/NotFound";
-import Portfolio from './views/Portfolio';
-import Discord from './views/Discord';
-import Footer from './features/Footer';
-import Loading from './components/Loading';
+import NotFound from "views/Errors/NotFound";
+import Portfolio from 'views/Portfolio';
+import Discord from 'views/Discord';
+import Footer from 'features/Footer';
+import Loading from 'components/Loading';
 
 import useKonami from 'react-use-konami';
 

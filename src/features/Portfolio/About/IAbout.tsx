@@ -1,4 +1,4 @@
-import ILang from '../../../components/Lang/ILang';
+import ILang from 'components/Lang/ILang';
 import IEducation from './Educations/IEducation';
 import IExperience from './Experiences/IExperience';
 import ILanguage from './Languages/ILanguage';

@@ -1,14 +1,14 @@
 import React from 'react';
 import styled from '@emotion/styled';
 
-import { Segment, SegmentTitle } from '../../../../components/styledComponents';
+import { Segment, SegmentTitle } from 'components/styledComponents';
 
-import { AboutItem } from '../../About';
+import { AboutItem } from 'features/Portfolio/About';
 import ITechs from './ITechs';
-import LanguageComponent from '../../../../components/LanguagesIcons/LanguageComponent';
+import LanguageComponent from 'components/LanguagesIcons/LanguageComponent';
 
-import Lang from '../../../../components/Lang/Lang';
-import LangsList from '../../../../components/Lang/LangsList';
+import Lang from 'components/Lang/Lang';
+import LangsList from 'components/Lang/LangsList';
 
 const LanguageList = styled.li`
     &>span:not(:last-of-type):after {

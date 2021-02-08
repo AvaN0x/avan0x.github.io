@@ -3,7 +3,7 @@ import styled from '@emotion/styled';
 import { isMobile } from 'react-device-detect';
 
 import { FirebaseDatabaseNode } from '@react-firebase/database';
-import { Section } from '../../components/styledComponents';
+import { Section } from 'components/styledComponents';
 
 import IAbout from './About/IAbout';
 import Personal from './About/Personal/Personal';

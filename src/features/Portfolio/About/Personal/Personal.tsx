@@ -2,14 +2,14 @@ import React from 'react';
 import styled from '@emotion/styled';
 
 import IPersonal from './IPersonal';
-import { Segment, SegmentTitle } from '../../../../components/styledComponents';
-import { AboutItem } from '../../About';
+import { Segment, SegmentTitle } from 'components/styledComponents';
+import { AboutItem } from 'features/Portfolio/About';
 
 import moment from 'moment';
 import format from "string-format";
 
-import Lang, { LangString } from '../../../../components/Lang/Lang';
-import LangsList from '../../../../components/Lang/LangsList';
+import Lang, { LangString } from 'components/Lang/Lang';
+import LangsList from 'components/Lang/LangsList';
 
 
 const Label = styled.b`
