@@ -23,7 +23,8 @@ const ContactContainerStyle = styled.div`
     }
 
     & > textarea,
-    & > input[type = text] {
+    & > input[type = text],
+    & > input[type = email] {
         width: ${isMobile ? "90vw" : "600px"};
         min-height: 1.2rem;
     }
@@ -49,19 +50,22 @@ const ContactContainerStyle = styled.div`
     }
 `;
 
-const ContactContainer = ({ mail }: { mail: string }): JSX.Element => {
+const ContactContainer = ({ webhook }: { webhook: string }): JSX.Element => {
     const alert = useAlert();
 
     const contact_error_name: string = LangString(LangsList.contact_error_name);
+    const contact_error_email: string = LangString(LangsList.contact_error_email);
     const contact_error_message: string = LangString(LangsList.contact_error_message);
     const contact_success: string = LangString(LangsList.contact_success);
+    const contact_error_webhook: string = LangString(LangsList.contact_error_webhook);
 
     //TODO size max
-    const [name, setName] = React.useState("");
-    const [content, setContent] = React.useState("");
+    const [name, setName] = React.useState(""); //? discord size max : 256
+    const [email, setEmail] = React.useState(""); //? discord size max : 2048
+    const [content, setContent] = React.useState(""); //? discord size max : 2048
 
     const handleSetNameOnChange = (event: React.ChangeEvent<HTMLInputElement>) => setName(event.target.value);
-
+    const handleSetEmailOnChange = (event: React.ChangeEvent<HTMLInputElement>) => setEmail(event.target.value);
     const handleSetContentOnChange = (event: React.ChangeEvent<HTMLTextAreaElement>) => setContent(event.target.value);
 
 
@@ -69,20 +73,51 @@ const ContactContainer = ({ mail }: { mail: string }): JSX.Element => {
         event.preventDefault();
         let error = false;
 
-        if (!name.trim()) {
+        if (!name.trim() || name.length < 6) {
             alert.error(contact_error_name);
             error = true;
         }
-        if (!content.trim()) {
+        if (!email.trim() || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
+            alert.error(contact_error_email);
+            error = true;
+        }
+        if (!content.trim() || content.length < 10) {
             alert.error(contact_error_message);
             error = true;
         }
 
         if (!error) {
-            window.open('mailto:' + mail + '?subject=Contact - ' + name.trim() + '&body=' + content.trim());
-            alert.success(contact_success)
-            setName("");
-            setContent("");
+            const request = new XMLHttpRequest();
+            request.open("POST", webhook);
+            request.setRequestHeader('Content-type', 'application/json');
+            request.onreadystatechange = function () {
+                if (request.readyState === 4) {
+                    //? 204 seem to be ok for discord
+                    if (request.status === 204) {
+                        alert.success(contact_success);
+                        setName("");
+                        setEmail("");
+                        setContent("");
+                    } else {
+                        alert.error(contact_error_webhook);
+                    }
+                }
+            };
+
+            request.send(JSON.stringify({
+                username: "avan0x.github.io",
+                avatar_url: "https://avatars3.githubusercontent.com/u/27494805",
+                embeds: [
+                    {
+                        title: name,
+                        description: content,
+                        color: 7653631,
+                        footer: {
+                            text: email
+                        }
+                    }
+                ]
+            }));
         }
     }
 
@@ -94,6 +129,15 @@ const ContactContainer = ({ mail }: { mail: string }): JSX.Element => {
                 name="name"
                 value={name}
                 onChange={handleSetNameOnChange}
+                required
+            />
+            <label htmlFor="email"><Lang name={LangsList.contact_email} />:</label>
+            <input
+                type="email"
+                name="email"
+                value={email}
+                onChange={handleSetEmailOnChange}
+                required
             />
             <label htmlFor="content"><Lang name={LangsList.contact_message} />:</label>
             <textarea
@@ -101,6 +145,7 @@ const ContactContainer = ({ mail }: { mail: string }): JSX.Element => {
                 rows={5}
                 value={content}
                 onChange={handleSetContentOnChange}
+                required
             ></textarea>
             <button onClick={handleOnSubmit}><Lang name={LangsList.contact_button} /></button>
         </ContactContainerStyle>
@@ -112,11 +157,11 @@ const Contact = (): JSX.Element => {
     return (
         <Section>
             <FirebaseDatabaseNode
-                path="/email/"
+                path="/contact_webhook/"
                 orderByKey
             >
                 {data => !data.isLoading && data.value &&
-                    <ContactContainer mail={data.value} />
+                    <ContactContainer webhook={data.value} />
                 }
             </FirebaseDatabaseNode>
             <DiscordInvite />

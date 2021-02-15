@@ -32,8 +32,11 @@ const LangsList = {
     contact_button: "contact_button",
     contact_error_message: "contact_error_message",
     contact_error_name: "contact_error_name",
+    contact_error_email: "contact_error_email",
+    contact_error_webhook: "contact_error_webhook",
     contact_message: "contact_message",
     contact_name: "contact_name",
+    contact_email: "contact_email",
     contact_success: "contact_success",
 
     discord_invite_join: "discord_invite_join",

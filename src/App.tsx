@@ -1,7 +1,7 @@
 import React from 'react';
 import styled from '@emotion/styled';
 
-import { Route, HashRouter as Router, Switch, useParams } from 'react-router-dom';
+import { Route, HashRouter as Router, Switch } from 'react-router-dom';
 
 import firebase from "firebase/app";
 import "firebase/database";

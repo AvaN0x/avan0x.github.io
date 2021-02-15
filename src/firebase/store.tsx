@@ -34,7 +34,7 @@ export type RootState = DefaultRootState & {
     firebase: {
         data: {
             about?: IAbout;
-            email?: string;
+            contact_webhook?: string;
             projects?: IProjects;
             icons?: { [id: string]: IIcon; };
             langs?: { [id: string]: ILang; };
