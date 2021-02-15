@@ -42,10 +42,21 @@ const ContactContainerStyle = styled.div`
         transition: .5s;
         font-size: 1em;
 
-        &:hover {
+        &:not(:disabled):hover {
             border: 1px solid var(--main-color);
             background: var(--font-color);
             color: var(--main-color);
+        }
+
+        &:disabled {
+            opacity: .6;
+            color: var(--header-footer-color);
+            border: 1px solid var(--header-footer-color);
+            cursor: not-allowed;
+
+            &:hover {
+                opacity: .8;
+            }
         }
     }
 `;
@@ -59,10 +70,13 @@ const ContactContainer = ({ webhook }: { webhook: string }): JSX.Element => {
     const contact_success: string = LangString(LangsList.contact_success);
     const contact_error_webhook: string = LangString(LangsList.contact_error_webhook);
 
+
+    const [isProcessingRequest, setIsProcessingRequest] = React.useState<boolean>(false);
+
     //TODO size max
-    const [name, setName] = React.useState(""); //? discord size max : 256
-    const [email, setEmail] = React.useState(""); //? discord size max : 2048
-    const [content, setContent] = React.useState(""); //? discord size max : 2048
+    const [name, setName] = React.useState<string>(""); //? discord size max : 256
+    const [email, setEmail] = React.useState<string>(""); //? discord size max : 2048
+    const [content, setContent] = React.useState<string>(""); //? discord size max : 2048
 
     const handleSetNameOnChange = (event: React.ChangeEvent<HTMLInputElement>) => setName(event.target.value);
     const handleSetEmailOnChange = (event: React.ChangeEvent<HTMLInputElement>) => setEmail(event.target.value);
@@ -72,6 +86,7 @@ const ContactContainer = ({ webhook }: { webhook: string }): JSX.Element => {
     const handleOnSubmit = (event: React.MouseEvent<HTMLButtonElement, MouseEvent>) => {
         event.preventDefault();
         let error = false;
+        setIsProcessingRequest(true);
 
         if (!name.trim() || name.length < 6) {
             alert.error(contact_error_name);
@@ -98,6 +113,7 @@ const ContactContainer = ({ webhook }: { webhook: string }): JSX.Element => {
                         setName("");
                         setEmail("");
                         setContent("");
+                        setIsProcessingRequest(false);
                     } else {
                         alert.error(contact_error_webhook);
                     }
@@ -147,7 +163,12 @@ const ContactContainer = ({ webhook }: { webhook: string }): JSX.Element => {
                 onChange={handleSetContentOnChange}
                 required
             ></textarea>
-            <button onClick={handleOnSubmit}><Lang name={LangsList.contact_button} /></button>
+            <button
+                onClick={handleOnSubmit}
+                disabled={isProcessingRequest}
+            >
+                <Lang name={LangsList.contact_button} />
+            </button>
         </ContactContainerStyle>
     );
 }
