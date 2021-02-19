@@ -102,25 +102,7 @@ const ContactContainer = ({ webhook }: { webhook: string }): JSX.Element => {
         }
 
         if (!error) {
-            const request = new XMLHttpRequest();
-            request.open("POST", webhook);
-            request.setRequestHeader('Content-type', 'application/json');
-            request.onreadystatechange = function () {
-                if (request.readyState === 4) {
-                    //? 204 seem to be ok for discord
-                    if (request.status === 204) {
-                        alert.success(contact_success);
-                        setName("");
-                        setEmail("");
-                        setContent("");
-                        setIsProcessingRequest(false);
-                    } else {
-                        alert.error(contact_error_webhook);
-                    }
-                }
-            };
-
-            request.send(JSON.stringify({
+            const bodyContent = JSON.stringify({
                 username: "avan0x.github.io",
                 avatar_url: "https://avatars3.githubusercontent.com/u/27494805",
                 embeds: [
@@ -133,7 +115,32 @@ const ContactContainer = ({ webhook }: { webhook: string }): JSX.Element => {
                         }
                     }
                 ]
-            }));
+            })
+
+            fetch(webhook, {
+                method: "post",
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: bodyContent
+            }).then((data) => {
+                if (data.ok) {
+
+                    alert.success(contact_success);
+                    setName("");
+                    setEmail("");
+                    setContent("");
+
+                } else
+                    alert.error(contact_error_webhook);
+
+                setIsProcessingRequest(false);
+
+            }).catch(() => {
+                alert.error(contact_error_webhook);
+                setIsProcessingRequest(false);
+
+            });
         }
     }
 
