@@ -86,7 +86,6 @@ const ContactContainer = ({ webhook }: { webhook: string }): JSX.Element => {
     const handleOnSubmit = (event: React.MouseEvent<HTMLButtonElement, MouseEvent>) => {
         event.preventDefault();
         let error = false;
-        setIsProcessingRequest(true);
 
         if (!name.trim() || name.length < 6) {
             alert.error(contact_error_name);
@@ -102,6 +101,7 @@ const ContactContainer = ({ webhook }: { webhook: string }): JSX.Element => {
         }
 
         if (!error) {
+            setIsProcessingRequest(true);
             const bodyContent = JSON.stringify({
                 username: "avan0x.github.io",
                 avatar_url: "https://avatars3.githubusercontent.com/u/27494805",
