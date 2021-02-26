@@ -25,6 +25,7 @@ const LangsList = {
     about_location: "about_location",
     about_personal_informations: "about_personal_informations",
     about_qualities: "about_qualities",
+    about_techs_title: "about_techs_title",
     about_techs: "about_techs",
 
     contact: "contact",

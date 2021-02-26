@@ -24,7 +24,7 @@ type PropsType = {
 const Techs = ({ techs }: PropsType): JSX.Element => {
     return (
         <AboutItem>
-            <SegmentTitle><Lang name={LangsList.about_techs} /></SegmentTitle>
+            <SegmentTitle><Lang name={LangsList.about_techs_title} /></SegmentTitle>
             <Segment>
                 <ul>
                     {techs.others.map((techList, index) => (
@@ -35,7 +35,7 @@ const Techs = ({ techs }: PropsType): JSX.Element => {
                         </LanguageList>
                     ))}
                 </ul>
-                <h1><Lang name="about_languages" /></h1>
+                <h1><Lang name={LangsList.about_techs} /></h1>
                 <ul>
                     {techs.codingLanguages.map((techList, index) => (
                         <LanguageList key={index}>
