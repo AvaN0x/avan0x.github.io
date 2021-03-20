@@ -32,7 +32,7 @@ const FooterContainer = styled.div`
     }
 
     & > svg {
-        margin: 0 5px
+        margin: 0 5px;
     }
 
     ${!isMobile && css`
