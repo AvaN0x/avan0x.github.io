@@ -33,3 +33,6 @@ package-lock.json
 # Firebase Config
 src/firebase/config.ts
 debug.log
+
+# Firebase database save
+save_db/
