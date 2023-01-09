@@ -4,7 +4,7 @@ import styled from '@emotion/styled';
 import { keyframes } from '@emotion/react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faAngleDoubleDown } from '@fortawesome/free-solid-svg-icons';
-import { HashLink } from 'react-router-hash-link';
+import { HashLink, HashLinkProps } from 'react-router-hash-link';
 
 const Scroll = keyframes`
     0% {
@@ -55,7 +55,7 @@ const CoverContentContainer = styled.div<{ actualHeight: number }>`
     }
 `;
 
-const AnimatedScroller = styled(HashLink)`
+const AnimatedScroller = styled(HashLink as React.ComponentClass<HashLinkProps>)`
     padding-bottom: 1rem;
     animation: ${Scroll} 1.8s linear infinite;
 
