@@ -100,17 +100,10 @@ const LinksContainer = styled.div`
             margin-right: 8px;
             font-size: 1.2rem;
             transition: .5s;
-
-            &.fa-github {
-                color: #fff;
-            }
+            color: #fff;
 
             &.fa-youtube {
                 color: #eb4034;
-            }
-
-            &.fa-external-link-alt {
-                color: #fff;
             }
         }
     }
