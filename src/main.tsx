@@ -32,7 +32,7 @@ const router = createHashRouter([
         children: [
             {
                 path: '/',
-                element: <Navigate to="/portfolio" />,
+                element: <Portfolio />,
             },
             {
                 path: '/discord',
@@ -40,7 +40,7 @@ const router = createHashRouter([
             },
             {
                 path: '/portfolio',
-                element: <Portfolio />,
+                element: <Navigate to="/" />,
             },
             {
                 path: '/lang/:language',
