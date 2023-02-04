@@ -1,10 +1,10 @@
-import React from 'react';
+import React, { useState } from 'react';
 import styled from '@emotion/styled';
 
 import { keyframes } from '@emotion/react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faAngleDoubleDown } from '@fortawesome/free-solid-svg-icons';
-import { HashLink, HashLinkProps } from 'react-router-hash-link';
+import { HashLink } from 'react-router-hash-link';
 
 const Scroll = keyframes`
     0% {
@@ -27,7 +27,7 @@ const CoverContainer = styled.div<{ url: string }>`
     width: 100%;
     height: 100vh;
     position: relative;
-    background-image: url(${props => props.url});
+    background-image: url(${(props) => props.url});
     background-size: cover;
     background-position: center;
 `;
@@ -35,7 +35,7 @@ const CoverContainer = styled.div<{ url: string }>`
 const CoverContentContainer = styled.div<{ actualHeight: number }>`
     position: relative;
     background-color: var(--main-transparent-color);
-    top: calc(50% ${props => " - " + props.actualHeight / 2 + "px"});
+    top: calc(50% ${(props) => ' - ' + props.actualHeight / 2 + 'px'});
     width: 100%;
     text-align: center;
     margin: auto;
@@ -55,7 +55,7 @@ const CoverContentContainer = styled.div<{ actualHeight: number }>`
     }
 `;
 
-const AnimatedScroller = styled(HashLink as React.ComponentClass<HashLinkProps>)`
+const AnimatedScroller = styled(HashLink as any)`
     padding-bottom: 1rem;
     animation: ${Scroll} 1.8s linear infinite;
 
@@ -67,7 +67,7 @@ const AnimatedScroller = styled(HashLink as React.ComponentClass<HashLinkProps>)
 type PropsType = {
     url: string;
     children?: React.ReactNode;
-}
+};
 
 /**
  * Create a cover component with a background image
@@ -75,7 +75,7 @@ type PropsType = {
  * @param {React.ReactNode} children content of the cover
  */
 const Cover = ({ url, children }: PropsType): JSX.Element => {
-    const [contentHeight, setContentHeight] = React.useState(0);
+    const [contentHeight, setContentHeight] = useState(0);
     const contentRef = React.useRef<HTMLDivElement>(null);
 
     React.useEffect(() => {
@@ -85,7 +85,10 @@ const Cover = ({ url, children }: PropsType): JSX.Element => {
     return (
         <>
             <CoverContainer url={url}>
-                <CoverContentContainer ref={contentRef} actualHeight={contentHeight}>
+                <CoverContentContainer
+                    ref={contentRef}
+                    actualHeight={contentHeight}
+                >
                     {children}
                     <AnimatedScroller smooth to="#scroll">
                         <FontAwesomeIcon icon={faAngleDoubleDown} />
@@ -95,6 +98,6 @@ const Cover = ({ url, children }: PropsType): JSX.Element => {
             <span id="scroll"></span>
         </>
     );
-}
+};
 
 export default Cover;

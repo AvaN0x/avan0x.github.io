@@ -20,10 +20,10 @@ export const SegmentTitle = styled.h1`
 `;
 
 export const Segment = styled.div`
-    transition: .5s;
+    transition: 0.5s;
     border-left: 2px solid var(--secondary-color);
     box-sizing: border-box;
-    padding-bottom: .1rem;
+    padding-bottom: 0.1rem;
     margin-bottom: 2rem;
 
     & > ul {
@@ -50,7 +50,7 @@ export const EducationContainer = styled.div`
     margin: 0;
     padding: 4px;
 
-    &>h1 {
+    & > h1 {
         border: none;
         text-align: left;
         font-size: 1rem;
@@ -59,7 +59,7 @@ export const EducationContainer = styled.div`
         color: var(--secondary-color);
     }
 
-    &>p {
+    & > p {
         text-indent: 20px;
         margin: 2px;
     }

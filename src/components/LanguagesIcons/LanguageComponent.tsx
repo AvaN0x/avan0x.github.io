@@ -1,10 +1,8 @@
 import React from 'react';
 import styled from '@emotion/styled';
 import { css } from '@emotion/react';
-import { useSelector } from 'react-redux';
-import { isLoaded } from 'react-redux-firebase';
-import { RootState } from '../../firebase/store';
 import Lang, { LangStringFromILang } from '../Lang/Lang';
+import { useDatabase } from 'components/context/DatabaseProvider';
 
 const LanguageImg = styled.img`
     height: 1rem;
@@ -15,17 +13,25 @@ const LanguageImg = styled.img`
     background-color: #00000060;
     position: relative;
     top: -2px;
-    transition: background-color .5s;
+    transition: background-color 0.5s;
 `;
 
 const LanguageComponent = ({ name }: { name: string }): JSX.Element => {
-    const icons = useSelector((state: RootState) => state.firebase.data.icons)
+    const icons = useDatabase()?.icons;
 
-    if (icons && icons[name]) {
+    if (!icons) {
+        return <span>{name}</span>;
+    }
+    if (icons[name]) {
         return (
-            <span title={LangStringFromILang(icons[name].title) || ""}>
+            <span title={LangStringFromILang(icons[name].title) || ''}>
                 {icons[name].icons?.map((icon, techIndex) => (
-                    <LanguageLink key={techIndex} target="_blank" rel="noreferrer" href={icon.href}>
+                    <LanguageLink
+                        key={techIndex}
+                        target="_blank"
+                        rel="noreferrer"
+                        href={icon.href}
+                    >
                         <LanguageImg src={icon.src} />
                     </LanguageLink>
                 ))}
@@ -34,26 +40,20 @@ const LanguageComponent = ({ name }: { name: string }): JSX.Element => {
             </span>
         );
     }
-    else {
-        // only print error if icons have loaded
-        if (isLoaded(icons)) {
-            console.error("`" + name + "` is missing from icons");
-        }
 
-        return (
-            <span>
-                {name}
-            </span>
-        );
-    }
-}
+    console.error('`' + name + '` is missing from icons');
+
+    return <span>{name}</span>;
+};
 
 const LanguageLink = styled.a<{ href?: string }>`
-    ${props => props.href && css`
-        &>img:hover {
-            background-color: #ffffff20;
-        }
-    `}
+    ${(props) =>
+        props.href &&
+        css`
+            & > img:hover {
+                background-color: #ffffff20;
+            }
+        `}
 `;
 
 export default LanguageComponent;

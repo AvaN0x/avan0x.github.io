@@ -25,7 +25,7 @@ const ColoredSectionComponent = styled.section`
 type PropsType = {
     title: string;
     id?: string;
-}
+};
 
 const ColoredSection = ({ title, id }: PropsType): JSX.Element => {
     return (
@@ -33,6 +33,6 @@ const ColoredSection = ({ title, id }: PropsType): JSX.Element => {
             <h1>{title}</h1>
         </ColoredSectionComponent>
     );
-}
+};
 
 export default ColoredSection;

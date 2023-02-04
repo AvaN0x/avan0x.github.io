@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import styled from '@emotion/styled';
 import { NavLink } from 'react-router-dom';
 
@@ -37,7 +37,7 @@ const Container = styled.div`
         cursor: pointer;
         text-overflow: ellipsis;
         font-weight: 600;
-        transition: .2s;
+        transition: 0.2s;
     }
 `;
 
@@ -96,36 +96,39 @@ interface IDiscordInvite {
 }
 
 const DiscordInvite = (): JSX.Element => {
-    const [discord, setDiscord] = React.useState<IDiscordInvite | null>(null);
+    const [discord, setDiscord] = useState<IDiscordInvite | null>(null);
 
     React.useEffect(() => {
-        fetch("https://discordapp.com/api/guilds/673139614927683594/widget.json")
-            .then(res => res.json())
-            .then(
-                (result) => {
-                    setDiscord({
-                        name: result.name,
-                        onlines: result.presence_count
-                    });
-                }
-            )
-    }, [])
+        fetch(
+            'https://discordapp.com/api/guilds/673139614927683594/widget.json'
+        )
+            .then((res) => res.json())
+            .then((result) => {
+                setDiscord({
+                    name: result.name,
+                    onlines: result.presence_count,
+                });
+            });
+    }, []);
 
     return (
         <Container>
-            <p><Lang name={LangsList.discord_invite_title} /></p>
+            <p>
+                <Lang name={LangsList.discord_invite_title} />
+            </p>
             <DiscordLogo src="https://avatars3.githubusercontent.com/u/27494805" />
             <DetailsContainer>
-                <NavLink to="/discord">
-                    {discord?.name || ""}
-                </NavLink>
-                <p><DiscordBubble /> <strong>{discord?.onlines || -1}</strong> <Lang name={LangsList.discord_invite_online} /></p>
+                <NavLink to="/discord">{discord?.name || ''}</NavLink>
+                <p>
+                    <DiscordBubble /> <strong>{discord?.onlines || -1}</strong>{' '}
+                    <Lang name={LangsList.discord_invite_online} />
+                </p>
             </DetailsContainer>
             <JoinButton to="/discord">
                 <Lang name={LangsList.discord_invite_join} />
             </JoinButton>
         </Container>
     );
-}
+};
 
 export default DiscordInvite;

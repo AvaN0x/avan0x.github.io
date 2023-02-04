@@ -13,7 +13,7 @@ const Container = styled.div`
 `;
 
 const Fill = styled.div<{ pourcent: number }>`
-    width: ${props => props.pourcent}%;
+    width: ${(props) => props.pourcent}%;
     height: 100%;
     background-color: var(--main-color);
     border-radius: 5px;
@@ -26,6 +26,6 @@ const LoadBar = ({ pourcent }: { pourcent: number }): JSX.Element => {
             <Fill pourcent={pourcent}></Fill>
         </Container>
     );
-}
+};
 
 export default LoadBar;

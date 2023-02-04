@@ -3,4 +3,4 @@ interface ILang {
     [key: string]: string;
 }
 
-export default ILang
+export default ILang;

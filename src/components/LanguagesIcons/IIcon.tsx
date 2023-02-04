@@ -1,4 +1,4 @@
-import ILang from "../Lang/ILang";
+import ILang from '../Lang/ILang';
 
 interface IIcon {
     label: ILang | string;
