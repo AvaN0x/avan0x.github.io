@@ -13,7 +13,7 @@ const Discord = (): JSX.Element => {
         )
             .then((res) => res.json())
             .then((result) => {
-                // window.location.href = result.instant_invite;
+                window.location.href = result.instant_invite;
             });
     }, []);
 
