@@ -2,11 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom/client';
 import { transitions, positions, Provider as AlertProvider } from 'react-alert';
 import AlertTemplate from 'components/AlertTemplate';
-import {
-    createBrowserRouter,
-    Navigate,
-    RouterProvider,
-} from 'react-router-dom';
+import { createHashRouter, Navigate, RouterProvider } from 'react-router-dom';
 import DefaultLayout from 'layouts/DefaultLayout';
 import ErrorPage from 'pages/error';
 import Portfolio from 'pages/Portfolio';
@@ -26,7 +22,9 @@ const options = {
     },
 };
 
-const router = createBrowserRouter([
+// We need to use a hash router otherwise github pages wouldn't
+// be able to find the pages other than the home page
+const router = createHashRouter([
     {
         path: '/',
         element: <DefaultLayout />,
