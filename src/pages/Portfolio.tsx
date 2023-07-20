@@ -27,7 +27,10 @@ const Portfolio = (): JSX.Element => {
                 </HashLink>
             </NavBar>
 
-            <Cover url={'https://wallpaperaccess.com/full/521099.jpg'}>
+            <Cover
+                url={'https://wallpaperaccess.com/full/521099.jpg'}
+                urlSource={'https://wallpaperaccess.com/'}
+            >
                 <p>
                     <Lang name={LangsList.portfolio_cover_subtitle} />
                 </p>

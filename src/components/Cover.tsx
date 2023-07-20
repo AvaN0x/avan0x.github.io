@@ -23,11 +23,13 @@ const Scroll = keyframes`
     }
 `;
 
-const CoverContainer = styled.div<{ url: string }>`
+const CoverContainer = styled.div<{ url?: string }>`
     width: 100%;
-    height: 100vh;
     position: relative;
-    background-image: url(${(props) => props.url});
+    height: ${(props) => (props.url ? '100vh' : 'fit-content')};
+    ${(props) => props.url && `background-image: url(${props.url});`}
+    ${(props) => !props.url && `margin-top: 3rem;`}
+    background-color: var(--cover-background-color);
     background-size: cover;
     background-position: center;
 `;
@@ -55,6 +57,19 @@ const CoverContentContainer = styled.div<{ actualHeight: number }>`
     }
 `;
 
+const CoverUrlSource = styled.div<{}>`
+    position: absolute;
+    background-color: var(--nav-menu-color);
+    bottom: 0;
+    right: 1rem;
+    padding: 0.35rem 0.5rem;
+    border-radius: 0.5rem 0.5rem 0 0;
+
+    & a:hover {
+        text-decoration: underline;
+    }
+`;
+
 const AnimatedScroller = styled(HashLink as any)`
     padding-bottom: 1rem;
     animation: ${Scroll} 1.8s linear infinite;
@@ -65,16 +80,18 @@ const AnimatedScroller = styled(HashLink as any)`
 `;
 
 type PropsType = {
-    url: string;
+    url?: string;
+    urlSource?: string;
     children?: React.ReactNode;
 };
 
 /**
  * Create a cover component with a background image
  * @param {string} url url of the image
+ * @param {string} urlSource source of the image
  * @param {React.ReactNode} children content of the cover
  */
-const Cover = ({ url, children }: PropsType): JSX.Element => {
+const Cover = ({ url, urlSource, children }: PropsType): JSX.Element => {
     const [contentHeight, setContentHeight] = useState(0);
     const contentRef = React.useRef<HTMLDivElement>(null);
 
@@ -94,6 +111,13 @@ const Cover = ({ url, children }: PropsType): JSX.Element => {
                         <FontAwesomeIcon icon={faAngleDoubleDown} />
                     </AnimatedScroller>
                 </CoverContentContainer>
+                {url && urlSource && (
+                    <CoverUrlSource>
+                        <a href={urlSource} target="_blank">
+                            Source
+                        </a>
+                    </CoverUrlSource>
+                )}
             </CoverContainer>
             <span id="scroll"></span>
         </>
