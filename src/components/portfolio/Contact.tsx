@@ -130,6 +130,7 @@ const ContactContainer = ({ webhook }: { webhook: string }): JSX.Element => {
                 ],
             });
 
+            // ! Disclaimer, the site being fully static, I'm totally aware that the webhook is accessible by anyone.
             fetch(webhook, {
                 method: 'post',
                 headers: {
