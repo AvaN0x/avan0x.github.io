@@ -34,7 +34,7 @@ const Personal = ({ personal }: PropsType): JSX.Element => {
     return (
         <AboutItem>
             <SegmentTitle>
-                <Lang name={LangsList.about_personal_informations} />
+                <Lang name={LangsList.about_personal_information} />
             </SegmentTitle>
             <Segment>
                 <ul>

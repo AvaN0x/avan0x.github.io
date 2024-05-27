@@ -23,7 +23,7 @@ const LangsList = {
     about_lastname: 'about_lastname',
     about_license_vehicle: 'about_license_vehicle',
     about_location: 'about_location',
-    about_personal_informations: 'about_personal_informations',
+    about_personal_information: 'about_personal_information',
     about_qualities: 'about_qualities',
     about_techs_title: 'about_techs_title',
     about_techs: 'about_techs',
