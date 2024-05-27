@@ -160,9 +160,6 @@ const ProjectCard = ({ project }: PropsType): JSX.Element => {
     const [show, setShow] = useState<boolean>(false);
 
     const handleTitleClick = () => {
-        if (!show && cardRef.current)
-            window.scrollTo(0, cardRef.current.offsetTop - 200);
-
         setShow(!show);
     };
 
